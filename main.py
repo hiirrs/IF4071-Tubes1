@@ -160,17 +160,41 @@ class VowelRecognitionDTW:
                     if len(person_distances) > 0:
                         distances_by_vowel_person[vowel].append(min(person_distances))
         
+        # Dictionary untuk final distances per vowel
+        final_vowel_distances = {}
+        
         # Untuk setiap vowel, ambil rata-rata dari semua person
         for vowel, person_distances in distances_by_vowel_person.items():
             if len(person_distances) > 0:
                 # Bisa pakai mean atau median
                 avg_vowel_distance = np.mean(person_distances)
+                final_vowel_distances[vowel] = avg_vowel_distance
                 
                 if avg_vowel_distance < min_distance:
                     min_distance = avg_vowel_distance
                     recognized_vowel = vowel
         
-        return recognized_vowel, min_distance, all_distances
+        return recognized_vowel, min_distance, all_distances, final_vowel_distances
+
+    def print_detailed_prediction(self, audio_path, true_vowel, test_person_id, recognized_vowel, distance, final_vowel_distances, is_correct, scenario=""):
+        """
+        Print detailed prediction information
+        """
+        filename = os.path.basename(audio_path)
+        status = "✓ CORRECT" if is_correct else "✗ WRONG"
+        
+        print(f"\n  Test: {filename}")
+        print(f"    Person: {test_person_id}")
+        print(f"    Actual: {true_vowel} | Predicted: {recognized_vowel} | {status}")
+        print(f"    Best Distance: {distance:.4f}")
+        
+        # Show distances to all vowels (sorted)
+        print(f"    All distances:")
+        sorted_distances = sorted(final_vowel_distances.items(), key=lambda x: x[1])
+        for vowel, dist in sorted_distances:
+            marker = " 👈 CHOSEN" if vowel == recognized_vowel else ""
+            correct_marker = " (CORRECT)" if vowel == true_vowel else ""
+            print(f"      {vowel}: {dist:.4f}{marker}{correct_marker}")
     
     def test_closed_scenario(self, test_data):
         """
@@ -180,13 +204,22 @@ class VowelRecognitionDTW:
         total = 0
         results = []
         
+        print(f"\n--- DETAILED CLOSED SCENARIO RESULTS ---")
+        
         for audio_path, true_vowel, test_person_id in test_data:
-            recognized_vowel, distance, _ = self.recognize(audio_path, use_averaging=True)
+            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_averaging=True)
             
             is_correct = (recognized_vowel == true_vowel)
             if is_correct:
                 correct += 1
             total += 1
+            
+            # Print detailed prediction info
+            self.print_detailed_prediction(
+                audio_path, true_vowel, test_person_id, 
+                recognized_vowel, distance, final_vowel_distances, 
+                is_correct, "CLOSED"
+            )
             
             results.append({
                 'audio': audio_path,
@@ -194,10 +227,12 @@ class VowelRecognitionDTW:
                 'predicted': recognized_vowel,
                 'person': test_person_id,
                 'correct': is_correct,
-                'distance': distance
+                'distance': distance,
+                'final_vowel_distances': final_vowel_distances
             })
         
         accuracy = (correct / total) * 100 if total > 0 else 0
+        print(f"\n  CLOSED SCENARIO SUMMARY: {correct}/{total} correct = {accuracy:.2f}%")
         return accuracy, results
     
     def test_open_scenario(self, test_data, template_person_ids):
@@ -211,6 +246,7 @@ class VowelRecognitionDTW:
         original_templates = self.templates.copy()
         filtered_templates = {}
         
+        # Filter templates to only use specified persons
         for vowel in self.templates:
             filtered_templates[vowel] = {
                 pid: feat for pid, feat in self.templates[vowel].items() 
@@ -219,13 +255,23 @@ class VowelRecognitionDTW:
         
         self.templates = filtered_templates
         
+        print(f"\n--- DETAILED OPEN SCENARIO RESULTS ---")
+        print(f"Using templates from: {template_person_ids}")
+        
         for audio_path, true_vowel, test_person_id in test_data:
-            recognized_vowel, distance, _ = self.recognize(audio_path, use_averaging=True)
+            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_averaging=True)
             
             is_correct = (recognized_vowel == true_vowel)
             if is_correct:
                 correct += 1
             total += 1
+            
+            # Print detailed prediction info
+            self.print_detailed_prediction(
+                audio_path, true_vowel, test_person_id, 
+                recognized_vowel, distance, final_vowel_distances, 
+                is_correct, "OPEN"
+            )
             
             results.append({
                 'audio': audio_path,
@@ -233,12 +279,15 @@ class VowelRecognitionDTW:
                 'predicted': recognized_vowel,
                 'person': test_person_id,
                 'correct': is_correct,
-                'distance': distance
+                'distance': distance,
+                'final_vowel_distances': final_vowel_distances
             })
         
+        # Restore original templates
         self.templates = original_templates
         
         accuracy = (correct / total) * 100 if total > 0 else 0
+        print(f"\n  OPEN SCENARIO SUMMARY: {correct}/{total} correct = {accuracy:.2f}%")
         return accuracy, results
     
     def evaluate_all_scenarios(self, test_data_by_person):
@@ -249,20 +298,32 @@ class VowelRecognitionDTW:
         results_summary = {}
         
         for template_person in all_persons:
-            print(f"\n=== Template dari {template_person} ===")
+            print(f"\n{'='*60}")
+            print(f"=== EVALUATION WITH TEMPLATES FROM {template_person.upper()} ===")
+            print(f"{'='*60}")
             
+            # Prepare all test data
             all_test_data = []
             for person_id, tests in test_data_by_person.items():
                 for audio_path, vowel in tests:
                     all_test_data.append((audio_path, vowel, person_id))
             
+            print(f"\nTotal test files: {len(all_test_data)}")
+            
+            # Closed scenario testing
+            print(f"\n🔒 CLOSED SCENARIO (all templates vs all test data)")
             closed_acc, closed_results = self.test_closed_scenario(all_test_data)
             
+            # Open scenario testing
             other_persons = [p for p in all_persons if p != template_person]
             open_test_data = [
                 (path, vowel, pid) for path, vowel, pid in all_test_data 
                 if pid != template_person
             ]
+            
+            print(f"\n🔓 OPEN SCENARIO (templates from {template_person} vs test from others)")
+            print(f"Test persons: {other_persons}")
+            print(f"Test files: {len(open_test_data)}")
             
             open_acc, open_results = self.test_open_scenario(
                 open_test_data, 
@@ -279,15 +340,19 @@ class VowelRecognitionDTW:
                 'open_results': open_results
             }
             
-            print(f"Closed Accuracy: {closed_acc:.2f}%")
-            print(f"Open Accuracy: {open_acc:.2f}%")
-            print(f"Average Accuracy: {avg_acc:.2f}%")
+            print(f"\n📊 SUMMARY FOR {template_person.upper()}:")
+            print(f"  Closed Accuracy: {closed_acc:.2f}%")
+            print(f"  Open Accuracy: {open_acc:.2f}%")
+            print(f"  Average Accuracy: {avg_acc:.2f}%")
         
+        # Calculate overall statistics
         overall_closed = np.mean([r['closed_accuracy'] for r in results_summary.values()])
         overall_open = np.mean([r['open_accuracy'] for r in results_summary.values()])
         overall_avg = np.mean([r['average_accuracy'] for r in results_summary.values()])
         
-        print(f"\n=== OVERALL RESULTS ===")
+        print(f"\n{'='*60}")
+        print(f"=== OVERALL RESULTS ACROSS ALL TEMPLATE PERSONS ===")
+        print(f"{'='*60}")
         print(f"Overall Closed Accuracy: {overall_closed:.2f}%")
         print(f"Overall Open Accuracy: {overall_open:.2f}%")
         print(f"Overall Average Accuracy: {overall_avg:.2f}%")
