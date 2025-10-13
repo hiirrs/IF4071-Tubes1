@@ -1,0 +1,32 @@
+# macOS system files
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pycache
+*.pdb
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+
+# VSCode settings
+.vscode/
+.history/
+
+# Audio / dataset temporary files
+*.wav~
+*.tmp
+*.log
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# OS files
+Thumbs.db

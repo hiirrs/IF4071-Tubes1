@@ -181,7 +181,7 @@ class VowelRecognitionDTW:
         Print detailed prediction information
         """
         filename = os.path.basename(audio_path)
-        status = "✓ CORRECT" if is_correct else "✗ WRONG"
+        status = "CORRECT" if is_correct else "WRONG"
         
         print(f"\n  Test: {filename}")
         print(f"    Person: {test_person_id}")
@@ -192,7 +192,7 @@ class VowelRecognitionDTW:
         print(f"    All distances:")
         sorted_distances = sorted(final_vowel_distances.items(), key=lambda x: x[1])
         for vowel, dist in sorted_distances:
-            marker = " 👈 CHOSEN" if vowel == recognized_vowel else ""
+            marker = " <- CHOSEN" if vowel == recognized_vowel else ""
             correct_marker = " (CORRECT)" if vowel == true_vowel else ""
             print(f"      {vowel}: {dist:.4f}{marker}{correct_marker}")
     
@@ -290,11 +290,12 @@ class VowelRecognitionDTW:
         print(f"\n  OPEN SCENARIO SUMMARY: {correct}/{total} correct = {accuracy:.2f}%")
         return accuracy, results
     
-    def evaluate_all_scenarios(self, test_data_by_person):
+    def evaluate_all_scenarios(self, test_data_us, test_data_other):
         """
         Evaluasi lengkap: closed, open, dan rata-rata
         """
-        all_persons = list(test_data_by_person.keys())
+        # Get all persons from templates_us test data
+        all_persons = list(set([person_id for _, _, person_id in test_data_us]))
         results_summary = {}
         
         for template_person in all_persons:
@@ -302,27 +303,17 @@ class VowelRecognitionDTW:
             print(f"=== EVALUATION WITH TEMPLATES FROM {template_person.upper()} ===")
             print(f"{'='*60}")
             
-            # Prepare all test data
-            all_test_data = []
-            for person_id, tests in test_data_by_person.items():
-                for audio_path, vowel in tests:
-                    all_test_data.append((audio_path, vowel, person_id))
+            print(f"\nTotal test files (templates_us): {len(test_data_us)}")
+            print(f"Total test files (templates_other): {len(test_data_other)}")
             
-            print(f"\nTotal test files: {len(all_test_data)}")
+            # Closed scenario testing (all templates vs test from templates_us only)
+            print(f"\n[CLOSED SCENARIO] (all templates vs test from templates_us)")
+            closed_acc, closed_results = self.test_closed_scenario(test_data_us)
             
-            # Closed scenario testing
-            print(f"\n🔒 CLOSED SCENARIO (all templates vs all test data)")
-            closed_acc, closed_results = self.test_closed_scenario(all_test_data)
+            # Open scenario testing (templates from template_person vs test from templates_other)
+            open_test_data = test_data_other
             
-            # Open scenario testing
-            other_persons = [p for p in all_persons if p != template_person]
-            open_test_data = [
-                (path, vowel, pid) for path, vowel, pid in all_test_data 
-                if pid != template_person
-            ]
-            
-            print(f"\n🔓 OPEN SCENARIO (templates from {template_person} vs test from others)")
-            print(f"Test persons: {other_persons}")
+            print(f"\n[OPEN SCENARIO] (templates from {template_person} vs test from templates_other)")
             print(f"Test files: {len(open_test_data)}")
             
             open_acc, open_results = self.test_open_scenario(
@@ -340,7 +331,7 @@ class VowelRecognitionDTW:
                 'open_results': open_results
             }
             
-            print(f"\n📊 SUMMARY FOR {template_person.upper()}:")
+            print(f"\n--- SUMMARY FOR {template_person.upper()} ---")
             print(f"  Closed Accuracy: {closed_acc:.2f}%")
             print(f"  Open Accuracy: {open_acc:.2f}%")
             print(f"  Average Accuracy: {avg_acc:.2f}%")
@@ -407,10 +398,10 @@ if __name__ == "__main__":
     
     all_files = {}
     
-    print("=== SCANNING FILES ===")
+    print("=== SCANNING FILES (templates_us) ===")
     for person in persons:
         all_files[person] = {}
-        folder = f"{base_path}templates/{person}"
+        folder = f"{base_path}templates_us/{person}"
         
         if os.path.exists(folder):
             for filename in os.listdir(folder):
@@ -434,19 +425,19 @@ if __name__ == "__main__":
         else:
             print(f"Folder tidak ditemukan: {folder}")
     
-    test_data_by_person = {}
+    test_data_us = []
     
     print("\n=== LOADING TEMPLATES (using files with smaller numbers) ===")
     for person in persons:
-        test_data_by_person[person] = []
-        
         for vowel in vowels:
             if vowel in all_files[person]:
                 files = all_files[person][vowel]
                 files.sort(key=lambda x: x[1])
                 
                 if len(files) > 0:
+                    # Gunakan file 1 dan 2 sebagai template
                     template_files = files[:-1] if len(files) > 1 else []
+                    # Gunakan file terakhir sebagai test
                     test_file = files[-1]
                     
                     for file_path, file_num in template_files:
@@ -455,14 +446,59 @@ if __name__ == "__main__":
                         except Exception as e:
                             print(f"Error loading {file_path}: {e}")
                     
-                    test_data_by_person[person].append((test_file[0], vowel))
+                    test_data_us.append((test_file[0], vowel, person))
     
-    print(f"\n=== TEST DATA (using files with largest numbers) ===")
-    for person, data in test_data_by_person.items():
-        print(f"  {person}: {len(data)} test files")
+    print(f"\n=== TEST DATA (templates_us - using files with largest numbers) ===")
+    print(f"Total: {len(test_data_us)} test files")
+    
+    # Scan templates_other
+    all_files_other = {}
+    
+    print("\n=== SCANNING FILES (templates_other) ===")
+    folder_other = f"{base_path}templates_other"
+    if os.path.exists(folder_other):
+        for person in os.listdir(folder_other):
+            person_folder = os.path.join(folder_other, person)
+            if os.path.isdir(person_folder):
+                all_files_other[person] = {}
+                for filename in os.listdir(person_folder):
+                    if filename.endswith('.wav') or filename.endswith('.m4a'):
+                        parts = filename.replace('.wav', '').replace('.m4a', '').split(' - ')
+                        if len(parts) >= 2:
+                            vowel_num = parts[1].strip().split()
+                            if len(vowel_num) >= 2:
+                                vowel_part = vowel_num[0]
+                                try:
+                                    file_num = int(vowel_num[1])
+                                    
+                                    if vowel_part in vowels:
+                                        if vowel_part not in all_files_other[person]:
+                                            all_files_other[person][vowel_part] = []
+                                        
+                                        file_path = os.path.join(person_folder, filename)
+                                        all_files_other[person][vowel_part].append((file_path, file_num))
+                                except ValueError:
+                                    print(f"Warning: Could not parse number from {filename}")
+    else:
+        print(f"Folder tidak ditemukan: {folder_other}")
+    
+    test_data_other = []
+    
+    print("\n=== TEST DATA (templates_other - using files with largest numbers) ===")
+    for person in all_files_other:
+        for vowel in vowels:
+            if vowel in all_files_other[person]:
+                files = all_files_other[person][vowel]
+                files.sort(key=lambda x: x[1])
+                
+                if len(files) > 0:
+                    test_file = files[-1]
+                    test_data_other.append((test_file[0], vowel, person))
+    
+    print(f"Total: {len(test_data_other)} test files")
     
     print("\n=== STARTING EVALUATION ===")
-    results = recognizer.evaluate_all_scenarios(test_data_by_person)
+    results = recognizer.evaluate_all_scenarios(test_data_us, test_data_other)
     
     # Print confusion matrix untuk analisis
     all_closed_results = []
