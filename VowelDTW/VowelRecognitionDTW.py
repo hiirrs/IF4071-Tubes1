@@ -11,6 +11,7 @@ class VowelRecognitionDTW:
     def __init__(self, sample_rate=16000, use_vad=True, normalize=True):
         """
         Sistem pengenalan vokal menggunakan DTW dan MFCC 39 dimensi
+        dengan Generalized Template sesuai PPT
         
         Parameters:
         - sample_rate: sampling rate audio (default 16000 Hz)
@@ -20,7 +21,13 @@ class VowelRecognitionDTW:
         self.sample_rate = sample_rate
         self.use_vad = use_vad
         self.normalize = normalize
-        self.templates = {}  # {vowel: {person_id: [list of mfcc_features]}}
+        
+        # Storage untuk raw templates sebelum digeneralisasi
+        self.raw_templates = {}  # {vowel: {person_id: [list of mfcc_features]}}
+        
+        # Storage untuk generalized templates (hasil akhir untuk recognition)
+        self.generalized_templates = {}  # {vowel: generalized_mfcc_features}
+        
         self.vowels = ['a', 'i', 'u', 'e', 'o']
         
     def voice_activity_detection(self, audio, top_db=20):
@@ -101,80 +108,142 @@ class VowelRecognitionDTW:
         
         return normalized_distance
     
+    def segment_template(self, template_features, num_segments=5):
+        """
+        Membagi template menjadi beberapa segmen
+        
+        Parameters:
+        - template_features: MFCC features (time_frames x 39)
+        - num_segments: jumlah segmen yang diinginkan
+        
+        Returns:
+        - List of segments, each segment is a numpy array
+        """
+        total_frames = template_features.shape[0]
+        segment_size = total_frames // num_segments
+        
+        segments = []
+        for i in range(num_segments):
+            start_idx = i * segment_size
+            if i == num_segments - 1:  # segmen terakhir ambil sisa
+                end_idx = total_frames
+            else:
+                end_idx = (i + 1) * segment_size
+            
+            segment = template_features[start_idx:end_idx]
+            segments.append(segment)
+        
+        return segments
+    
+    def create_generalized_template(self, all_segments):
+        """
+        Membuat generalized template dari kumpulan segmen
+        
+        Parameters:
+        - all_segments: List of segments dari berbagai template
+        
+        Returns:
+        - generalized_template: numpy array (combined_frames x 39)
+        """
+        if len(all_segments) == 0:
+            return np.array([])
+        
+        # Metode konkatenasi sederhana 
+        generalized = np.vstack(all_segments)
+        
+        return generalized
+    
+    def build_generalized_templates(self, target_person_ids=None, num_segments=5):
+        """
+        Membangun generalized templates dari raw templates
+        
+        Parameters:
+        - target_person_ids: List of person IDs to use (None = all persons)
+        - num_segments: jumlah segmen per template
+        """
+        print(f"\n=== BUILDING GENERALIZED TEMPLATES ===")
+        
+        self.generalized_templates = {}
+        
+        for vowel in self.vowels:
+            if vowel not in self.raw_templates:
+                continue
+            
+            print(f"\nProcessing vowel: {vowel}")
+            all_segments = []
+            template_count = 0
+            
+            for person_id, template_list in self.raw_templates[vowel].items():
+                # Filter berdasarkan target_person_ids jika ada
+                if target_person_ids is not None and person_id not in target_person_ids:
+                    continue
+                
+                print(f"  Person {person_id}: {len(template_list)} templates")
+                
+                for template_features in template_list:
+                    # Bagi template menjadi segmen
+                    segments = self.segment_template(template_features, num_segments)
+                    all_segments.extend(segments)
+                    template_count += 1
+            
+            if len(all_segments) > 0:
+                # Buat generalized template
+                generalized = self.create_generalized_template(all_segments)
+                self.generalized_templates[vowel] = generalized
+                
+                print(f"  → Created generalized template: {generalized.shape[0]} frames from {len(all_segments)} segments ({template_count} templates)")
+            else:
+                print(f"  → No templates available for vowel {vowel}")
+    
     def add_template(self, vowel, person_id, audio_path):
         """
-        Menambahkan template ke dictionary
+        Menambahkan raw template ke storage
+        Generalized template akan dibuat kemudian dengan build_generalized_templates()
         """
         if vowel not in self.vowels:
             raise ValueError(f"Vokal harus salah satu dari {self.vowels}")
         
         features = self.extract_mfcc_39(audio_path)
         
-        if vowel not in self.templates:
-            self.templates[vowel] = {}
+        if vowel not in self.raw_templates:
+            self.raw_templates[vowel] = {}
         
-        if person_id not in self.templates[vowel]:
-            self.templates[vowel][person_id] = []
+        if person_id not in self.raw_templates[vowel]:
+            self.raw_templates[vowel][person_id] = []
         
-        self.templates[vowel][person_id].append(features)
-        print(f"Template ditambahkan: {vowel} dari {person_id} ({len(self.templates[vowel][person_id])} file)")
+        self.raw_templates[vowel][person_id].append(features)
+        print(f"Raw template ditambahkan: {vowel} dari {person_id} ({len(self.raw_templates[vowel][person_id])} file)")
     
-    def recognize(self, audio_path, template_person_id=None, use_averaging=True):
+    def recognize(self, audio_path, use_generalized=True):
         """
-        Mengenali vokal dari file audio
+        Mengenali vokal dari file audio menggunakan generalized templates
         
         Parameters:
-        - use_averaging: jika True, gunakan rata-rata jarak dari semua template person yang sama
+        - use_generalized: jika True, gunakan generalized templates
         """
         test_features = self.extract_mfcc_39(audio_path)
+        
+        if use_generalized and len(self.generalized_templates) == 0:
+            raise ValueError("Generalized templates belum dibuat. Panggil build_generalized_templates() dulu.")
         
         min_distance = float('inf')
         recognized_vowel = None
         all_distances = {}
         
-        # Dictionary untuk menyimpan jarak per vowel per person
-        distances_by_vowel_person = defaultdict(list)
-        
+        # Gunakan generalized templates untuk recognition
         for vowel in self.vowels:
-            if vowel not in self.templates:
+            if vowel not in self.generalized_templates:
                 continue
-                
-            for person_id, template_features_list in self.templates[vowel].items():
-                if template_person_id is not None and person_id != template_person_id:
-                    continue
-                
-                person_distances = []
-                for idx, template_features in enumerate(template_features_list):
-                    distance = self.dtw_distance(template_features, test_features)
-                    person_distances.append(distance)
-                    
-                    key = f"{vowel}_{person_id}_{idx+1}"
-                    all_distances[key] = distance
-                
-                # Gunakan rata-rata jarak dari semua template person yang sama
-                if use_averaging and len(person_distances) > 0:
-                    avg_distance = np.mean(person_distances)
-                    distances_by_vowel_person[vowel].append(avg_distance)
-                else:
-                    # Atau gunakan jarak minimum
-                    if len(person_distances) > 0:
-                        distances_by_vowel_person[vowel].append(min(person_distances))
+            
+            template_features = self.generalized_templates[vowel]
+            distance = self.dtw_distance(template_features, test_features)
+            all_distances[vowel] = distance
+            
+            if distance < min_distance:
+                min_distance = distance
+                recognized_vowel = vowel
         
-        # Dictionary untuk final distances per vowel
-        final_vowel_distances = {}
-        
-        # Untuk setiap vowel, ambil rata-rata dari semua person
-        for vowel, person_distances in distances_by_vowel_person.items():
-            if len(person_distances) > 0:
-                # Bisa pakai mean atau median
-                avg_vowel_distance = np.mean(person_distances)
-                final_vowel_distances[vowel] = avg_vowel_distance
-                
-                if avg_vowel_distance < min_distance:
-                    min_distance = avg_vowel_distance
-                    recognized_vowel = vowel
-        
-        return recognized_vowel, min_distance, all_distances, final_vowel_distances
+        return recognized_vowel, min_distance, all_distances, all_distances
 
     def print_detailed_prediction(self, audio_path, true_vowel, test_person_id, recognized_vowel, distance, final_vowel_distances, is_correct, scenario=""):
         """
@@ -198,8 +267,11 @@ class VowelRecognitionDTW:
     
     def test_closed_scenario(self, test_data):
         """
-        Skenario Closed
+        Skenario Closed - menggunakan semua raw templates untuk generalized template
         """
+        print(f"\n--- BUILDING GENERALIZED TEMPLATES FOR CLOSED SCENARIO ---")
+        self.build_generalized_templates(target_person_ids=None)  # Gunakan semua person
+        
         correct = 0
         total = 0
         results = []
@@ -207,7 +279,7 @@ class VowelRecognitionDTW:
         print(f"\n--- DETAILED CLOSED SCENARIO RESULTS ---")
         
         for audio_path, true_vowel, test_person_id in test_data:
-            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_averaging=True)
+            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_generalized=True)
             
             is_correct = (recognized_vowel == true_vowel)
             if is_correct:
@@ -237,29 +309,20 @@ class VowelRecognitionDTW:
     
     def test_open_scenario(self, test_data, template_person_ids):
         """
-        Skenario Open
+        Skenario Open - menggunakan hanya template dari person tertentu
         """
+        print(f"\n--- BUILDING GENERALIZED TEMPLATES FOR OPEN SCENARIO ---")
+        print(f"Using templates from: {template_person_ids}")
+        self.build_generalized_templates(target_person_ids=template_person_ids)
+        
         correct = 0
         total = 0
         results = []
         
-        original_templates = self.templates.copy()
-        filtered_templates = {}
-        
-        # Filter templates to only use specified persons
-        for vowel in self.templates:
-            filtered_templates[vowel] = {
-                pid: feat for pid, feat in self.templates[vowel].items() 
-                if pid in template_person_ids
-            }
-        
-        self.templates = filtered_templates
-        
         print(f"\n--- DETAILED OPEN SCENARIO RESULTS ---")
-        print(f"Using templates from: {template_person_ids}")
         
         for audio_path, true_vowel, test_person_id in test_data:
-            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_averaging=True)
+            recognized_vowel, distance, all_distances, final_vowel_distances = self.recognize(audio_path, use_generalized=True)
             
             is_correct = (recognized_vowel == true_vowel)
             if is_correct:
@@ -283,9 +346,6 @@ class VowelRecognitionDTW:
                 'final_vowel_distances': final_vowel_distances
             })
         
-        # Restore original templates
-        self.templates = original_templates
-        
         accuracy = (correct / total) * 100 if total > 0 else 0
         print(f"\n  OPEN SCENARIO SUMMARY: {correct}/{total} correct = {accuracy:.2f}%")
         return accuracy, results
@@ -307,13 +367,13 @@ class VowelRecognitionDTW:
             print(f"Total test files (templates_other): {len(test_data_other)}")
             
             # Closed scenario testing (all templates vs test from templates_us only)
-            print(f"\n[CLOSED SCENARIO] (all templates vs test from templates_us)")
+            print(f"\n[CLOSED SCENARIO] (all raw templates → generalized templates vs test from templates_us)")
             closed_acc, closed_results = self.test_closed_scenario(test_data_us)
             
             # Open scenario testing (templates from template_person vs test from templates_other)
             open_test_data = test_data_other
             
-            print(f"\n[OPEN SCENARIO] (templates from {template_person} vs test from templates_other)")
+            print(f"\n[OPEN SCENARIO] (raw templates from {template_person} → generalized templates vs test from templates_other)")
             print(f"Test files: {len(open_test_data)}")
             
             open_acc, open_results = self.test_open_scenario(
@@ -382,3 +442,20 @@ class VowelRecognitionDTW:
                 print(f"{count:5}", end='')
             print()
 
+    # Properti untuk kompatibilitas dengan kode lama
+    @property
+    def templates(self):
+        """Kompatibilitas dengan kode lama yang mengakses self.templates"""
+        return self.raw_templates
+    
+    def get_generalized_template_info(self):
+        """
+        Mendapatkan informasi tentang generalized templates
+        """
+        info = {}
+        for vowel, template in self.generalized_templates.items():
+            info[vowel] = {
+                'shape': template.shape,
+                'total_frames': template.shape[0] if len(template.shape) > 0 else 0
+            }
+        return info

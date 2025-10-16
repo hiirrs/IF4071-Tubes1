@@ -70,7 +70,9 @@ def save_detailed_results(results, test_data_us, test_data_other, output_path):
         "metadata": {
             "timestamp": datetime.now().isoformat(),
             "total_test_files_us": len(test_data_us),
-            "total_test_files_other": len(test_data_other)
+            "total_test_files_other": len(test_data_other),
+            "method": "generalized_template",
+            "description": "Using generalized templates created from segmented multiple templates"
         },
         "test_data": {
             "us_files": [
@@ -99,24 +101,39 @@ def save_template_info(recognizer, output_path, logger):
     template_info = {
         "metadata": {
             "timestamp": datetime.now().isoformat(),
-            "total_vowels": len(recognizer.vowels)
+            "total_vowels": len(recognizer.vowels),
+            "method": "generalized_template"
         },
-        "templates": {}
+        "raw_templates": {},
+        "generalized_templates": {}
     }
     
-    total_templates = 0
+    # Info raw templates
+    total_raw_templates = 0
     for vowel in recognizer.vowels:
-        if vowel in recognizer.templates:
-            template_info["templates"][vowel] = {}
-            for person, templates in recognizer.templates[vowel].items():
-                template_info["templates"][vowel][person] = {
+        if vowel in recognizer.raw_templates:
+            template_info["raw_templates"][vowel] = {}
+            for person, templates in recognizer.raw_templates[vowel].items():
+                template_info["raw_templates"][vowel][person] = {
                     "count": len(templates),
                     "feature_shapes": [list(t.shape) for t in templates]
                 }
-                total_templates += len(templates)
+                total_raw_templates += len(templates)
     
-    template_info["metadata"]["total_templates"] = total_templates
-    logger.log(f"Total templates loaded: {total_templates}")
+    # Info generalized templates
+    if hasattr(recognizer, 'generalized_templates') and recognizer.generalized_templates:
+        generalized_info = recognizer.get_generalized_template_info()
+        for vowel, info in generalized_info.items():
+            template_info["generalized_templates"][vowel] = {
+                "shape": list(info['shape']),
+                "total_frames": info['total_frames']
+            }
+    
+    template_info["metadata"]["total_raw_templates"] = total_raw_templates
+    template_info["metadata"]["total_generalized_templates"] = len(template_info["generalized_templates"])
+    
+    logger.log(f"Total raw templates loaded: {total_raw_templates}")
+    logger.log(f"Total generalized templates created: {len(template_info['generalized_templates'])}")
     
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(template_info, f, indent=2, ensure_ascii=False)
@@ -124,9 +141,9 @@ def save_template_info(recognizer, output_path, logger):
 if __name__ == "__main__":
     # Setup logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = os.path.join(RESULTS_DIR, f"execution_log_{timestamp}.txt")
-    detailed_results_file = os.path.join(RESULTS_DIR, f"detailed_results_{timestamp}.json")
-    template_info_file = os.path.join(RESULTS_DIR, f"template_info_{timestamp}.json")
+    log_file = os.path.join(RESULTS_DIR, f"execution_log_generalized_{timestamp}.txt")
+    detailed_results_file = os.path.join(RESULTS_DIR, f"detailed_results_generalized_{timestamp}.json")
+    template_info_file = os.path.join(RESULTS_DIR, f"template_info_generalized_{timestamp}.json")
     
     logger = OutputLogger(log_file)
     
@@ -134,7 +151,9 @@ if __name__ == "__main__":
     vowels = ['a', 'i', 'u', 'e', 'o']
     base_path = ""  
 
-    logger.log("=== MEMULAI EKSPERIMEN VOWEL RECOGNITION ===")
+    logger.log("=== MEMULAI EKSPERIMEN VOWEL RECOGNITION (GENERALIZED TEMPLATE) ===")
+    logger.log("Method: Generalized Template (sesuai PPT)")
+    logger.log("Multiple templates → segmentasi → gabungkan jadi 1 template generalized")
     logger.log(f"Persons: {persons}")
     logger.log(f"Vowels: {vowels}")
 
@@ -154,8 +173,8 @@ if __name__ == "__main__":
         for vowel, files in all_files[person].items():
             logger.log(f"  - Vowel {vowel}: {len(files)} files")
 
-    # Load templates & build test set (US) 
-    logger.log("\n=== LOADING TEMPLATES (using files with smaller numbers) ===")
+    # Load raw templates & build test set (US) 
+    logger.log("\n=== LOADING RAW TEMPLATES (using files with smaller numbers) ===")
     test_data_us: List[Tuple[str, str, str]] = []
     templates_loaded = 0
     
@@ -168,24 +187,24 @@ if __name__ == "__main__":
                 logger.log(f"  No files found for vowel {vowel}", "WARNING")
                 continue
 
-            # semua kecuali terakhir -> template, terakhir -> test
+            # semua kecuali terakhir -> raw template, terakhir -> test
             template_files = files[:-1] if len(files) > 1 else []
             test_file = files[-1]
 
-            logger.log(f"  Vowel {vowel}: {len(template_files)} templates, 1 test file")
+            logger.log(f"  Vowel {vowel}: {len(template_files)} raw templates, 1 test file")
             
             for file_path, file_num in template_files:
                 try:
                     recognizer.add_template(vowel, person, file_path)
                     templates_loaded += 1
-                    logger.log(f"    Loaded template: {os.path.basename(file_path)}")
+                    logger.log(f"    Loaded raw template: {os.path.basename(file_path)}")
                 except Exception as e:
                     logger.log(f"    Error loading {file_path}: {e}", "ERROR")
 
             test_data_us.append((test_file[0], vowel, person))
             logger.log(f"    Test file: {os.path.basename(test_file[0])}")
 
-    logger.log(f"\nTotal templates loaded: {templates_loaded}")
+    logger.log(f"\nTotal raw templates loaded: {templates_loaded}")
     logger.log(f"Total US test files: {len(test_data_us)}")
     
     # Simpan informasi template
@@ -253,36 +272,40 @@ if __name__ == "__main__":
         except Exception as e:
             logger.log(f"  Error creating MFCC visualization: {e}", "ERROR")
 
-        # DTW alignment terhadap salah satu template dari vokal yang sama
-        if sample_true in recognizer.templates and len(recognizer.templates[sample_true]) > 0:
-            try:
-                first_pid, templ_list = next(iter(recognizer.templates[sample_true].items()))
-                if len(templ_list) > 0:
-                    template_feats = templ_list[0]
-                    test_feats = recognizer.extract_mfcc_39(sample_path)
-                    viz.plot_dtw_alignment(
-                        template_feats, test_feats,
-                        title=f"DTW {sample_true.upper()} | template:{first_pid} vs test:{sample_person}",
-                        save_path=os.path.join(IMAGES_DIR, f"{sample_base}_dtw_alignment.png")
-                    )
-                    logger.log("  DTW alignment visualization created")
-            except Exception as e:
-                logger.log(f"  Error creating DTW visualization: {e}", "ERROR")
-
-        # Bar distances untuk sampel ini
+        # Build generalized template untuk visualisasi DTW
+        logger.log("  Building generalized templates for visualization...")
         try:
-            pred, dist, _, final_d = recognizer.recognize(sample_path, use_averaging=True)
+            recognizer.build_generalized_templates(target_person_ids=None)
+            
+            # DTW alignment terhadap generalized template dari vokal yang sama
+            if sample_true in recognizer.generalized_templates:
+                template_feats = recognizer.generalized_templates[sample_true]
+                test_feats = recognizer.extract_mfcc_39(sample_path)
+                viz.plot_dtw_alignment(
+                    template_feats, test_feats,
+                    title=f"DTW {sample_true.upper()} | generalized template vs test:{sample_person}",
+                    save_path=os.path.join(IMAGES_DIR, f"{sample_base}_dtw_alignment_generalized.png")
+                )
+                logger.log("  DTW alignment visualization with generalized template created")
+            else:
+                logger.log(f"  No generalized template available for vowel {sample_true}", "WARNING")
+        except Exception as e:
+            logger.log(f"  Error creating DTW visualization: {e}", "ERROR")
+
+        # Bar distances untuk sampel ini (setelah generalized template siap)
+        try:
+            pred, dist, _, final_d = recognizer.recognize(sample_path, use_generalized=True)
             viz.plot_vowel_distances_bar(
                 final_d,
-                title=f"Distances for {os.path.basename(sample_path)} (true={sample_true}, pred={pred})",
-                save_path=os.path.join(IMAGES_DIR, f"{sample_base}_vowel_distances.png")
+                title=f"Distances for {os.path.basename(sample_path)} (true={sample_true}, pred={pred}) - Generalized",
+                save_path=os.path.join(IMAGES_DIR, f"{sample_base}_vowel_distances_generalized.png")
             )
             logger.log(f"  Distance bar chart created (true={sample_true}, pred={pred})")
         except Exception as e:
             logger.log(f"  Error creating distance visualization: {e}", "ERROR")
 
     # Evaluasi lengkap 
-    logger.log("\n=== STARTING EVALUATION ===")
+    logger.log("\n=== STARTING EVALUATION (GENERALIZED TEMPLATE METHOD) ===")
     logger.log("This may take several minutes...")
     
     try:
@@ -319,8 +342,8 @@ if __name__ == "__main__":
             viz.plot_confusion_heatmap(
                 all_closed_results,
                 vowels=recognizer.vowels,
-                title="Confusion Matrix (Closed Scenario)",
-                save_path=os.path.join(IMAGES_DIR, "confusion_matrix_closed.png")
+                title="Confusion Matrix (Closed Scenario - Generalized Template)",
+                save_path=os.path.join(IMAGES_DIR, "confusion_matrix_closed_generalized.png")
             )
             logger.log("Confusion matrix heatmap created")
         else:
@@ -338,10 +361,16 @@ if __name__ == "__main__":
 
     # Simpan ringkasan angka ke JSON (ke folder results/)
     os.makedirs(RESULTS_DIR, exist_ok=True)
-    json_path = os.path.join(RESULTS_DIR, 'results.json')
+    json_path = os.path.join(RESULTS_DIR, 'results_generalized.json')
     try:
         with open(json_path, 'w', encoding='utf-8') as f:
-            json_results = {}
+            json_results = {
+                "metadata": {
+                    "method": "generalized_template",
+                    "timestamp": datetime.now().isoformat(),
+                    "description": "Results using generalized templates"
+                }
+            }
             for k, v in results.items():
                 if k != 'overall':
                     json_results[k] = {
@@ -356,8 +385,21 @@ if __name__ == "__main__":
     except Exception as e:
         logger.log(f"Error saving summary results: {e}", "ERROR")
 
+    # Log informasi generalized templates yang telah dibuat
+    logger.log("\n=== GENERALIZED TEMPLATE INFO ===")
+    try:
+        if hasattr(recognizer, 'generalized_templates') and recognizer.generalized_templates:
+            gen_info = recognizer.get_generalized_template_info()
+            for vowel, info in gen_info.items():
+                logger.log(f"Vowel {vowel}: {info['total_frames']} frames (shape: {info['shape']})")
+        else:
+            logger.log("No generalized templates found", "WARNING")
+    except Exception as e:
+        logger.log(f"Error getting generalized template info: {e}", "ERROR")
+
     # Simpan log eksekusi
-    logger.log(f"\n=== EXPERIMENT COMPLETED ===")
+    logger.log(f"\n=== EXPERIMENT COMPLETED (GENERALIZED TEMPLATE METHOD) ===")
+    logger.log(f"Method: Segmentasi multiple templates → gabungkan jadi generalized template")
     logger.log(f"Execution log: {log_file}")
     logger.log(f"Detailed results: {detailed_results_file}")
     logger.log(f"Template info: {template_info_file}")
@@ -367,5 +409,11 @@ if __name__ == "__main__":
     try:
         logger.save_log()
         print(f"\nAll outputs saved successfully!")
+        print(f"\nMethod used: GENERALIZED TEMPLATE (sesuai PPT)")
+        print(f"Key files:")
+        print(f"   • {json_path} - Summary results")
+        print(f"   • {detailed_results_file} - Detailed results")
+        print(f"   • {template_info_file} - Template information")
+        print(f"   • {log_file} - Execution log")
     except Exception as e:
         print(f"Error saving execution log: {e}")
