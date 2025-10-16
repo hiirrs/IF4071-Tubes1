@@ -242,7 +242,7 @@ if __name__ == "__main__":
             )
             logger.log("  Waveform + VAD visualization created")
         except Exception as e:
-            logger.log(f"  ✗ Error creating waveform visualization: {e}", "ERROR")
+            logger.log(f"  Error creating waveform visualization: {e}", "ERROR")
             
         try:
             viz.plot_mfcc39(
@@ -251,7 +251,7 @@ if __name__ == "__main__":
             )
             logger.log("  MFCC-39 visualization created")
         except Exception as e:
-            logger.log(f"  ✗ Error creating MFCC visualization: {e}", "ERROR")
+            logger.log(f"  Error creating MFCC visualization: {e}", "ERROR")
 
         # DTW alignment terhadap salah satu template dari vokal yang sama
         if sample_true in recognizer.templates and len(recognizer.templates[sample_true]) > 0:
@@ -267,7 +267,7 @@ if __name__ == "__main__":
                     )
                     logger.log("  DTW alignment visualization created")
             except Exception as e:
-                logger.log(f"  ✗ Error creating DTW visualization: {e}", "ERROR")
+                logger.log(f"  Error creating DTW visualization: {e}", "ERROR")
 
         # Bar distances untuk sampel ini
         try:
@@ -279,7 +279,7 @@ if __name__ == "__main__":
             )
             logger.log(f"  Distance bar chart created (true={sample_true}, pred={pred})")
         except Exception as e:
-            logger.log(f"  ✗ Error creating distance visualization: {e}", "ERROR")
+            logger.log(f"  Error creating distance visualization: {e}", "ERROR")
 
     # Evaluasi lengkap 
     logger.log("\n=== STARTING EVALUATION ===")
@@ -304,7 +304,7 @@ if __name__ == "__main__":
                 logger.log(f"  {key}: {value:.3f}")
                 
     except Exception as e:
-        logger.log(f"✗ Error during evaluation: {e}", "ERROR")
+        logger.log(f"Error during evaluation: {e}", "ERROR")
         results = {}
 
     # Confusion matrix (closed) sebagai heatmap
@@ -326,7 +326,7 @@ if __name__ == "__main__":
         else:
             logger.log("No closed results available for confusion matrix", "WARNING")
     except Exception as e:
-        logger.log(f"✗ Error creating confusion matrix: {e}", "ERROR")
+        logger.log(f"Error creating confusion matrix: {e}", "ERROR")
 
     # Simpan hasil detail
     logger.log("\n=== SAVING RESULTS ===")
@@ -334,7 +334,7 @@ if __name__ == "__main__":
         save_detailed_results(results, test_data_us, test_data_other, detailed_results_file)
         logger.log(f"Detailed results saved to {detailed_results_file}")
     except Exception as e:
-        logger.log(f"✗ Error saving detailed results: {e}", "ERROR")
+        logger.log(f"Error saving detailed results: {e}", "ERROR")
 
     # Simpan ringkasan angka ke JSON (ke folder results/)
     os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -354,7 +354,7 @@ if __name__ == "__main__":
             json.dump(json_results, f, indent=2, ensure_ascii=False)
         logger.log(f"Summary results saved to {json_path}")
     except Exception as e:
-        logger.log(f"✗ Error saving summary results: {e}", "ERROR")
+        logger.log(f"Error saving summary results: {e}", "ERROR")
 
     # Simpan log eksekusi
     logger.log(f"\n=== EXPERIMENT COMPLETED ===")
@@ -368,4 +368,4 @@ if __name__ == "__main__":
         logger.save_log()
         print(f"\nAll outputs saved successfully!")
     except Exception as e:
-        print(f"✗ Error saving execution log: {e}")
+        print(f"Error saving execution log: {e}")
