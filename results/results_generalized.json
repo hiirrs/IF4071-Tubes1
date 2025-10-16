@@ -1,30 +1,30 @@
 {
   "metadata": {
     "method": "generalized_template",
-    "timestamp": "2025-10-16T19:39:33.403009",
+    "timestamp": "2025-10-16T19:41:48.927281",
     "description": "Results using generalized templates"
-  },
-  "wiga": {
-    "closed_accuracy": 48.0,
-    "open_accuracy": 42.0,
-    "average_accuracy": 45.0
-  },
-  "zya": {
-    "closed_accuracy": 48.0,
-    "open_accuracy": 46.0,
-    "average_accuracy": 47.0
   },
   "naufal": {
     "closed_accuracy": 48.0,
     "open_accuracy": 32.0,
     "average_accuracy": 40.0
   },
+  "zya": {
+    "closed_accuracy": 48.0,
+    "open_accuracy": 46.0,
+    "average_accuracy": 47.0
+  },
+  "densu": {
+    "closed_accuracy": 48.0,
+    "open_accuracy": 42.0,
+    "average_accuracy": 45.0
+  },
   "hira": {
     "closed_accuracy": 48.0,
     "open_accuracy": 20.0,
     "average_accuracy": 34.0
   },
-  "densu": {
+  "wiga": {
     "closed_accuracy": 48.0,
     "open_accuracy": 42.0,
     "average_accuracy": 45.0

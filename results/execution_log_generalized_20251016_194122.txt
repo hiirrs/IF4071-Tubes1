@@ -1,0 +1,328 @@
+[2025-10-16 19:41:22] [INFO] === MEMULAI EKSPERIMEN VOWEL RECOGNITION (GENERALIZED TEMPLATE) ===
+[2025-10-16 19:41:22] [INFO] Method: Generalized Template (sesuai PPT)
+[2025-10-16 19:41:22] [INFO] Multiple templates → segmentasi → gabungkan jadi 1 template generalized
+[2025-10-16 19:41:22] [INFO] Persons: ['densu', 'hira', 'naufal', 'wiga', 'zya']
+[2025-10-16 19:41:22] [INFO] Vowels: ['a', 'i', 'u', 'e', 'o']
+[2025-10-16 19:41:22] [INFO] === SCANNING FILES (templates_us) ===
+[2025-10-16 19:41:22] [INFO] Scanning folder: templates_us/densu
+[2025-10-16 19:41:22] [INFO] Found 18 audio files in templates_us/densu
+[2025-10-16 19:41:22] [INFO] Person densu: 15 total files
+[2025-10-16 19:41:22] [INFO]   - Vowel u: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel i: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel o: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel a: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel e: 3 files
+[2025-10-16 19:41:22] [INFO] Scanning folder: templates_us/hira
+[2025-10-16 19:41:22] [INFO] Found 18 audio files in templates_us/hira
+[2025-10-16 19:41:22] [INFO] Person hira: 15 total files
+[2025-10-16 19:41:22] [INFO]   - Vowel e: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel a: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel o: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel i: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel u: 3 files
+[2025-10-16 19:41:22] [INFO] Scanning folder: templates_us/naufal
+[2025-10-16 19:41:22] [INFO] Found 23 audio files in templates_us/naufal
+[2025-10-16 19:41:22] [INFO] Person naufal: 20 total files
+[2025-10-16 19:41:22] [INFO]   - Vowel i: 4 files
+[2025-10-16 19:41:22] [INFO]   - Vowel o: 4 files
+[2025-10-16 19:41:22] [INFO]   - Vowel u: 4 files
+[2025-10-16 19:41:22] [INFO]   - Vowel a: 4 files
+[2025-10-16 19:41:22] [INFO]   - Vowel e: 4 files
+[2025-10-16 19:41:22] [INFO] Scanning folder: templates_us/wiga
+[2025-10-16 19:41:22] [INFO] Found 18 audio files in templates_us/wiga
+[2025-10-16 19:41:22] [INFO] Person wiga: 15 total files
+[2025-10-16 19:41:22] [INFO]   - Vowel u: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel o: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel i: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel e: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel a: 3 files
+[2025-10-16 19:41:22] [INFO] Scanning folder: templates_us/zya
+[2025-10-16 19:41:22] [INFO] Found 18 audio files in templates_us/zya
+[2025-10-16 19:41:22] [INFO] Person zya: 15 total files
+[2025-10-16 19:41:22] [INFO]   - Vowel i: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel o: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel u: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel a: 3 files
+[2025-10-16 19:41:22] [INFO]   - Vowel e: 3 files
+[2025-10-16 19:41:22] [INFO] 
+=== LOADING RAW TEMPLATES (using files with smaller numbers) ===
+[2025-10-16 19:41:22] [INFO] Processing person: densu
+[2025-10-16 19:41:22] [INFO]   Vowel a: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - a 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - a 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: densu - a 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel i: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - i 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - i 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: densu - i 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel u: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - u 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - u 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: densu - u 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel e: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - e 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - e 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: densu - e 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel o: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - o 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: densu - o 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: densu - o 3.wav
+[2025-10-16 19:41:22] [INFO] Processing person: hira
+[2025-10-16 19:41:22] [INFO]   Vowel a: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - a 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - a 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: hira - a 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel i: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - i 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - i 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: hira - i 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel u: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - u 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - u 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: hira - u 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel e: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - e 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - e 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: hira - e 3.wav
+[2025-10-16 19:41:22] [INFO]   Vowel o: 2 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - o 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: hira - o 2.wav
+[2025-10-16 19:41:22] [INFO]     Test file: hira - o 3.wav
+[2025-10-16 19:41:22] [INFO] Processing person: naufal
+[2025-10-16 19:41:22] [INFO]   Vowel a: 3 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - a 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - a 2.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - a 3.wav
+[2025-10-16 19:41:22] [INFO]     Test file: naufal - a 4.wav
+[2025-10-16 19:41:22] [INFO]   Vowel i: 3 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - i 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - i 2.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - i 3.wav
+[2025-10-16 19:41:22] [INFO]     Test file: naufal - i 4.wav
+[2025-10-16 19:41:22] [INFO]   Vowel u: 3 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - u 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - u 2.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - u 3.wav
+[2025-10-16 19:41:22] [INFO]     Test file: naufal - u 4.wav
+[2025-10-16 19:41:22] [INFO]   Vowel e: 3 raw templates, 1 test file
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - e 1.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - e 2.wav
+[2025-10-16 19:41:22] [INFO]     Loaded raw template: naufal - e 3.wav
+[2025-10-16 19:41:22] [INFO]     Test file: naufal - e 4.wav
+[2025-10-16 19:41:22] [INFO]   Vowel o: 3 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: naufal - o 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: naufal - o 2.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: naufal - o 3.wav
+[2025-10-16 19:41:23] [INFO]     Test file: naufal - o 4.wav
+[2025-10-16 19:41:23] [INFO] Processing person: wiga
+[2025-10-16 19:41:23] [INFO]   Vowel a: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - a 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - a 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: wiga - a 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel i: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - i 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - i 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: wiga - i 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel u: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - u 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - u 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: wiga - u 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel e: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - e 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - e 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: wiga - e 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel o: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - o 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: wiga - o 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: wiga - o 3.wav
+[2025-10-16 19:41:23] [INFO] Processing person: zya
+[2025-10-16 19:41:23] [INFO]   Vowel a: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - a 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - a 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: zya - a 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel i: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - i 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - i 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: zya - i 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel u: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - u 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - u 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: zya - u 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel e: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - e 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - e 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: zya - e 3.wav
+[2025-10-16 19:41:23] [INFO]   Vowel o: 2 raw templates, 1 test file
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - o 1.wav
+[2025-10-16 19:41:23] [INFO]     Loaded raw template: zya - o 2.wav
+[2025-10-16 19:41:23] [INFO]     Test file: zya - o 3.wav
+[2025-10-16 19:41:23] [INFO] 
+Total raw templates loaded: 55
+[2025-10-16 19:41:23] [INFO] Total US test files: 25
+[2025-10-16 19:41:23] [INFO] Total raw templates loaded: 55
+[2025-10-16 19:41:23] [INFO] Total generalized templates created: 0
+[2025-10-16 19:41:23] [INFO] 
+=== SCANNING FILES (templates_other) ===
+[2025-10-16 19:41:23] [INFO] Processing other person: Dabbir
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Dabbir
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Dabbir
+[2025-10-16 19:41:23] [INFO] Person Dabbir: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Evelyn
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Evelyn
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Evelyn
+[2025-10-16 19:41:23] [INFO] Person Evelyn: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Fed
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Fed
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Fed
+[2025-10-16 19:41:23] [INFO] Person Fed: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Akbar
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Akbar
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Akbar
+[2025-10-16 19:41:23] [INFO] Person Akbar: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Justin
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Justin
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Justin
+[2025-10-16 19:41:23] [INFO] Person Justin: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Ucup
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Ucup
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Ucup
+[2025-10-16 19:41:23] [INFO] Person Ucup: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Gonza
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Gonza
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Gonza
+[2025-10-16 19:41:23] [INFO] Person Gonza: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Angie
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Angie
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Angie
+[2025-10-16 19:41:23] [INFO] Person Angie: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Adnan
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Adnan
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Adnan
+[2025-10-16 19:41:23] [INFO] Person Adnan: 10 total files
+[2025-10-16 19:41:23] [INFO] Processing other person: Azul
+[2025-10-16 19:41:23] [INFO] Scanning folder: templates_other/Azul
+[2025-10-16 19:41:23] [INFO] Found 10 audio files in templates_other/Azul
+[2025-10-16 19:41:23] [INFO] Person Azul: 10 total files
+[2025-10-16 19:41:23] [INFO] 
+=== TEST DATA (templates_other - using files with largest numbers) ===
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Dabbir
+[2025-10-16 19:41:23] [INFO]   Test file a: dab - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: dab - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: dab - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: dab - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: dab - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Evelyn
+[2025-10-16 19:41:23] [INFO]   Test file a: Evelyn - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: Evelyn - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: Evelyn - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: Evelyn - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: Evelyn - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Fed
+[2025-10-16 19:41:23] [INFO]   Test file a: Fed - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: Fed - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: Fed - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: Fed - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: Fed - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Akbar
+[2025-10-16 19:41:23] [INFO]   Test file a: Akbar - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: Akbar - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: Akbar - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: Akbar - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: Akbar - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Justin
+[2025-10-16 19:41:23] [INFO]   Test file a: Justin - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: Justin - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: Justin - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: Justin - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: Justin - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Ucup
+[2025-10-16 19:41:23] [INFO]   Test file a: Ucup - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: Ucup - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: Ucup - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: Ucup - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: Ucup - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Gonza
+[2025-10-16 19:41:23] [INFO]   Test file a: gon - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: gon - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: gon - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: gon - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: gon - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Angie
+[2025-10-16 19:41:23] [INFO]   Test file a: ji - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: ji - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: ji - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: ji - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: ji - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Adnan
+[2025-10-16 19:41:23] [INFO]   Test file a: nan - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: nan - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: nan - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: nan - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: nan - o 2.wav
+[2025-10-16 19:41:23] [INFO] Processing other person test files: Azul
+[2025-10-16 19:41:23] [INFO]   Test file a: zul - a 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file i: zul - i 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file u: zul - u 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file e: zul - e 2.wav
+[2025-10-16 19:41:23] [INFO]   Test file o: zul - o 2.wav
+[2025-10-16 19:41:23] [INFO] Total other test files: 50
+[2025-10-16 19:41:23] [INFO] 
+=== GENERATING SAMPLE VISUALIZATIONS ===
+[2025-10-16 19:41:23] [INFO] Creating visualizations for sample: densu - a 3
+[2025-10-16 19:41:24] [INFO]   Waveform + VAD visualization created
+[2025-10-16 19:41:26] [INFO]   MFCC-39 visualization created
+[2025-10-16 19:41:26] [INFO]   Building generalized templates for visualization...
+[2025-10-16 19:41:27] [INFO]   DTW alignment visualization with generalized template created
+[2025-10-16 19:41:28] [INFO]   Distance bar chart created (true=a, pred=a)
+[2025-10-16 19:41:28] [INFO] 
+=== STARTING EVALUATION (GENERALIZED TEMPLATE METHOD) ===
+[2025-10-16 19:41:28] [INFO] This may take several minutes...
+[2025-10-16 19:41:47] [INFO] Evaluation completed successfully
+[2025-10-16 19:41:47] [INFO] 
+=== EVALUATION SUMMARY ===
+[2025-10-16 19:41:47] [INFO] Person naufal:
+[2025-10-16 19:41:47] [INFO]   Closed accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   Open accuracy: 32.000
+[2025-10-16 19:41:47] [INFO]   Average accuracy: 40.000
+[2025-10-16 19:41:47] [INFO] Person zya:
+[2025-10-16 19:41:47] [INFO]   Closed accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   Open accuracy: 46.000
+[2025-10-16 19:41:47] [INFO]   Average accuracy: 47.000
+[2025-10-16 19:41:47] [INFO] Person densu:
+[2025-10-16 19:41:47] [INFO]   Closed accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   Open accuracy: 42.000
+[2025-10-16 19:41:47] [INFO]   Average accuracy: 45.000
+[2025-10-16 19:41:47] [INFO] Person hira:
+[2025-10-16 19:41:47] [INFO]   Closed accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   Open accuracy: 20.000
+[2025-10-16 19:41:47] [INFO]   Average accuracy: 34.000
+[2025-10-16 19:41:47] [INFO] Person wiga:
+[2025-10-16 19:41:47] [INFO]   Closed accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   Open accuracy: 42.000
+[2025-10-16 19:41:47] [INFO]   Average accuracy: 45.000
+[2025-10-16 19:41:47] [INFO] Overall results:
+[2025-10-16 19:41:47] [INFO]   closed_accuracy: 48.000
+[2025-10-16 19:41:47] [INFO]   open_accuracy: 36.400
+[2025-10-16 19:41:47] [INFO]   average_accuracy: 42.200
+[2025-10-16 19:41:47] [INFO] 
+=== GENERATING CONFUSION MATRIX ===
+[2025-10-16 19:41:48] [INFO] Confusion matrix heatmap created
+[2025-10-16 19:41:48] [INFO] 
+=== SAVING RESULTS ===
+[2025-10-16 19:41:48] [INFO] Detailed results saved to results/detailed_results_generalized_20251016_194122.json
+[2025-10-16 19:41:48] [INFO] Summary results saved to results/results_generalized.json
+[2025-10-16 19:41:48] [INFO] 
+=== GENERALIZED TEMPLATE INFO ===
+[2025-10-16 19:41:48] [INFO] Vowel a: 88 frames (shape: (88, 39))
+[2025-10-16 19:41:48] [INFO] Vowel i: 116 frames (shape: (116, 39))
+[2025-10-16 19:41:48] [INFO] Vowel u: 136 frames (shape: (136, 39))
+[2025-10-16 19:41:48] [INFO] Vowel e: 126 frames (shape: (126, 39))
+[2025-10-16 19:41:48] [INFO] Vowel o: 78 frames (shape: (78, 39))
+[2025-10-16 19:41:48] [INFO] 
+=== EXPERIMENT COMPLETED (GENERALIZED TEMPLATE METHOD) ===
+[2025-10-16 19:41:48] [INFO] Method: Segmentasi multiple templates → gabungkan jadi generalized template
+[2025-10-16 19:41:48] [INFO] Execution log: results/execution_log_generalized_20251016_194122.txt
+[2025-10-16 19:41:48] [INFO] Detailed results: results/detailed_results_generalized_20251016_194122.json
+[2025-10-16 19:41:48] [INFO] Template info: results/template_info_generalized_20251016_194122.json
+[2025-10-16 19:41:48] [INFO] Summary results: results/results_generalized.json
+[2025-10-16 19:41:48] [INFO] Images directory: results/images

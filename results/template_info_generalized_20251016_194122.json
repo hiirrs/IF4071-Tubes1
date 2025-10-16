@@ -1,0 +1,367 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-16T19:41:23.036531",
+    "total_vowels": 5,
+    "method": "generalized_template",
+    "total_raw_templates": 55,
+    "total_generalized_templates": 0
+  },
+  "raw_templates": {
+    "a": {
+      "densu": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            66,
+            39
+          ],
+          [
+            98,
+            39
+          ]
+        ]
+      },
+      "hira": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            41,
+            39
+          ],
+          [
+            47,
+            39
+          ]
+        ]
+      },
+      "naufal": {
+        "count": 3,
+        "feature_shapes": [
+          [
+            57,
+            39
+          ],
+          [
+            76,
+            39
+          ],
+          [
+            57,
+            39
+          ]
+        ]
+      },
+      "wiga": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            47,
+            39
+          ],
+          [
+            41,
+            39
+          ]
+        ]
+      },
+      "zya": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            37,
+            39
+          ],
+          [
+            34,
+            39
+          ]
+        ]
+      }
+    },
+    "i": {
+      "densu": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            44,
+            39
+          ],
+          [
+            57,
+            39
+          ]
+        ]
+      },
+      "hira": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            73,
+            39
+          ],
+          [
+            53,
+            39
+          ]
+        ]
+      },
+      "naufal": {
+        "count": 3,
+        "feature_shapes": [
+          [
+            73,
+            39
+          ],
+          [
+            60,
+            39
+          ],
+          [
+            63,
+            39
+          ]
+        ]
+      },
+      "wiga": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            63,
+            39
+          ],
+          [
+            53,
+            39
+          ]
+        ]
+      },
+      "zya": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            44,
+            39
+          ],
+          [
+            41,
+            39
+          ]
+        ]
+      }
+    },
+    "u": {
+      "densu": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            47,
+            39
+          ],
+          [
+            63,
+            39
+          ]
+        ]
+      },
+      "hira": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            50,
+            39
+          ],
+          [
+            50,
+            39
+          ]
+        ]
+      },
+      "naufal": {
+        "count": 3,
+        "feature_shapes": [
+          [
+            175,
+            39
+          ],
+          [
+            57,
+            39
+          ],
+          [
+            79,
+            39
+          ]
+        ]
+      },
+      "wiga": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            63,
+            39
+          ],
+          [
+            73,
+            39
+          ]
+        ]
+      },
+      "zya": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            105,
+            39
+          ],
+          [
+            37,
+            39
+          ]
+        ]
+      }
+    },
+    "e": {
+      "densu": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            44,
+            39
+          ],
+          [
+            44,
+            39
+          ]
+        ]
+      },
+      "hira": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            44,
+            39
+          ],
+          [
+            44,
+            39
+          ]
+        ]
+      },
+      "naufal": {
+        "count": 3,
+        "feature_shapes": [
+          [
+            66,
+            39
+          ],
+          [
+            63,
+            39
+          ],
+          [
+            92,
+            39
+          ]
+        ]
+      },
+      "wiga": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            73,
+            39
+          ],
+          [
+            53,
+            39
+          ]
+        ]
+      },
+      "zya": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            50,
+            39
+          ],
+          [
+            41,
+            39
+          ]
+        ]
+      }
+    },
+    "o": {
+      "densu": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            31,
+            39
+          ],
+          [
+            37,
+            39
+          ]
+        ]
+      },
+      "hira": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            111,
+            39
+          ],
+          [
+            34,
+            39
+          ]
+        ]
+      },
+      "naufal": {
+        "count": 3,
+        "feature_shapes": [
+          [
+            69,
+            39
+          ],
+          [
+            60,
+            39
+          ],
+          [
+            57,
+            39
+          ]
+        ]
+      },
+      "wiga": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            47,
+            39
+          ],
+          [
+            31,
+            39
+          ]
+        ]
+      },
+      "zya": {
+        "count": 2,
+        "feature_shapes": [
+          [
+            44,
+            39
+          ],
+          [
+            37,
+            39
+          ]
+        ]
+      }
+    }
+  },
+  "generalized_templates": {}
+}
