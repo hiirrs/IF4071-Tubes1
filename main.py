@@ -152,7 +152,6 @@ if __name__ == "__main__":
     base_path = ""  
 
     logger.log("=== MEMULAI EKSPERIMEN VOWEL RECOGNITION (GENERALIZED TEMPLATE) ===")
-    logger.log("Method: Generalized Template (sesuai PPT)")
     logger.log("Multiple templates → segmentasi → gabungkan jadi 1 template generalized")
     logger.log(f"Persons: {persons}")
     logger.log(f"Vowels: {vowels}")
