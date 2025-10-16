@@ -21,7 +21,7 @@ class OutputLogger:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         entry = f"[{timestamp}] [{level}] {message}"
         self.log_entries.append(entry)
-        print(message)  # Tetap tampilkan di console
+        print(message)
         
     def save_log(self):
         with open(self.log_file_path, 'w', encoding='utf-8') as f:
@@ -122,39 +122,37 @@ def save_template_info(recognizer, output_path, logger):
         json.dump(template_info, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
-    # Setup logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     log_file = os.path.join(RESULTS_DIR, f"execution_log_{timestamp}.txt")
     detailed_results_file = os.path.join(RESULTS_DIR, f"detailed_results_{timestamp}.json")
     template_info_file = os.path.join(RESULTS_DIR, f"template_info_{timestamp}.json")
+    predictions_closed_file = os.path.join(RESULTS_DIR, f"predictions_closed_{timestamp}.csv")
+    predictions_open_file = os.path.join(RESULTS_DIR, f"predictions_open_{timestamp}.csv")
     
     logger = OutputLogger(log_file)
     
     persons = ['densu', 'hira', 'naufal', 'wiga', 'zya']
     vowels = ['a', 'i', 'u', 'e', 'o']
-    base_path = ""  
+    base_path = ""
 
     logger.log("=== MEMULAI EKSPERIMEN VOWEL RECOGNITION ===")
     logger.log(f"Persons: {persons}")
     logger.log(f"Vowels: {vowels}")
 
-    recognizer = VowelRecognitionDTW(sample_rate=16000, use_vad=True, normalize=True)
+    recognizer = VowelRecognitionDTW(sample_rate=16000, use_vad=True, normalize=True, n_segments=3)
     viz = VowelDTWVisualizer(recognizer)
 
-    # Scan templates_us 
     logger.log("=== SCANNING FILES (templates_us) ===")
     all_files = {}
     for person in persons:
         person_folder = os.path.join(f"{base_path}templates_us", person)
         all_files[person] = scan_person_folder(person_folder, vowels, logger)
         
-        # Log statistik per person
         total_files = sum(len(files) for files in all_files[person].values())
         logger.log(f"Person {person}: {total_files} total files")
         for vowel, files in all_files[person].items():
             logger.log(f"  - Vowel {vowel}: {len(files)} files")
 
-    # Load templates & build test set (US) 
     logger.log("\n=== LOADING TEMPLATES (using files with smaller numbers) ===")
     test_data_us: List[Tuple[str, str, str]] = []
     templates_loaded = 0
@@ -168,7 +166,6 @@ if __name__ == "__main__":
                 logger.log(f"  No files found for vowel {vowel}", "WARNING")
                 continue
 
-            # semua kecuali terakhir -> template, terakhir -> test
             template_files = files[:-1] if len(files) > 1 else []
             test_file = files[-1]
 
@@ -188,10 +185,8 @@ if __name__ == "__main__":
     logger.log(f"\nTotal templates loaded: {templates_loaded}")
     logger.log(f"Total US test files: {len(test_data_us)}")
     
-    # Simpan informasi template
     save_template_info(recognizer, template_info_file, logger)
 
-    # Scan templates_other 
     logger.log("\n=== SCANNING FILES (templates_other) ===")
     all_files_other = {}
     folder_other = f"{base_path}templates_other"
@@ -203,13 +198,11 @@ if __name__ == "__main__":
             logger.log(f"Processing other person: {person}")
             all_files_other[person] = scan_person_folder(person_folder, vowels, logger)
             
-            # Log statistik per person
             total_files = sum(len(files) for files in all_files_other[person].values())
             logger.log(f"Person {person}: {total_files} total files")
     else:
         logger.log(f"Folder tidak ditemukan: {folder_other}", "WARNING")
 
-    # Build test_data_other dari file terakhir tiap vowel
     test_data_other: List[Tuple[str, str, str]] = []
     logger.log("\n=== TEST DATA (templates_other - using files with largest numbers) ===")
     for person in all_files_other:
@@ -225,7 +218,6 @@ if __name__ == "__main__":
             
     logger.log(f"Total other test files: {len(test_data_other)}")
 
-    # Contoh Visualisasi untuk satu sampel 
     logger.log("\n=== GENERATING SAMPLE VISUALIZATIONS ===")
     if len(test_data_us) > 0:
         sample_path, sample_true, sample_person = test_data_us[0]
@@ -233,7 +225,6 @@ if __name__ == "__main__":
         
         logger.log(f"Creating visualizations for sample: {sample_base}")
 
-        # Waveform + VAD & MFCC-39
         try:
             viz.plot_waveform_with_vad(
                 sample_path,
@@ -253,7 +244,6 @@ if __name__ == "__main__":
         except Exception as e:
             logger.log(f"  Error creating MFCC visualization: {e}", "ERROR")
 
-        # DTW alignment terhadap salah satu template dari vokal yang sama
         if sample_true in recognizer.templates and len(recognizer.templates[sample_true]) > 0:
             try:
                 first_pid, templ_list = next(iter(recognizer.templates[sample_true].items()))
@@ -269,9 +259,8 @@ if __name__ == "__main__":
             except Exception as e:
                 logger.log(f"  Error creating DTW visualization: {e}", "ERROR")
 
-        # Bar distances untuk sampel ini
         try:
-            pred, dist, _, final_d = recognizer.recognize(sample_path, use_averaging=True)
+            pred, dist, _, final_d = recognizer.recognize(sample_path)
             viz.plot_vowel_distances_bar(
                 final_d,
                 title=f"Distances for {os.path.basename(sample_path)} (true={sample_true}, pred={pred})",
@@ -281,7 +270,6 @@ if __name__ == "__main__":
         except Exception as e:
             logger.log(f"  Error creating distance visualization: {e}", "ERROR")
 
-    # Evaluasi lengkap 
     logger.log("\n=== STARTING EVALUATION ===")
     logger.log("This may take several minutes...")
     
@@ -289,7 +277,6 @@ if __name__ == "__main__":
         results = recognizer.evaluate_all_scenarios(test_data_us, test_data_other)
         logger.log("Evaluation completed successfully")
         
-        # Log summary results
         logger.log("\n=== EVALUATION SUMMARY ===")
         for person, person_results in results.items():
             if person != 'overall':
@@ -302,12 +289,30 @@ if __name__ == "__main__":
             logger.log("Overall results:")
             for key, value in results['overall'].items():
                 logger.log(f"  {key}: {value:.3f}")
+
+        logger.log("\n=== SAVING CSV PREDICTIONS ===")
+        all_closed_results = []
+        all_open_results = []
+        
+        for person_results in results.values():
+            if isinstance(person_results, dict):
+                if 'closed_results' in person_results:
+                    all_closed_results.extend(person_results['closed_results'])
+                if 'open_results' in person_results:
+                    all_open_results.extend(person_results['open_results'])
+        
+        if all_closed_results:
+            recognizer.save_predictions_to_csv(all_closed_results, predictions_closed_file)
+            logger.log(f"Closed predictions saved to: {predictions_closed_file}")
+        
+        if all_open_results:
+            recognizer.save_predictions_to_csv(all_open_results, predictions_open_file)
+            logger.log(f"Open predictions saved to: {predictions_open_file}")
                 
     except Exception as e:
         logger.log(f"Error during evaluation: {e}", "ERROR")
         results = {}
 
-    # Confusion matrix (closed) sebagai heatmap
     logger.log("\n=== GENERATING CONFUSION MATRIX ===")
     try:
         all_closed_results = []
@@ -328,7 +333,6 @@ if __name__ == "__main__":
     except Exception as e:
         logger.log(f"Error creating confusion matrix: {e}", "ERROR")
 
-    # Simpan hasil detail
     logger.log("\n=== SAVING RESULTS ===")
     try:
         save_detailed_results(results, test_data_us, test_data_other, detailed_results_file)
@@ -336,7 +340,6 @@ if __name__ == "__main__":
     except Exception as e:
         logger.log(f"Error saving detailed results: {e}", "ERROR")
 
-    # Simpan ringkasan angka ke JSON (ke folder results/)
     os.makedirs(RESULTS_DIR, exist_ok=True)
     json_path = os.path.join(RESULTS_DIR, 'results.json')
     try:
@@ -356,12 +359,13 @@ if __name__ == "__main__":
     except Exception as e:
         logger.log(f"Error saving summary results: {e}", "ERROR")
 
-    # Simpan log eksekusi
     logger.log(f"\n=== EXPERIMENT COMPLETED ===")
     logger.log(f"Execution log: {log_file}")
     logger.log(f"Detailed results: {detailed_results_file}")
     logger.log(f"Template info: {template_info_file}")
     logger.log(f"Summary results: {json_path}")
+    logger.log(f"Closed predictions CSV: {predictions_closed_file}")
+    logger.log(f"Open predictions CSV: {predictions_open_file}")
     logger.log(f"Images directory: {IMAGES_DIR}")
     
     try:

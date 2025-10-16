@@ -1,32 +1,32 @@
 {
-  "densu": {
+  "wiga": {
     "closed_accuracy": 80.0,
-    "open_accuracy": 42.0,
-    "average_accuracy": 61.0
-  },
-  "zya": {
-    "closed_accuracy": 80.0,
-    "open_accuracy": 42.0,
-    "average_accuracy": 61.0
+    "open_accuracy": 20.0,
+    "average_accuracy": 50.0
   },
   "hira": {
     "closed_accuracy": 80.0,
-    "open_accuracy": 30.0,
-    "average_accuracy": 55.0
+    "open_accuracy": 20.0,
+    "average_accuracy": 50.0
   },
-  "wiga": {
+  "densu": {
     "closed_accuracy": 80.0,
-    "open_accuracy": 46.0,
-    "average_accuracy": 63.0
+    "open_accuracy": 20.0,
+    "average_accuracy": 50.0
   },
   "naufal": {
     "closed_accuracy": 80.0,
-    "open_accuracy": 34.0,
-    "average_accuracy": 57.0
+    "open_accuracy": 28.000000000000004,
+    "average_accuracy": 54.0
+  },
+  "zya": {
+    "closed_accuracy": 80.0,
+    "open_accuracy": 20.0,
+    "average_accuracy": 50.0
   },
   "overall": {
     "closed_accuracy": 80.0,
-    "open_accuracy": 38.8,
-    "average_accuracy": 59.4
+    "open_accuracy": 21.6,
+    "average_accuracy": 50.8
   }
 }

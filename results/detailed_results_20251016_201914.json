@@ -1,0 +1,6065 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-16T20:19:28.374766",
+    "total_test_files_us": 25,
+    "total_test_files_other": 50
+  },
+  "test_data": {
+    "us_files": [
+      {
+        "file_path": "templates_us/densu/densu - a 3.wav",
+        "true_vowel": "a",
+        "person": "densu"
+      },
+      {
+        "file_path": "templates_us/densu/densu - i 3.wav",
+        "true_vowel": "i",
+        "person": "densu"
+      },
+      {
+        "file_path": "templates_us/densu/densu - u 3.wav",
+        "true_vowel": "u",
+        "person": "densu"
+      },
+      {
+        "file_path": "templates_us/densu/densu - e 3.wav",
+        "true_vowel": "e",
+        "person": "densu"
+      },
+      {
+        "file_path": "templates_us/densu/densu - o 3.wav",
+        "true_vowel": "o",
+        "person": "densu"
+      },
+      {
+        "file_path": "templates_us/hira/hira - a 3.wav",
+        "true_vowel": "a",
+        "person": "hira"
+      },
+      {
+        "file_path": "templates_us/hira/hira - i 3.wav",
+        "true_vowel": "i",
+        "person": "hira"
+      },
+      {
+        "file_path": "templates_us/hira/hira - u 3.wav",
+        "true_vowel": "u",
+        "person": "hira"
+      },
+      {
+        "file_path": "templates_us/hira/hira - e 3.wav",
+        "true_vowel": "e",
+        "person": "hira"
+      },
+      {
+        "file_path": "templates_us/hira/hira - o 3.wav",
+        "true_vowel": "o",
+        "person": "hira"
+      },
+      {
+        "file_path": "templates_us/naufal/naufal - a 4.wav",
+        "true_vowel": "a",
+        "person": "naufal"
+      },
+      {
+        "file_path": "templates_us/naufal/naufal - i 4.wav",
+        "true_vowel": "i",
+        "person": "naufal"
+      },
+      {
+        "file_path": "templates_us/naufal/naufal - u 4.wav",
+        "true_vowel": "u",
+        "person": "naufal"
+      },
+      {
+        "file_path": "templates_us/naufal/naufal - e 4.wav",
+        "true_vowel": "e",
+        "person": "naufal"
+      },
+      {
+        "file_path": "templates_us/naufal/naufal - o 4.wav",
+        "true_vowel": "o",
+        "person": "naufal"
+      },
+      {
+        "file_path": "templates_us/wiga/wiga - a 3.wav",
+        "true_vowel": "a",
+        "person": "wiga"
+      },
+      {
+        "file_path": "templates_us/wiga/wiga - i 3.wav",
+        "true_vowel": "i",
+        "person": "wiga"
+      },
+      {
+        "file_path": "templates_us/wiga/wiga - u 3.wav",
+        "true_vowel": "u",
+        "person": "wiga"
+      },
+      {
+        "file_path": "templates_us/wiga/wiga - e 3.wav",
+        "true_vowel": "e",
+        "person": "wiga"
+      },
+      {
+        "file_path": "templates_us/wiga/wiga - o 3.wav",
+        "true_vowel": "o",
+        "person": "wiga"
+      },
+      {
+        "file_path": "templates_us/zya/zya - a 3.wav",
+        "true_vowel": "a",
+        "person": "zya"
+      },
+      {
+        "file_path": "templates_us/zya/zya - i 3.wav",
+        "true_vowel": "i",
+        "person": "zya"
+      },
+      {
+        "file_path": "templates_us/zya/zya - u 3.wav",
+        "true_vowel": "u",
+        "person": "zya"
+      },
+      {
+        "file_path": "templates_us/zya/zya - e 3.wav",
+        "true_vowel": "e",
+        "person": "zya"
+      },
+      {
+        "file_path": "templates_us/zya/zya - o 3.wav",
+        "true_vowel": "o",
+        "person": "zya"
+      }
+    ],
+    "other_files": [
+      {
+        "file_path": "templates_other/Dabbir/dab - a 2.wav",
+        "true_vowel": "a",
+        "person": "Dabbir"
+      },
+      {
+        "file_path": "templates_other/Dabbir/dab - i 2.wav",
+        "true_vowel": "i",
+        "person": "Dabbir"
+      },
+      {
+        "file_path": "templates_other/Dabbir/dab - u 2.wav",
+        "true_vowel": "u",
+        "person": "Dabbir"
+      },
+      {
+        "file_path": "templates_other/Dabbir/dab - e 2.wav",
+        "true_vowel": "e",
+        "person": "Dabbir"
+      },
+      {
+        "file_path": "templates_other/Dabbir/dab - o 2.wav",
+        "true_vowel": "o",
+        "person": "Dabbir"
+      },
+      {
+        "file_path": "templates_other/Evelyn/Evelyn - a 2.wav",
+        "true_vowel": "a",
+        "person": "Evelyn"
+      },
+      {
+        "file_path": "templates_other/Evelyn/Evelyn - i 2.wav",
+        "true_vowel": "i",
+        "person": "Evelyn"
+      },
+      {
+        "file_path": "templates_other/Evelyn/Evelyn - u 2.wav",
+        "true_vowel": "u",
+        "person": "Evelyn"
+      },
+      {
+        "file_path": "templates_other/Evelyn/Evelyn - e 2.wav",
+        "true_vowel": "e",
+        "person": "Evelyn"
+      },
+      {
+        "file_path": "templates_other/Evelyn/Evelyn - o 2.wav",
+        "true_vowel": "o",
+        "person": "Evelyn"
+      },
+      {
+        "file_path": "templates_other/Fed/Fed - a 2.wav",
+        "true_vowel": "a",
+        "person": "Fed"
+      },
+      {
+        "file_path": "templates_other/Fed/Fed - i 2.wav",
+        "true_vowel": "i",
+        "person": "Fed"
+      },
+      {
+        "file_path": "templates_other/Fed/Fed - u 2.wav",
+        "true_vowel": "u",
+        "person": "Fed"
+      },
+      {
+        "file_path": "templates_other/Fed/Fed - e 2.wav",
+        "true_vowel": "e",
+        "person": "Fed"
+      },
+      {
+        "file_path": "templates_other/Fed/Fed - o 2.wav",
+        "true_vowel": "o",
+        "person": "Fed"
+      },
+      {
+        "file_path": "templates_other/Akbar/Akbar - a 2.wav",
+        "true_vowel": "a",
+        "person": "Akbar"
+      },
+      {
+        "file_path": "templates_other/Akbar/Akbar - i 2.wav",
+        "true_vowel": "i",
+        "person": "Akbar"
+      },
+      {
+        "file_path": "templates_other/Akbar/Akbar - u 2.wav",
+        "true_vowel": "u",
+        "person": "Akbar"
+      },
+      {
+        "file_path": "templates_other/Akbar/Akbar - e 2.wav",
+        "true_vowel": "e",
+        "person": "Akbar"
+      },
+      {
+        "file_path": "templates_other/Akbar/Akbar - o 2.wav",
+        "true_vowel": "o",
+        "person": "Akbar"
+      },
+      {
+        "file_path": "templates_other/Justin/Justin - a 2.wav",
+        "true_vowel": "a",
+        "person": "Justin"
+      },
+      {
+        "file_path": "templates_other/Justin/Justin - i 2.wav",
+        "true_vowel": "i",
+        "person": "Justin"
+      },
+      {
+        "file_path": "templates_other/Justin/Justin - u 2.wav",
+        "true_vowel": "u",
+        "person": "Justin"
+      },
+      {
+        "file_path": "templates_other/Justin/Justin - e 2.wav",
+        "true_vowel": "e",
+        "person": "Justin"
+      },
+      {
+        "file_path": "templates_other/Justin/Justin - o 2.wav",
+        "true_vowel": "o",
+        "person": "Justin"
+      },
+      {
+        "file_path": "templates_other/Ucup/Ucup - a 2.wav",
+        "true_vowel": "a",
+        "person": "Ucup"
+      },
+      {
+        "file_path": "templates_other/Ucup/Ucup - i 2.wav",
+        "true_vowel": "i",
+        "person": "Ucup"
+      },
+      {
+        "file_path": "templates_other/Ucup/Ucup - u 2.wav",
+        "true_vowel": "u",
+        "person": "Ucup"
+      },
+      {
+        "file_path": "templates_other/Ucup/Ucup - e 2.wav",
+        "true_vowel": "e",
+        "person": "Ucup"
+      },
+      {
+        "file_path": "templates_other/Ucup/Ucup - o 2.wav",
+        "true_vowel": "o",
+        "person": "Ucup"
+      },
+      {
+        "file_path": "templates_other/Gonza/gon - a 2.wav",
+        "true_vowel": "a",
+        "person": "Gonza"
+      },
+      {
+        "file_path": "templates_other/Gonza/gon - i 2.wav",
+        "true_vowel": "i",
+        "person": "Gonza"
+      },
+      {
+        "file_path": "templates_other/Gonza/gon - u 2.wav",
+        "true_vowel": "u",
+        "person": "Gonza"
+      },
+      {
+        "file_path": "templates_other/Gonza/gon - e 2.wav",
+        "true_vowel": "e",
+        "person": "Gonza"
+      },
+      {
+        "file_path": "templates_other/Gonza/gon - o 2.wav",
+        "true_vowel": "o",
+        "person": "Gonza"
+      },
+      {
+        "file_path": "templates_other/Angie/ji - a 2.wav",
+        "true_vowel": "a",
+        "person": "Angie"
+      },
+      {
+        "file_path": "templates_other/Angie/ji - i 2.wav",
+        "true_vowel": "i",
+        "person": "Angie"
+      },
+      {
+        "file_path": "templates_other/Angie/ji - u 2.wav",
+        "true_vowel": "u",
+        "person": "Angie"
+      },
+      {
+        "file_path": "templates_other/Angie/ji - e 2.wav",
+        "true_vowel": "e",
+        "person": "Angie"
+      },
+      {
+        "file_path": "templates_other/Angie/ji - o 2.wav",
+        "true_vowel": "o",
+        "person": "Angie"
+      },
+      {
+        "file_path": "templates_other/Adnan/nan - a 2.wav",
+        "true_vowel": "a",
+        "person": "Adnan"
+      },
+      {
+        "file_path": "templates_other/Adnan/nan - i 2.wav",
+        "true_vowel": "i",
+        "person": "Adnan"
+      },
+      {
+        "file_path": "templates_other/Adnan/nan - u 2.wav",
+        "true_vowel": "u",
+        "person": "Adnan"
+      },
+      {
+        "file_path": "templates_other/Adnan/nan - e 2.wav",
+        "true_vowel": "e",
+        "person": "Adnan"
+      },
+      {
+        "file_path": "templates_other/Adnan/nan - o 2.wav",
+        "true_vowel": "o",
+        "person": "Adnan"
+      },
+      {
+        "file_path": "templates_other/Azul/zul - a 2.wav",
+        "true_vowel": "a",
+        "person": "Azul"
+      },
+      {
+        "file_path": "templates_other/Azul/zul - i 2.wav",
+        "true_vowel": "i",
+        "person": "Azul"
+      },
+      {
+        "file_path": "templates_other/Azul/zul - u 2.wav",
+        "true_vowel": "u",
+        "person": "Azul"
+      },
+      {
+        "file_path": "templates_other/Azul/zul - e 2.wav",
+        "true_vowel": "e",
+        "person": "Azul"
+      },
+      {
+        "file_path": "templates_other/Azul/zul - o 2.wav",
+        "true_vowel": "o",
+        "person": "Azul"
+      }
+    ]
+  },
+  "detailed_results": {
+    "wiga": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 20.0,
+      "average_accuracy": 50.0,
+      "closed_results": [
+        {
+          "audio": "templates_us/densu/densu - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "densu",
+          "correct": true,
+          "distance": 70.20693261385283,
+          "final_vowel_distances": {
+            "a": 70.20693261385283,
+            "i": 101.27023452333354,
+            "u": 76.23145002275523,
+            "e": 96.87690475273384,
+            "o": 74.32156369473651
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "densu",
+          "correct": true,
+          "distance": 53.94922614485301,
+          "final_vowel_distances": {
+            "a": 95.73067873319354,
+            "i": 53.94922614485301,
+            "u": 75.70620428738759,
+            "e": 78.54623557764256,
+            "o": 100.74842015970337
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "densu",
+          "correct": true,
+          "distance": 55.617798596711,
+          "final_vowel_distances": {
+            "a": 75.82648099916297,
+            "i": 92.3292906805688,
+            "u": 55.617798596711,
+            "e": 105.24248771013549,
+            "o": 72.83687286572119
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "densu",
+          "correct": true,
+          "distance": 30.641642893637712,
+          "final_vowel_distances": {
+            "a": 73.9450631400302,
+            "i": 64.11775939488687,
+            "u": 65.06952386577971,
+            "e": 30.641642893637712,
+            "o": 74.42787996551228
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "densu",
+          "correct": false,
+          "distance": 54.91726353975813,
+          "final_vowel_distances": {
+            "a": 54.91726353975813,
+            "i": 108.87390723470548,
+            "u": 65.11294455283877,
+            "e": 101.61563996278342,
+            "o": 61.56026052593779
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "hira",
+          "correct": true,
+          "distance": 63.27449979910856,
+          "final_vowel_distances": {
+            "a": 63.27449979910856,
+            "i": 89.66127958921668,
+            "u": 72.94383561022359,
+            "e": 108.55963303850531,
+            "o": 77.6447600831799
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - i 3.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "hira",
+          "correct": false,
+          "distance": 80.02112238190226,
+          "final_vowel_distances": {
+            "a": 89.33208114875363,
+            "i": 90.11866106748317,
+            "u": 80.02112238190226,
+            "e": 81.30577144924688,
+            "o": 94.09859892058365
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "hira",
+          "correct": true,
+          "distance": 52.23147493459865,
+          "final_vowel_distances": {
+            "a": 82.78913552659226,
+            "i": 87.16871204177413,
+            "u": 52.23147493459865,
+            "e": 94.86917432731775,
+            "o": 56.919974965251726
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "hira",
+          "correct": true,
+          "distance": 31.66494068546727,
+          "final_vowel_distances": {
+            "a": 93.15785521479124,
+            "i": 67.29426440868995,
+            "u": 67.23175005571517,
+            "e": 31.66494068546727,
+            "o": 82.47109638762022
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "hira",
+          "correct": false,
+          "distance": 52.504903716020046,
+          "final_vowel_distances": {
+            "a": 52.504903716020046,
+            "i": 104.55619556296678,
+            "u": 64.81919796070862,
+            "e": 81.71167040412838,
+            "o": 57.961795400572385
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - a 4.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "naufal",
+          "correct": true,
+          "distance": 57.623123310802896,
+          "final_vowel_distances": {
+            "a": 57.623123310802896,
+            "i": 89.69105590592982,
+            "u": 72.16261714644496,
+            "e": 78.40538689809797,
+            "o": 83.88414321651625
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - i 4.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "naufal",
+          "correct": true,
+          "distance": 59.445597056701445,
+          "final_vowel_distances": {
+            "a": 93.32440406572073,
+            "i": 59.445597056701445,
+            "u": 78.65703179524293,
+            "e": 75.98789756424138,
+            "o": 142.42493945778548
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - u 4.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "naufal",
+          "correct": true,
+          "distance": 52.99689590214297,
+          "final_vowel_distances": {
+            "a": 83.93048171149994,
+            "i": 103.4871429289807,
+            "u": 52.99689590214297,
+            "e": 83.60599102180915,
+            "o": 68.36388345579945
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - e 4.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "naufal",
+          "correct": true,
+          "distance": 71.90308386547775,
+          "final_vowel_distances": {
+            "a": 79.46792901507392,
+            "i": 83.38708130335242,
+            "u": 76.33230035687173,
+            "e": 71.90308386547775,
+            "o": 100.62279130096242
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - o 4.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "naufal",
+          "correct": true,
+          "distance": 64.21114194642179,
+          "final_vowel_distances": {
+            "a": 67.4120158321509,
+            "i": 94.52484569273413,
+            "u": 65.4304768923344,
+            "e": 71.15391142718344,
+            "o": 64.21114194642179
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "wiga",
+          "correct": true,
+          "distance": 53.12764443108395,
+          "final_vowel_distances": {
+            "a": 53.12764443108395,
+            "i": 104.10897409811042,
+            "u": 71.05797686661428,
+            "e": 84.9118987432174,
+            "o": 70.02915465159076
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "wiga",
+          "correct": true,
+          "distance": 80.4007697705937,
+          "final_vowel_distances": {
+            "a": 88.851318362536,
+            "i": 80.4007697705937,
+            "u": 83.49828467743127,
+            "e": 114.41006166866231,
+            "o": 126.23249689349717
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": true,
+          "distance": 52.92889591198365,
+          "final_vowel_distances": {
+            "a": 89.005390406393,
+            "i": 108.42085996295823,
+            "u": 52.92889591198365,
+            "e": 105.41072751117518,
+            "o": 71.69918257141919
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - e 3.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 86.2585847749919,
+          "final_vowel_distances": {
+            "a": 109.75781937087078,
+            "i": 90.70285078164811,
+            "u": 86.2585847749919,
+            "e": 143.03129469736947,
+            "o": 162.30771887097464
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - o 3.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 63.533337945360394,
+          "final_vowel_distances": {
+            "a": 95.8924107682069,
+            "i": 126.28842980946284,
+            "u": 63.533337945360394,
+            "e": 123.40728971225417,
+            "o": 94.79622186441587
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "zya",
+          "correct": true,
+          "distance": 52.85073309465736,
+          "final_vowel_distances": {
+            "a": 52.85073309465736,
+            "i": 100.62449586396984,
+            "u": 63.685592173142204,
+            "e": 70.3880945340593,
+            "o": 68.49342736339703
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "zya",
+          "correct": true,
+          "distance": 47.460612056624626,
+          "final_vowel_distances": {
+            "a": 100.8038431582459,
+            "i": 47.460612056624626,
+            "u": 66.47396450061811,
+            "e": 66.77813187452625,
+            "o": 94.13902227650355
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "zya",
+          "correct": true,
+          "distance": 49.187120026426975,
+          "final_vowel_distances": {
+            "a": 76.46713121445973,
+            "i": 109.24221101005985,
+            "u": 49.187120026426975,
+            "e": 92.96929701024084,
+            "o": 59.00174779619559
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "zya",
+          "correct": true,
+          "distance": 51.347806852813704,
+          "final_vowel_distances": {
+            "a": 73.68146192871792,
+            "i": 90.70246672233634,
+            "u": 64.82131246373343,
+            "e": 51.347806852813704,
+            "o": 75.40714803727202
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - o 3.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "zya",
+          "correct": true,
+          "distance": 61.40856084173831,
+          "final_vowel_distances": {
+            "a": 68.83250726827595,
+            "i": 90.73556302977619,
+            "u": 70.56736684963012,
+            "e": 83.10186768998362,
+            "o": 61.40856084173831
+          }
+        }
+      ],
+      "open_results": [
+        {
+          "audio": "templates_other/Dabbir/dab - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 5855.393141686655,
+          "final_vowel_distances": {
+            "a": 2804421.228399535,
+            "i": 305021.1925267952,
+            "u": 5855.393141686655,
+            "e": 14392.26809080127,
+            "o": 5545575.896665969
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 6475.624537279712,
+          "final_vowel_distances": {
+            "a": 5498226.79919323,
+            "i": 458578.2254766883,
+            "u": 6475.624537279712,
+            "e": 7402.736080249724,
+            "o": 6477510.782179681
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 4377.960349194268,
+          "final_vowel_distances": {
+            "a": 4684780.29566523,
+            "i": 624316.5364037412,
+            "u": 4377.960349194268,
+            "e": 16380.987114290503,
+            "o": 4484754.846252278
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 8660.158136759623,
+          "final_vowel_distances": {
+            "a": 4173099.694462217,
+            "i": 673032.2147241201,
+            "u": 8660.158136759623,
+            "e": 21641.478957664036,
+            "o": 4934249.642639068
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 5439.827714127573,
+          "final_vowel_distances": {
+            "a": 3183479.7779862196,
+            "i": 432378.1938246815,
+            "u": 5439.827714127573,
+            "e": 19704.123148459184,
+            "o": 5659238.678502019
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 5348.9238584333025,
+          "final_vowel_distances": {
+            "a": 5436245.702925165,
+            "i": 358977.1282873457,
+            "u": 5348.9238584333025,
+            "e": 44025.6922527957,
+            "o": 6144963.452971292
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 5815.910559304768,
+          "final_vowel_distances": {
+            "a": 5043422.764819525,
+            "i": 343634.24690082745,
+            "u": 5815.910559304768,
+            "e": 50602.844763117704,
+            "o": 7125820.096865498
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": true,
+          "distance": 4626.268048889669,
+          "final_vowel_distances": {
+            "a": 3770986.470753625,
+            "i": 660583.2502886679,
+            "u": 4626.268048889669,
+            "e": 19771.633481415516,
+            "o": 4493802.306326653
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 4940.881148812571,
+          "final_vowel_distances": {
+            "a": 5477297.809164001,
+            "i": 417020.96639516833,
+            "u": 4940.881148812571,
+            "e": 51265.482051592095,
+            "o": 6804199.115261617
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 5784.074085813781,
+          "final_vowel_distances": {
+            "a": 4945195.537615179,
+            "i": 935049.1682899258,
+            "u": 5784.074085813781,
+            "e": 15863.731747787213,
+            "o": 6743519.405244536
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 10274.01594913063,
+          "final_vowel_distances": {
+            "a": 4980373.940753448,
+            "i": 875185.9018139462,
+            "u": 10274.01594913063,
+            "e": 19209.12993416564,
+            "o": 8844579.978201736
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 4860.232981411592,
+          "final_vowel_distances": {
+            "a": 3938172.318452338,
+            "i": 454315.4101086151,
+            "u": 4860.232981411592,
+            "e": 15307.305169533267,
+            "o": 6643290.93407398
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": true,
+          "distance": 6108.455313422138,
+          "final_vowel_distances": {
+            "a": 4063582.8340498786,
+            "i": 643600.2985138979,
+            "u": 6108.455313422138,
+            "e": 17609.444005343223,
+            "o": 6312657.137469607
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 9594.043378533132,
+          "final_vowel_distances": {
+            "a": 5796943.155866283,
+            "i": 683830.6969949232,
+            "u": 9594.043378533132,
+            "e": 38680.14411589689,
+            "o": 6605695.0764908865
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 10867.47012053606,
+          "final_vowel_distances": {
+            "a": 4698965.121264587,
+            "i": 558684.1221102127,
+            "u": 10867.47012053606,
+            "e": 13002.2118313753,
+            "o": 6273794.584031469
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 12137.067173739051,
+          "final_vowel_distances": {
+            "a": 4538313.312297416,
+            "i": 689535.1491746327,
+            "u": 12137.067173739051,
+            "e": 20107.993884480584,
+            "o": 6625647.466652099
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 4654.105234428398,
+          "final_vowel_distances": {
+            "a": 5507144.924138232,
+            "i": 520520.05455408414,
+            "u": 4654.105234428398,
+            "e": 15565.406788415516,
+            "o": 6632026.749919888
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": true,
+          "distance": 5168.05812199581,
+          "final_vowel_distances": {
+            "a": 4924339.759580047,
+            "i": 714612.1550097204,
+            "u": 5168.05812199581,
+            "e": 16181.196243961624,
+            "o": 3974260.5858298005
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 6786.347698216283,
+          "final_vowel_distances": {
+            "a": 5252588.147867882,
+            "i": 373081.665285852,
+            "u": 6786.347698216283,
+            "e": 15356.636600963218,
+            "o": 7459219.17759724
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 6888.159634732007,
+          "final_vowel_distances": {
+            "a": 4130397.3348979116,
+            "i": 416613.61639818916,
+            "u": 6888.159634732007,
+            "e": 19773.305035960915,
+            "o": 6488402.479429415
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 7638.788141005283,
+          "final_vowel_distances": {
+            "a": 4914530.997726309,
+            "i": 737004.8273813658,
+            "u": 7638.788141005283,
+            "e": 36802.50057482021,
+            "o": 6771084.143219891
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 6023.064825407347,
+          "final_vowel_distances": {
+            "a": 5207356.492536844,
+            "i": 928970.477128232,
+            "u": 6023.064825407347,
+            "e": 30374.905203221624,
+            "o": 7307912.376888529
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": true,
+          "distance": 5161.691746390822,
+          "final_vowel_distances": {
+            "a": 5750988.804406989,
+            "i": 558604.0739317437,
+            "u": 5161.691746390822,
+            "e": 37361.84565256464,
+            "o": 6801802.915651054
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 7046.414153001108,
+          "final_vowel_distances": {
+            "a": 5820290.819556815,
+            "i": 968815.4409788102,
+            "u": 7046.414153001108,
+            "e": 33339.27453284088,
+            "o": 7252283.219492059
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 4845.888890686057,
+          "final_vowel_distances": {
+            "a": 4707472.858776465,
+            "i": 320635.9341628127,
+            "u": 4845.888890686057,
+            "e": 36240.054961234106,
+            "o": 5213896.933481491
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 5171.170069034215,
+          "final_vowel_distances": {
+            "a": 4983688.553098995,
+            "i": 391847.78970869334,
+            "u": 5171.170069034215,
+            "e": 44872.71158514395,
+            "o": 6509623.955065
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 5661.858228062733,
+          "final_vowel_distances": {
+            "a": 5021429.792774919,
+            "i": 338059.07981368527,
+            "u": 5661.858228062733,
+            "e": 39051.312372179025,
+            "o": 7700641.267468505
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 4007.2702078884595,
+          "final_vowel_distances": {
+            "a": 5435123.7297844095,
+            "i": 391462.4341803792,
+            "u": 4007.2702078884595,
+            "e": 37773.68078070702,
+            "o": 6690474.067567033
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 4970.41759672322,
+          "final_vowel_distances": {
+            "a": 4224881.128015584,
+            "i": 168627.40449691904,
+            "u": 4970.41759672322,
+            "e": 17320.426194400254,
+            "o": 6356851.896198965
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 5855.162047567851,
+          "final_vowel_distances": {
+            "a": 4052002.67395344,
+            "i": 355670.89066086576,
+            "u": 5855.162047567851,
+            "e": 21385.499346347144,
+            "o": 5032577.887472878
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6595.42229042995,
+          "final_vowel_distances": {
+            "a": 4626786.810672995,
+            "i": 300843.05914257054,
+            "u": 6595.42229042995,
+            "e": 17018.37407155136,
+            "o": 6484280.424286057
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6765.141390598891,
+          "final_vowel_distances": {
+            "a": 4207786.283170621,
+            "i": 304764.0285343752,
+            "u": 6765.141390598891,
+            "e": 17651.149977990895,
+            "o": 6899591.352234326
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 3677.580880300376,
+          "final_vowel_distances": {
+            "a": 3769964.4126738147,
+            "i": 365844.98290801834,
+            "u": 3677.580880300376,
+            "e": 26426.794926245668,
+            "o": 5451835.423921975
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6047.286543563506,
+          "final_vowel_distances": {
+            "a": 5191353.336029656,
+            "i": 646599.9979189144,
+            "u": 6047.286543563506,
+            "e": 24557.176580406027,
+            "o": 7837247.899286325
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6009.585969171363,
+          "final_vowel_distances": {
+            "a": 4187635.7326273844,
+            "i": 517395.8674355927,
+            "u": 6009.585969171363,
+            "e": 25346.99208319029,
+            "o": 5106581.413210214
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 5477.5446995741295,
+          "final_vowel_distances": {
+            "a": 3824381.1171064973,
+            "i": 954019.392035529,
+            "u": 5477.5446995741295,
+            "e": 23068.95452648129,
+            "o": 7730502.682076599
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 8205.141009661216,
+          "final_vowel_distances": {
+            "a": 5444324.427101968,
+            "i": 418445.25282998494,
+            "u": 8205.141009661216,
+            "e": 11550.315376452794,
+            "o": 7245190.770929472
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": true,
+          "distance": 6835.478728862553,
+          "final_vowel_distances": {
+            "a": 3918632.586616673,
+            "i": 539369.2718943524,
+            "u": 6835.478728862553,
+            "e": 10231.312974207876,
+            "o": 5614101.435193268
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 6631.629505641147,
+          "final_vowel_distances": {
+            "a": 4184893.6033375137,
+            "i": 450390.3334170936,
+            "u": 6631.629505641147,
+            "e": 11121.264610277574,
+            "o": 5994373.427301089
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 3924.3792442224344,
+          "final_vowel_distances": {
+            "a": 3316968.266030202,
+            "i": 537421.0294500351,
+            "u": 3924.3792442224344,
+            "e": 12938.714944358077,
+            "o": 3544187.2516738754
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 17172.764505511055,
+          "final_vowel_distances": {
+            "a": 4090568.2075287006,
+            "i": 426744.9754743133,
+            "u": 17172.764505511055,
+            "e": 21385.679471398606,
+            "o": 6293413.400613304
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 5843.158907727612,
+          "final_vowel_distances": {
+            "a": 6223404.263413083,
+            "i": 428940.99788103066,
+            "u": 5843.158907727612,
+            "e": 11620.003998038714,
+            "o": 5842207.646980748
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": true,
+          "distance": 4849.0744055921305,
+          "final_vowel_distances": {
+            "a": 3537518.7383884205,
+            "i": 276179.85845606186,
+            "u": 4849.0744055921305,
+            "e": 17943.47236811979,
+            "o": 5681305.331240181
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 10780.110693466688,
+          "final_vowel_distances": {
+            "a": 4409227.173893942,
+            "i": 308859.1486096089,
+            "u": 10780.110693466688,
+            "e": 16881.262181350914,
+            "o": 5294537.061400017
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 4860.255070082806,
+          "final_vowel_distances": {
+            "a": 4064797.6707893624,
+            "i": 412796.02324116486,
+            "u": 4860.255070082806,
+            "e": 17172.356054180033,
+            "o": 6258182.1895066155
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 5277.99183710558,
+          "final_vowel_distances": {
+            "a": 2307754.9519681116,
+            "i": 421348.5756149059,
+            "u": 5277.99183710558,
+            "e": 22453.275674197055,
+            "o": 4546552.034357562
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 6081.1001167904205,
+          "final_vowel_distances": {
+            "a": 4436566.0223281635,
+            "i": 195087.09090726005,
+            "u": 6081.1001167904205,
+            "e": 11827.453333225088,
+            "o": 5867707.628087085
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": true,
+          "distance": 4542.870951397044,
+          "final_vowel_distances": {
+            "a": 3803352.7708837814,
+            "i": 536639.8361736197,
+            "u": 4542.870951397044,
+            "e": 14167.971611320032,
+            "o": 4096416.111789776
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 4293.860794386809,
+          "final_vowel_distances": {
+            "a": 4469559.1730322195,
+            "i": 494522.0991722725,
+            "u": 4293.860794386809,
+            "e": 14862.59726486241,
+            "o": 5329184.395231868
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 4742.95543939634,
+          "final_vowel_distances": {
+            "a": 3148320.814534064,
+            "i": 555189.906018298,
+            "u": 4742.95543939634,
+            "e": 14051.760275444127,
+            "o": 5225290.273103177
+          }
+        }
+      ]
+    },
+    "hira": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 20.0,
+      "average_accuracy": 50.0,
+      "closed_results": [
+        {
+          "audio": "templates_us/densu/densu - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "densu",
+          "correct": true,
+          "distance": 70.20693261385283,
+          "final_vowel_distances": {
+            "a": 70.20693261385283,
+            "i": 101.27023452333354,
+            "u": 76.23145002275523,
+            "e": 96.87690475273384,
+            "o": 74.32156369473651
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "densu",
+          "correct": true,
+          "distance": 53.94922614485301,
+          "final_vowel_distances": {
+            "a": 95.73067873319354,
+            "i": 53.94922614485301,
+            "u": 75.70620428738759,
+            "e": 78.54623557764256,
+            "o": 100.74842015970337
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "densu",
+          "correct": true,
+          "distance": 55.617798596711,
+          "final_vowel_distances": {
+            "a": 75.82648099916297,
+            "i": 92.3292906805688,
+            "u": 55.617798596711,
+            "e": 105.24248771013549,
+            "o": 72.83687286572119
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "densu",
+          "correct": true,
+          "distance": 30.641642893637712,
+          "final_vowel_distances": {
+            "a": 73.9450631400302,
+            "i": 64.11775939488687,
+            "u": 65.06952386577971,
+            "e": 30.641642893637712,
+            "o": 74.42787996551228
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "densu",
+          "correct": false,
+          "distance": 54.91726353975813,
+          "final_vowel_distances": {
+            "a": 54.91726353975813,
+            "i": 108.87390723470548,
+            "u": 65.11294455283877,
+            "e": 101.61563996278342,
+            "o": 61.56026052593779
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "hira",
+          "correct": true,
+          "distance": 63.27449979910856,
+          "final_vowel_distances": {
+            "a": 63.27449979910856,
+            "i": 89.66127958921668,
+            "u": 72.94383561022359,
+            "e": 108.55963303850531,
+            "o": 77.6447600831799
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - i 3.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "hira",
+          "correct": false,
+          "distance": 80.02112238190226,
+          "final_vowel_distances": {
+            "a": 89.33208114875363,
+            "i": 90.11866106748317,
+            "u": 80.02112238190226,
+            "e": 81.30577144924688,
+            "o": 94.09859892058365
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "hira",
+          "correct": true,
+          "distance": 52.23147493459865,
+          "final_vowel_distances": {
+            "a": 82.78913552659226,
+            "i": 87.16871204177413,
+            "u": 52.23147493459865,
+            "e": 94.86917432731775,
+            "o": 56.919974965251726
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "hira",
+          "correct": true,
+          "distance": 31.66494068546727,
+          "final_vowel_distances": {
+            "a": 93.15785521479124,
+            "i": 67.29426440868995,
+            "u": 67.23175005571517,
+            "e": 31.66494068546727,
+            "o": 82.47109638762022
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "hira",
+          "correct": false,
+          "distance": 52.504903716020046,
+          "final_vowel_distances": {
+            "a": 52.504903716020046,
+            "i": 104.55619556296678,
+            "u": 64.81919796070862,
+            "e": 81.71167040412838,
+            "o": 57.961795400572385
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - a 4.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "naufal",
+          "correct": true,
+          "distance": 57.623123310802896,
+          "final_vowel_distances": {
+            "a": 57.623123310802896,
+            "i": 89.69105590592982,
+            "u": 72.16261714644496,
+            "e": 78.40538689809797,
+            "o": 83.88414321651625
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - i 4.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "naufal",
+          "correct": true,
+          "distance": 59.445597056701445,
+          "final_vowel_distances": {
+            "a": 93.32440406572073,
+            "i": 59.445597056701445,
+            "u": 78.65703179524293,
+            "e": 75.98789756424138,
+            "o": 142.42493945778548
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - u 4.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "naufal",
+          "correct": true,
+          "distance": 52.99689590214297,
+          "final_vowel_distances": {
+            "a": 83.93048171149994,
+            "i": 103.4871429289807,
+            "u": 52.99689590214297,
+            "e": 83.60599102180915,
+            "o": 68.36388345579945
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - e 4.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "naufal",
+          "correct": true,
+          "distance": 71.90308386547775,
+          "final_vowel_distances": {
+            "a": 79.46792901507392,
+            "i": 83.38708130335242,
+            "u": 76.33230035687173,
+            "e": 71.90308386547775,
+            "o": 100.62279130096242
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - o 4.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "naufal",
+          "correct": true,
+          "distance": 64.21114194642179,
+          "final_vowel_distances": {
+            "a": 67.4120158321509,
+            "i": 94.52484569273413,
+            "u": 65.4304768923344,
+            "e": 71.15391142718344,
+            "o": 64.21114194642179
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "wiga",
+          "correct": true,
+          "distance": 53.12764443108395,
+          "final_vowel_distances": {
+            "a": 53.12764443108395,
+            "i": 104.10897409811042,
+            "u": 71.05797686661428,
+            "e": 84.9118987432174,
+            "o": 70.02915465159076
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "wiga",
+          "correct": true,
+          "distance": 80.4007697705937,
+          "final_vowel_distances": {
+            "a": 88.851318362536,
+            "i": 80.4007697705937,
+            "u": 83.49828467743127,
+            "e": 114.41006166866231,
+            "o": 126.23249689349717
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": true,
+          "distance": 52.92889591198365,
+          "final_vowel_distances": {
+            "a": 89.005390406393,
+            "i": 108.42085996295823,
+            "u": 52.92889591198365,
+            "e": 105.41072751117518,
+            "o": 71.69918257141919
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - e 3.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 86.2585847749919,
+          "final_vowel_distances": {
+            "a": 109.75781937087078,
+            "i": 90.70285078164811,
+            "u": 86.2585847749919,
+            "e": 143.03129469736947,
+            "o": 162.30771887097464
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - o 3.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 63.533337945360394,
+          "final_vowel_distances": {
+            "a": 95.8924107682069,
+            "i": 126.28842980946284,
+            "u": 63.533337945360394,
+            "e": 123.40728971225417,
+            "o": 94.79622186441587
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "zya",
+          "correct": true,
+          "distance": 52.85073309465736,
+          "final_vowel_distances": {
+            "a": 52.85073309465736,
+            "i": 100.62449586396984,
+            "u": 63.685592173142204,
+            "e": 70.3880945340593,
+            "o": 68.49342736339703
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "zya",
+          "correct": true,
+          "distance": 47.460612056624626,
+          "final_vowel_distances": {
+            "a": 100.8038431582459,
+            "i": 47.460612056624626,
+            "u": 66.47396450061811,
+            "e": 66.77813187452625,
+            "o": 94.13902227650355
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "zya",
+          "correct": true,
+          "distance": 49.187120026426975,
+          "final_vowel_distances": {
+            "a": 76.46713121445973,
+            "i": 109.24221101005985,
+            "u": 49.187120026426975,
+            "e": 92.96929701024084,
+            "o": 59.00174779619559
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "zya",
+          "correct": true,
+          "distance": 51.347806852813704,
+          "final_vowel_distances": {
+            "a": 73.68146192871792,
+            "i": 90.70246672233634,
+            "u": 64.82131246373343,
+            "e": 51.347806852813704,
+            "o": 75.40714803727202
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - o 3.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "zya",
+          "correct": true,
+          "distance": 61.40856084173831,
+          "final_vowel_distances": {
+            "a": 68.83250726827595,
+            "i": 90.73556302977619,
+            "u": 70.56736684963012,
+            "e": 83.10186768998362,
+            "o": 61.40856084173831
+          }
+        }
+      ],
+      "open_results": [
+        {
+          "audio": "templates_other/Dabbir/dab - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 4379.567875685611,
+          "final_vowel_distances": {
+            "a": 3532728.210268231,
+            "i": 26454.666196659164,
+            "u": 2072021.663528309,
+            "e": 9971008.72155277,
+            "o": 4379.567875685611
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 8262.371360941008,
+          "final_vowel_distances": {
+            "a": 3814708.84349463,
+            "i": 22521.509367569222,
+            "u": 3009904.9533002824,
+            "e": 13084311.951384133,
+            "o": 8262.371360941008
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 4410.106405535766,
+          "final_vowel_distances": {
+            "a": 4620451.993216977,
+            "i": 30431.612489523923,
+            "u": 2143723.5379588185,
+            "e": 11790958.915018568,
+            "o": 4410.106405535766
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 8296.369937813337,
+          "final_vowel_distances": {
+            "a": 4454461.5966804605,
+            "i": 22504.84327083641,
+            "u": 2711917.2500778064,
+            "e": 9313935.728980534,
+            "o": 8296.369937813337
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 4901.119773377141,
+          "final_vowel_distances": {
+            "a": 3682722.6779202144,
+            "i": 29435.491204745602,
+            "u": 1594695.2532889948,
+            "e": 12076815.719118163,
+            "o": 4901.119773377141
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 7954.99913461601,
+          "final_vowel_distances": {
+            "a": 4525312.977163498,
+            "i": 76739.2102950046,
+            "u": 2911671.6317311055,
+            "e": 13395004.839220172,
+            "o": 7954.99913461601
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 13988.606465384664,
+          "final_vowel_distances": {
+            "a": 4787118.878444661,
+            "i": 51888.054571690234,
+            "u": 2814692.4844445265,
+            "e": 13882062.764261015,
+            "o": 13988.606465384664
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 7708.19451811526,
+          "final_vowel_distances": {
+            "a": 3510258.9390159566,
+            "i": 33741.92974380114,
+            "u": 2075984.019253254,
+            "e": 11066784.477026537,
+            "o": 7708.19451811526
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 9418.364271871096,
+          "final_vowel_distances": {
+            "a": 5077376.994473595,
+            "i": 67233.6070154422,
+            "u": 2902641.6850489434,
+            "e": 11155632.209420288,
+            "o": 9418.364271871096
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Evelyn",
+          "correct": true,
+          "distance": 3464.5635844819712,
+          "final_vowel_distances": {
+            "a": 4506325.92322917,
+            "i": 30321.82386732847,
+            "u": 2088656.699737976,
+            "e": 12570262.609036021,
+            "o": 3464.5635844819712
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Fed",
+          "correct": false,
+          "distance": 5678.44357968188,
+          "final_vowel_distances": {
+            "a": 2748094.441762878,
+            "i": 33859.636551388496,
+            "u": 2107976.9962510867,
+            "e": 12674309.418774853,
+            "o": 5678.44357968188
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Fed",
+          "correct": false,
+          "distance": 6775.555835382539,
+          "final_vowel_distances": {
+            "a": 4912200.177632897,
+            "i": 18502.77091534442,
+            "u": 2963224.261555124,
+            "e": 13075429.052243084,
+            "o": 6775.555835382539
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Fed",
+          "correct": false,
+          "distance": 4822.638057509372,
+          "final_vowel_distances": {
+            "a": 6043051.214082145,
+            "i": 30599.023645276728,
+            "u": 2132069.536903571,
+            "e": 11412078.546011386,
+            "o": 4822.638057509372
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Fed",
+          "correct": false,
+          "distance": 7202.5181297104255,
+          "final_vowel_distances": {
+            "a": 4537905.508746274,
+            "i": 37129.86230816271,
+            "u": 2977160.490554213,
+            "e": 12164998.1630131,
+            "o": 7202.5181297104255
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Fed",
+          "correct": true,
+          "distance": 6379.087258702678,
+          "final_vowel_distances": {
+            "a": 3671865.1490063407,
+            "i": 31888.975940208165,
+            "u": 2268419.3139615525,
+            "e": 12632500.974506713,
+            "o": 6379.087258702678
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 7311.883038814696,
+          "final_vowel_distances": {
+            "a": 5143557.488893268,
+            "i": 53236.07088389244,
+            "u": 3351744.2778597996,
+            "e": 12389986.533685884,
+            "o": 7311.883038814696
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 10499.618144051423,
+          "final_vowel_distances": {
+            "a": 3472368.2913019457,
+            "i": 20288.0143120065,
+            "u": 2974780.0217256118,
+            "e": 11280589.216710575,
+            "o": 10499.618144051423
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 7357.972934080986,
+          "final_vowel_distances": {
+            "a": 5952597.224134516,
+            "i": 26142.945373193914,
+            "u": 1877820.2594496375,
+            "e": 11954448.107922459,
+            "o": 7357.972934080986
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 9439.781788491615,
+          "final_vowel_distances": {
+            "a": 3570628.27403829,
+            "i": 51242.79918576488,
+            "u": 3299616.4983014814,
+            "e": 11005059.315417739,
+            "o": 9439.781788491615
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Akbar",
+          "correct": true,
+          "distance": 5236.709930032637,
+          "final_vowel_distances": {
+            "a": 3321829.2643473535,
+            "i": 30265.55778383983,
+            "u": 3191374.210959112,
+            "e": 13076055.745598571,
+            "o": 5236.709930032637
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Justin",
+          "correct": false,
+          "distance": 6805.145903319252,
+          "final_vowel_distances": {
+            "a": 5099393.106433586,
+            "i": 58940.4052771887,
+            "u": 2827432.8824402317,
+            "e": 12524141.606861716,
+            "o": 6805.145903319252
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Justin",
+          "correct": false,
+          "distance": 8329.192641959116,
+          "final_vowel_distances": {
+            "a": 4621024.427303608,
+            "i": 59498.2947150229,
+            "u": 2865021.9137528366,
+            "e": 12362506.58108794,
+            "o": 8329.192641959116
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Justin",
+          "correct": false,
+          "distance": 7626.403079109575,
+          "final_vowel_distances": {
+            "a": 5276846.421603602,
+            "i": 81989.82006729337,
+            "u": 2949015.7476243414,
+            "e": 13072184.901039341,
+            "o": 7626.403079109575
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Justin",
+          "correct": false,
+          "distance": 7195.7651153876095,
+          "final_vowel_distances": {
+            "a": 5034661.420807421,
+            "i": 74921.6105147899,
+            "u": 3133612.8101847037,
+            "e": 12984652.259439021,
+            "o": 7195.7651153876095
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Justin",
+          "correct": true,
+          "distance": 7406.868182903549,
+          "final_vowel_distances": {
+            "a": 4461732.3625376895,
+            "i": 95531.26969648838,
+            "u": 2082553.1658121597,
+            "e": 11627942.450634936,
+            "o": 7406.868182903549
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 6952.196466883834,
+          "final_vowel_distances": {
+            "a": 4161786.1087102913,
+            "i": 72082.09752696031,
+            "u": 2723026.2603490297,
+            "e": 12727400.130176717,
+            "o": 6952.196466883834
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 7933.953144218278,
+          "final_vowel_distances": {
+            "a": 4678693.093389191,
+            "i": 71982.21777562694,
+            "u": 3074637.0325007043,
+            "e": 13492900.710340083,
+            "o": 7933.953144218278
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 6660.234540647919,
+          "final_vowel_distances": {
+            "a": 4738049.820942562,
+            "i": 86720.66893876217,
+            "u": 2197265.47897544,
+            "e": 12401626.789710695,
+            "o": 6660.234540647919
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 7620.530245035505,
+          "final_vowel_distances": {
+            "a": 4353362.096466982,
+            "i": 39740.117929316504,
+            "u": 2981518.1471519726,
+            "e": 11262150.79451027,
+            "o": 7620.530245035505
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 4799.9678426127575,
+          "final_vowel_distances": {
+            "a": 5251304.7607164765,
+            "i": 14988.51873634623,
+            "u": 3271165.1485094787,
+            "e": 12956564.516816514,
+            "o": 4799.9678426127575
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 9037.885879940592,
+          "final_vowel_distances": {
+            "a": 4080920.4574429947,
+            "i": 29186.88080725551,
+            "u": 2756859.374154432,
+            "e": 11617645.574843742,
+            "o": 9037.885879940592
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 7084.959098752194,
+          "final_vowel_distances": {
+            "a": 4266874.937585407,
+            "i": 20239.22339787283,
+            "u": 3142056.0454133064,
+            "e": 11645806.405224284,
+            "o": 7084.959098752194
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 5955.889479196503,
+          "final_vowel_distances": {
+            "a": 3345468.6259659324,
+            "i": 28334.373828874803,
+            "u": 1623560.7617094275,
+            "e": 9814015.700436926,
+            "o": 5955.889479196503
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6411.820690855449,
+          "final_vowel_distances": {
+            "a": 7122022.203933355,
+            "i": 38338.74808250064,
+            "u": 2994233.3355837795,
+            "e": 11473316.61658906,
+            "o": 6411.820690855449
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 7493.630422350166,
+          "final_vowel_distances": {
+            "a": 3651649.151589865,
+            "i": 39969.18914091361,
+            "u": 2346443.1098356186,
+            "e": 10899601.301977424,
+            "o": 7493.630422350166
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Angie",
+          "correct": false,
+          "distance": 6434.799100000378,
+          "final_vowel_distances": {
+            "a": 3036057.5043780333,
+            "i": 23293.605219164183,
+            "u": 2564648.827605506,
+            "e": 9814801.96689202,
+            "o": 6434.799100000378
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Angie",
+          "correct": false,
+          "distance": 4984.179818492628,
+          "final_vowel_distances": {
+            "a": 3243081.873801205,
+            "i": 31584.512222819565,
+            "u": 2706739.681582311,
+            "e": 12347831.374380521,
+            "o": 4984.179818492628
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Angie",
+          "correct": false,
+          "distance": 2917.8715916509555,
+          "final_vowel_distances": {
+            "a": 4100645.009410406,
+            "i": 21431.579373054912,
+            "u": 1835513.9705612396,
+            "e": 12080620.867292916,
+            "o": 2917.8715916509555
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Angie",
+          "correct": false,
+          "distance": 6656.5256213477005,
+          "final_vowel_distances": {
+            "a": 4314448.821986514,
+            "i": 23579.667617278043,
+            "u": 3098356.9544907664,
+            "e": 9746277.992514009,
+            "o": 6656.5256213477005
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Angie",
+          "correct": true,
+          "distance": 4295.9421483147025,
+          "final_vowel_distances": {
+            "a": 3144167.937333604,
+            "i": 25800.505995094412,
+            "u": 1274692.4935510748,
+            "e": 11315368.79742097,
+            "o": 4295.9421483147025
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 3390.5760429321394,
+          "final_vowel_distances": {
+            "a": 3260105.5983905364,
+            "i": 33442.84949107351,
+            "u": 3616727.2258563098,
+            "e": 11824798.861761717,
+            "o": 3390.5760429321394
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 6677.033409432889,
+          "final_vowel_distances": {
+            "a": 5718141.945013978,
+            "i": 41339.83360000073,
+            "u": 2238829.204721263,
+            "e": 11135041.12225891,
+            "o": 6677.033409432889
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 7255.079019303124,
+          "final_vowel_distances": {
+            "a": 3586227.964803675,
+            "i": 21833.59460925023,
+            "u": 1484230.3914500868,
+            "e": 9191571.468310386,
+            "o": 7255.079019303124
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 6901.031946341615,
+          "final_vowel_distances": {
+            "a": 3946451.4690572154,
+            "i": 31850.008885588686,
+            "u": 2570461.1162504037,
+            "e": 10804650.247569116,
+            "o": 6901.031946341615
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Adnan",
+          "correct": true,
+          "distance": 10111.792796684722,
+          "final_vowel_distances": {
+            "a": 4053035.374398175,
+            "i": 38333.366357247985,
+            "u": 2441723.546233311,
+            "e": 12123759.961127197,
+            "o": 10111.792796684722
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - a 2.wav",
+          "true": "a",
+          "predicted": "o",
+          "person": "Azul",
+          "correct": false,
+          "distance": 4457.602717732203,
+          "final_vowel_distances": {
+            "a": 3413104.259659477,
+            "i": 17927.0730609634,
+            "u": 1645925.1552165989,
+            "e": 9819546.184443118,
+            "o": 4457.602717732203
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - i 2.wav",
+          "true": "i",
+          "predicted": "o",
+          "person": "Azul",
+          "correct": false,
+          "distance": 5412.738718131154,
+          "final_vowel_distances": {
+            "a": 5261280.386291464,
+            "i": 38547.3766046678,
+            "u": 2527859.6750612953,
+            "e": 11641045.215016996,
+            "o": 5412.738718131154
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - u 2.wav",
+          "true": "u",
+          "predicted": "o",
+          "person": "Azul",
+          "correct": false,
+          "distance": 6141.569650567869,
+          "final_vowel_distances": {
+            "a": 3750059.6502755485,
+            "i": 26801.624056907007,
+            "u": 2349056.0143921333,
+            "e": 11274568.294430127,
+            "o": 6141.569650567869
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - e 2.wav",
+          "true": "e",
+          "predicted": "o",
+          "person": "Azul",
+          "correct": false,
+          "distance": 4616.204365699209,
+          "final_vowel_distances": {
+            "a": 4835523.667720296,
+            "i": 17550.463948622655,
+            "u": 1971885.9026865491,
+            "e": 10932488.378305344,
+            "o": 4616.204365699209
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - o 2.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "Azul",
+          "correct": true,
+          "distance": 4439.994171913013,
+          "final_vowel_distances": {
+            "a": 5100366.982140651,
+            "i": 41131.94485215379,
+            "u": 2053411.1909539432,
+            "e": 11421752.105631664,
+            "o": 4439.994171913013
+          }
+        }
+      ]
+    },
+    "densu": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 20.0,
+      "average_accuracy": 50.0,
+      "closed_results": [
+        {
+          "audio": "templates_us/densu/densu - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "densu",
+          "correct": true,
+          "distance": 70.20693261385283,
+          "final_vowel_distances": {
+            "a": 70.20693261385283,
+            "i": 101.27023452333354,
+            "u": 76.23145002275523,
+            "e": 96.87690475273384,
+            "o": 74.32156369473651
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "densu",
+          "correct": true,
+          "distance": 53.94922614485301,
+          "final_vowel_distances": {
+            "a": 95.73067873319354,
+            "i": 53.94922614485301,
+            "u": 75.70620428738759,
+            "e": 78.54623557764256,
+            "o": 100.74842015970337
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "densu",
+          "correct": true,
+          "distance": 55.617798596711,
+          "final_vowel_distances": {
+            "a": 75.82648099916297,
+            "i": 92.3292906805688,
+            "u": 55.617798596711,
+            "e": 105.24248771013549,
+            "o": 72.83687286572119
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "densu",
+          "correct": true,
+          "distance": 30.641642893637712,
+          "final_vowel_distances": {
+            "a": 73.9450631400302,
+            "i": 64.11775939488687,
+            "u": 65.06952386577971,
+            "e": 30.641642893637712,
+            "o": 74.42787996551228
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "densu",
+          "correct": false,
+          "distance": 54.91726353975813,
+          "final_vowel_distances": {
+            "a": 54.91726353975813,
+            "i": 108.87390723470548,
+            "u": 65.11294455283877,
+            "e": 101.61563996278342,
+            "o": 61.56026052593779
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "hira",
+          "correct": true,
+          "distance": 63.27449979910856,
+          "final_vowel_distances": {
+            "a": 63.27449979910856,
+            "i": 89.66127958921668,
+            "u": 72.94383561022359,
+            "e": 108.55963303850531,
+            "o": 77.6447600831799
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - i 3.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "hira",
+          "correct": false,
+          "distance": 80.02112238190226,
+          "final_vowel_distances": {
+            "a": 89.33208114875363,
+            "i": 90.11866106748317,
+            "u": 80.02112238190226,
+            "e": 81.30577144924688,
+            "o": 94.09859892058365
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "hira",
+          "correct": true,
+          "distance": 52.23147493459865,
+          "final_vowel_distances": {
+            "a": 82.78913552659226,
+            "i": 87.16871204177413,
+            "u": 52.23147493459865,
+            "e": 94.86917432731775,
+            "o": 56.919974965251726
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "hira",
+          "correct": true,
+          "distance": 31.66494068546727,
+          "final_vowel_distances": {
+            "a": 93.15785521479124,
+            "i": 67.29426440868995,
+            "u": 67.23175005571517,
+            "e": 31.66494068546727,
+            "o": 82.47109638762022
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "hira",
+          "correct": false,
+          "distance": 52.504903716020046,
+          "final_vowel_distances": {
+            "a": 52.504903716020046,
+            "i": 104.55619556296678,
+            "u": 64.81919796070862,
+            "e": 81.71167040412838,
+            "o": 57.961795400572385
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - a 4.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "naufal",
+          "correct": true,
+          "distance": 57.623123310802896,
+          "final_vowel_distances": {
+            "a": 57.623123310802896,
+            "i": 89.69105590592982,
+            "u": 72.16261714644496,
+            "e": 78.40538689809797,
+            "o": 83.88414321651625
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - i 4.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "naufal",
+          "correct": true,
+          "distance": 59.445597056701445,
+          "final_vowel_distances": {
+            "a": 93.32440406572073,
+            "i": 59.445597056701445,
+            "u": 78.65703179524293,
+            "e": 75.98789756424138,
+            "o": 142.42493945778548
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - u 4.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "naufal",
+          "correct": true,
+          "distance": 52.99689590214297,
+          "final_vowel_distances": {
+            "a": 83.93048171149994,
+            "i": 103.4871429289807,
+            "u": 52.99689590214297,
+            "e": 83.60599102180915,
+            "o": 68.36388345579945
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - e 4.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "naufal",
+          "correct": true,
+          "distance": 71.90308386547775,
+          "final_vowel_distances": {
+            "a": 79.46792901507392,
+            "i": 83.38708130335242,
+            "u": 76.33230035687173,
+            "e": 71.90308386547775,
+            "o": 100.62279130096242
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - o 4.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "naufal",
+          "correct": true,
+          "distance": 64.21114194642179,
+          "final_vowel_distances": {
+            "a": 67.4120158321509,
+            "i": 94.52484569273413,
+            "u": 65.4304768923344,
+            "e": 71.15391142718344,
+            "o": 64.21114194642179
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "wiga",
+          "correct": true,
+          "distance": 53.12764443108395,
+          "final_vowel_distances": {
+            "a": 53.12764443108395,
+            "i": 104.10897409811042,
+            "u": 71.05797686661428,
+            "e": 84.9118987432174,
+            "o": 70.02915465159076
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "wiga",
+          "correct": true,
+          "distance": 80.4007697705937,
+          "final_vowel_distances": {
+            "a": 88.851318362536,
+            "i": 80.4007697705937,
+            "u": 83.49828467743127,
+            "e": 114.41006166866231,
+            "o": 126.23249689349717
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": true,
+          "distance": 52.92889591198365,
+          "final_vowel_distances": {
+            "a": 89.005390406393,
+            "i": 108.42085996295823,
+            "u": 52.92889591198365,
+            "e": 105.41072751117518,
+            "o": 71.69918257141919
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - e 3.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 86.2585847749919,
+          "final_vowel_distances": {
+            "a": 109.75781937087078,
+            "i": 90.70285078164811,
+            "u": 86.2585847749919,
+            "e": 143.03129469736947,
+            "o": 162.30771887097464
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - o 3.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 63.533337945360394,
+          "final_vowel_distances": {
+            "a": 95.8924107682069,
+            "i": 126.28842980946284,
+            "u": 63.533337945360394,
+            "e": 123.40728971225417,
+            "o": 94.79622186441587
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "zya",
+          "correct": true,
+          "distance": 52.85073309465736,
+          "final_vowel_distances": {
+            "a": 52.85073309465736,
+            "i": 100.62449586396984,
+            "u": 63.685592173142204,
+            "e": 70.3880945340593,
+            "o": 68.49342736339703
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "zya",
+          "correct": true,
+          "distance": 47.460612056624626,
+          "final_vowel_distances": {
+            "a": 100.8038431582459,
+            "i": 47.460612056624626,
+            "u": 66.47396450061811,
+            "e": 66.77813187452625,
+            "o": 94.13902227650355
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "zya",
+          "correct": true,
+          "distance": 49.187120026426975,
+          "final_vowel_distances": {
+            "a": 76.46713121445973,
+            "i": 109.24221101005985,
+            "u": 49.187120026426975,
+            "e": 92.96929701024084,
+            "o": 59.00174779619559
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "zya",
+          "correct": true,
+          "distance": 51.347806852813704,
+          "final_vowel_distances": {
+            "a": 73.68146192871792,
+            "i": 90.70246672233634,
+            "u": 64.82131246373343,
+            "e": 51.347806852813704,
+            "o": 75.40714803727202
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - o 3.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "zya",
+          "correct": true,
+          "distance": 61.40856084173831,
+          "final_vowel_distances": {
+            "a": 68.83250726827595,
+            "i": 90.73556302977619,
+            "u": 70.56736684963012,
+            "e": 83.10186768998362,
+            "o": 61.40856084173831
+          }
+        }
+      ],
+      "open_results": [
+        {
+          "audio": "templates_other/Dabbir/dab - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 3807.9434463196526,
+          "final_vowel_distances": {
+            "a": 3807.9434463196526,
+            "i": 2288719.1092202123,
+            "u": 847572.0034933578,
+            "e": 9725749.13029481,
+            "o": 6484006.869098641
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 2691.499915551773,
+          "final_vowel_distances": {
+            "a": 2691.499915551773,
+            "i": 1744911.952647975,
+            "u": 1355795.258234425,
+            "e": 11833339.31197901,
+            "o": 7211305.9266077345
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 3484.5986729417314,
+          "final_vowel_distances": {
+            "a": 3484.5986729417314,
+            "i": 2664701.736235068,
+            "u": 989216.3377813076,
+            "e": 10197222.065925067,
+            "o": 5493397.690206152
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 3321.2698076450747,
+          "final_vowel_distances": {
+            "a": 3321.2698076450747,
+            "i": 1742370.0575626744,
+            "u": 951154.9269933008,
+            "e": 9092346.222727617,
+            "o": 5919747.146769777
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 3105.749648289477,
+          "final_vowel_distances": {
+            "a": 3105.749648289477,
+            "i": 2178068.8931636754,
+            "u": 454113.89636225376,
+            "e": 10997256.157664761,
+            "o": 7059253.378425275
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Evelyn",
+          "correct": true,
+          "distance": 3009.0150771606222,
+          "final_vowel_distances": {
+            "a": 3009.0150771606222,
+            "i": 2685610.164183906,
+            "u": 1216291.473021582,
+            "e": 13342056.450949535,
+            "o": 8530131.26717766
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 6301.878768430858,
+          "final_vowel_distances": {
+            "a": 6301.878768430858,
+            "i": 2211674.9041751768,
+            "u": 1196549.4948857445,
+            "e": 13399400.595146721,
+            "o": 8240187.56806957
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 2948.2053037288365,
+          "final_vowel_distances": {
+            "a": 2948.2053037288365,
+            "i": 2581975.4171104566,
+            "u": 1075371.73177456,
+            "e": 13908965.665820071,
+            "o": 7639887.407486141
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 4122.346481731446,
+          "final_vowel_distances": {
+            "a": 4122.346481731446,
+            "i": 2698191.1731790113,
+            "u": 1335399.0307048934,
+            "e": 11255705.202655658,
+            "o": 8650179.678066043
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 2872.2701197926594,
+          "final_vowel_distances": {
+            "a": 2872.2701197926594,
+            "i": 3383395.300252989,
+            "u": 1574019.9891436305,
+            "e": 13341708.386354769,
+            "o": 5621055.80982021
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Fed",
+          "correct": true,
+          "distance": 3136.132773745195,
+          "final_vowel_distances": {
+            "a": 3136.132773745195,
+            "i": 1800404.5840285495,
+            "u": 1960466.6678246248,
+            "e": 11814722.21349004,
+            "o": 7845221.931719718
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Fed",
+          "correct": false,
+          "distance": 3124.638111232706,
+          "final_vowel_distances": {
+            "a": 3124.638111232706,
+            "i": 1801830.4137714177,
+            "u": 1141053.060190765,
+            "e": 10140679.113705542,
+            "o": 6895223.138615551
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Fed",
+          "correct": false,
+          "distance": 3153.0961283879765,
+          "final_vowel_distances": {
+            "a": 3153.0961283879765,
+            "i": 2182110.940277897,
+            "u": 916408.4746020212,
+            "e": 12174189.273008743,
+            "o": 6090693.632393918
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Fed",
+          "correct": false,
+          "distance": 2480.8209601349945,
+          "final_vowel_distances": {
+            "a": 2480.8209601349945,
+            "i": 3021149.9574522544,
+            "u": 1440244.5107125586,
+            "e": 12316990.301155016,
+            "o": 8031636.173793036
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Fed",
+          "correct": false,
+          "distance": 2845.426224113829,
+          "final_vowel_distances": {
+            "a": 2845.426224113829,
+            "i": 2016134.3814370933,
+            "u": 1713415.1254250966,
+            "e": 12187425.067971827,
+            "o": 5626559.938316383
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Akbar",
+          "correct": true,
+          "distance": 2103.554877439283,
+          "final_vowel_distances": {
+            "a": 2103.554877439283,
+            "i": 2882906.188621582,
+            "u": 2701487.8167007565,
+            "e": 13287232.87934198,
+            "o": 8991853.981703453
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 2002.555128800824,
+          "final_vowel_distances": {
+            "a": 2002.555128800824,
+            "i": 2503052.940987187,
+            "u": 1117760.4934313153,
+            "e": 11494340.558187911,
+            "o": 6515234.126659795
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 3273.6638945351647,
+          "final_vowel_distances": {
+            "a": 3273.6638945351647,
+            "i": 2475251.7405799306,
+            "u": 1245795.8274646413,
+            "e": 11703502.383004865,
+            "o": 6889517.544609834
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 2448.880677572042,
+          "final_vowel_distances": {
+            "a": 2448.880677572042,
+            "i": 3568323.732175106,
+            "u": 2244536.49814172,
+            "e": 11651738.78460481,
+            "o": 7890746.381255026
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 2789.638905810834,
+          "final_vowel_distances": {
+            "a": 2789.638905810834,
+            "i": 2249387.9168713423,
+            "u": 1800918.324184605,
+            "e": 12887804.806230582,
+            "o": 6285908.773007539
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Justin",
+          "correct": true,
+          "distance": 2742.1088859076094,
+          "final_vowel_distances": {
+            "a": 2742.1088859076094,
+            "i": 2639454.319963552,
+            "u": 1484490.9531024762,
+            "e": 12203931.455426954,
+            "o": 8328506.659700252
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Justin",
+          "correct": false,
+          "distance": 2910.15741752407,
+          "final_vowel_distances": {
+            "a": 2910.15741752407,
+            "i": 2954378.1983851255,
+            "u": 1558111.831442912,
+            "e": 12726432.035643077,
+            "o": 8476368.05857725
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Justin",
+          "correct": false,
+          "distance": 3346.357952506211,
+          "final_vowel_distances": {
+            "a": 3346.357952506211,
+            "i": 2406854.2768430267,
+            "u": 1465917.1146762625,
+            "e": 12741692.52517,
+            "o": 8307063.906838252
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Justin",
+          "correct": false,
+          "distance": 3163.625589176316,
+          "final_vowel_distances": {
+            "a": 3163.625589176316,
+            "i": 2965864.109914059,
+            "u": 1419417.8793106724,
+            "e": 13456255.581254805,
+            "o": 9330464.289038567
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Justin",
+          "correct": false,
+          "distance": 4780.93588480155,
+          "final_vowel_distances": {
+            "a": 4780.93588480155,
+            "i": 2129745.6077459226,
+            "u": 1087794.3601023993,
+            "e": 13439613.029944083,
+            "o": 8232436.774220201
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 3387.9402100939537,
+          "final_vowel_distances": {
+            "a": 3387.9402100939537,
+            "i": 2556714.9703571466,
+            "u": 1138565.071686533,
+            "e": 12865288.03656376,
+            "o": 8285781.150022287
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 4510.879274275229,
+          "final_vowel_distances": {
+            "a": 4510.879274275229,
+            "i": 2887878.9999508304,
+            "u": 1050884.0844012972,
+            "e": 13355561.906707758,
+            "o": 8557714.876156358
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 4144.9623524830795,
+          "final_vowel_distances": {
+            "a": 4144.9623524830795,
+            "i": 2293256.322842283,
+            "u": 1263711.3968177687,
+            "e": 13018017.09002394,
+            "o": 8189379.202600167
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 2364.0723494261238,
+          "final_vowel_distances": {
+            "a": 2364.0723494261238,
+            "i": 2465198.591271089,
+            "u": 728913.8821472004,
+            "e": 10795603.13790172,
+            "o": 8044741.034855444
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 2961.3690845066253,
+          "final_vowel_distances": {
+            "a": 2961.3690845066253,
+            "i": 1934408.2931314267,
+            "u": 943898.2811305728,
+            "e": 11859302.604220262,
+            "o": 6695290.99567723
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 3919.8037437289095,
+          "final_vowel_distances": {
+            "a": 3919.8037437289095,
+            "i": 1823559.3235684645,
+            "u": 1112578.3884734383,
+            "e": 10085487.227220124,
+            "o": 7975078.876490531
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 2552.7051921468433,
+          "final_vowel_distances": {
+            "a": 2552.7051921468433,
+            "i": 1451305.515353367,
+            "u": 1330965.6980412386,
+            "e": 10129620.863423573,
+            "o": 6368221.403477073
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 2658.78844349127,
+          "final_vowel_distances": {
+            "a": 2658.78844349127,
+            "i": 1450417.0147936214,
+            "u": 421467.7870328857,
+            "e": 9726782.571062343,
+            "o": 5862610.906146039
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 2943.3662168691276,
+          "final_vowel_distances": {
+            "a": 2943.3662168691276,
+            "i": 2171730.443010287,
+            "u": 1596406.0680795992,
+            "e": 9611953.90425496,
+            "o": 8323565.999874696
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 2862.658512864946,
+          "final_vowel_distances": {
+            "a": 2862.658512864946,
+            "i": 1893203.5041522577,
+            "u": 1423487.9699526236,
+            "e": 9941401.27437994,
+            "o": 7683610.972752649
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Angie",
+          "correct": true,
+          "distance": 3424.504370494622,
+          "final_vowel_distances": {
+            "a": 3424.504370494622,
+            "i": 2639817.2957366626,
+            "u": 1287094.9879437396,
+            "e": 11826486.286044339,
+            "o": 9619744.4017428
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Angie",
+          "correct": false,
+          "distance": 2992.4989046311443,
+          "final_vowel_distances": {
+            "a": 2992.4989046311443,
+            "i": 1227502.0889443501,
+            "u": 1643753.770036063,
+            "e": 13187089.442701543,
+            "o": 6105021.056926423
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Angie",
+          "correct": false,
+          "distance": 2449.134408925389,
+          "final_vowel_distances": {
+            "a": 2449.134408925389,
+            "i": 2013439.1841723968,
+            "u": 973505.2648600257,
+            "e": 12564590.414995223,
+            "o": 6337249.888302659
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Angie",
+          "correct": false,
+          "distance": 2981.154194211289,
+          "final_vowel_distances": {
+            "a": 2981.154194211289,
+            "i": 1988895.9308596456,
+            "u": 2678492.0413661143,
+            "e": 8935036.656465659,
+            "o": 8145978.269429906
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Angie",
+          "correct": false,
+          "distance": 2531.0639137958874,
+          "final_vowel_distances": {
+            "a": 2531.0639137958874,
+            "i": 3551670.5661066975,
+            "u": 1289588.5741775061,
+            "e": 10361974.727591868,
+            "o": 6816665.519366269
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Adnan",
+          "correct": true,
+          "distance": 3663.439280558123,
+          "final_vowel_distances": {
+            "a": 3663.439280558123,
+            "i": 2142681.0658116923,
+            "u": 2203209.9417994083,
+            "e": 11215753.072096488,
+            "o": 8455957.361381898
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 2825.2499600927713,
+          "final_vowel_distances": {
+            "a": 2825.2499600927713,
+            "i": 1929113.9677758068,
+            "u": 945516.4247442704,
+            "e": 10206049.209779875,
+            "o": 7300584.84362217
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 3276.233484321963,
+          "final_vowel_distances": {
+            "a": 3276.233484321963,
+            "i": 1364968.7231519453,
+            "u": 467015.29801981867,
+            "e": 9217347.59239024,
+            "o": 5837790.050876931
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 2700.3920336701667,
+          "final_vowel_distances": {
+            "a": 2700.3920336701667,
+            "i": 2081552.3784928822,
+            "u": 1345127.237981567,
+            "e": 9964161.448305255,
+            "o": 7951666.375423896
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 2360.9573908353764,
+          "final_vowel_distances": {
+            "a": 2360.9573908353764,
+            "i": 2181281.0602193098,
+            "u": 728861.0843399497,
+            "e": 11100342.330168553,
+            "o": 6517100.958658111
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - a 2.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "Azul",
+          "correct": true,
+          "distance": 3430.945133206194,
+          "final_vowel_distances": {
+            "a": 3430.945133206194,
+            "i": 2201969.718234545,
+            "u": 649002.0540477169,
+            "e": 10821980.668548042,
+            "o": 6850538.341989055
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - i 2.wav",
+          "true": "i",
+          "predicted": "a",
+          "person": "Azul",
+          "correct": false,
+          "distance": 2551.0700404860754,
+          "final_vowel_distances": {
+            "a": 2551.0700404860754,
+            "i": 2422711.1450340333,
+            "u": 719279.8241282767,
+            "e": 10398632.016927263,
+            "o": 8461684.439679926
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - u 2.wav",
+          "true": "u",
+          "predicted": "a",
+          "person": "Azul",
+          "correct": false,
+          "distance": 3301.1956165179454,
+          "final_vowel_distances": {
+            "a": 3301.1956165179454,
+            "i": 2356361.1995483395,
+            "u": 641484.8405879728,
+            "e": 11410862.847409181,
+            "o": 6903687.951659422
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - e 2.wav",
+          "true": "e",
+          "predicted": "a",
+          "person": "Azul",
+          "correct": false,
+          "distance": 4027.629046920431,
+          "final_vowel_distances": {
+            "a": 4027.629046920431,
+            "i": 2443456.766357833,
+            "u": 1440840.643767275,
+            "e": 9907265.932349643,
+            "o": 7064672.011749911
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - o 2.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "Azul",
+          "correct": false,
+          "distance": 3553.206398425738,
+          "final_vowel_distances": {
+            "a": 3553.206398425738,
+            "i": 2402369.764923056,
+            "u": 665745.0179233805,
+            "e": 10827277.941322304,
+            "o": 6695010.408211968
+          }
+        }
+      ]
+    },
+    "naufal": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 28.000000000000004,
+      "average_accuracy": 54.0,
+      "closed_results": [
+        {
+          "audio": "templates_us/densu/densu - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "densu",
+          "correct": true,
+          "distance": 70.20693261385283,
+          "final_vowel_distances": {
+            "a": 70.20693261385283,
+            "i": 101.27023452333354,
+            "u": 76.23145002275523,
+            "e": 96.87690475273384,
+            "o": 74.32156369473651
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "densu",
+          "correct": true,
+          "distance": 53.94922614485301,
+          "final_vowel_distances": {
+            "a": 95.73067873319354,
+            "i": 53.94922614485301,
+            "u": 75.70620428738759,
+            "e": 78.54623557764256,
+            "o": 100.74842015970337
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "densu",
+          "correct": true,
+          "distance": 55.617798596711,
+          "final_vowel_distances": {
+            "a": 75.82648099916297,
+            "i": 92.3292906805688,
+            "u": 55.617798596711,
+            "e": 105.24248771013549,
+            "o": 72.83687286572119
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "densu",
+          "correct": true,
+          "distance": 30.641642893637712,
+          "final_vowel_distances": {
+            "a": 73.9450631400302,
+            "i": 64.11775939488687,
+            "u": 65.06952386577971,
+            "e": 30.641642893637712,
+            "o": 74.42787996551228
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "densu",
+          "correct": false,
+          "distance": 54.91726353975813,
+          "final_vowel_distances": {
+            "a": 54.91726353975813,
+            "i": 108.87390723470548,
+            "u": 65.11294455283877,
+            "e": 101.61563996278342,
+            "o": 61.56026052593779
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "hira",
+          "correct": true,
+          "distance": 63.27449979910856,
+          "final_vowel_distances": {
+            "a": 63.27449979910856,
+            "i": 89.66127958921668,
+            "u": 72.94383561022359,
+            "e": 108.55963303850531,
+            "o": 77.6447600831799
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - i 3.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "hira",
+          "correct": false,
+          "distance": 80.02112238190226,
+          "final_vowel_distances": {
+            "a": 89.33208114875363,
+            "i": 90.11866106748317,
+            "u": 80.02112238190226,
+            "e": 81.30577144924688,
+            "o": 94.09859892058365
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "hira",
+          "correct": true,
+          "distance": 52.23147493459865,
+          "final_vowel_distances": {
+            "a": 82.78913552659226,
+            "i": 87.16871204177413,
+            "u": 52.23147493459865,
+            "e": 94.86917432731775,
+            "o": 56.919974965251726
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "hira",
+          "correct": true,
+          "distance": 31.66494068546727,
+          "final_vowel_distances": {
+            "a": 93.15785521479124,
+            "i": 67.29426440868995,
+            "u": 67.23175005571517,
+            "e": 31.66494068546727,
+            "o": 82.47109638762022
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "hira",
+          "correct": false,
+          "distance": 52.504903716020046,
+          "final_vowel_distances": {
+            "a": 52.504903716020046,
+            "i": 104.55619556296678,
+            "u": 64.81919796070862,
+            "e": 81.71167040412838,
+            "o": 57.961795400572385
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - a 4.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "naufal",
+          "correct": true,
+          "distance": 57.623123310802896,
+          "final_vowel_distances": {
+            "a": 57.623123310802896,
+            "i": 89.69105590592982,
+            "u": 72.16261714644496,
+            "e": 78.40538689809797,
+            "o": 83.88414321651625
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - i 4.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "naufal",
+          "correct": true,
+          "distance": 59.445597056701445,
+          "final_vowel_distances": {
+            "a": 93.32440406572073,
+            "i": 59.445597056701445,
+            "u": 78.65703179524293,
+            "e": 75.98789756424138,
+            "o": 142.42493945778548
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - u 4.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "naufal",
+          "correct": true,
+          "distance": 52.99689590214297,
+          "final_vowel_distances": {
+            "a": 83.93048171149994,
+            "i": 103.4871429289807,
+            "u": 52.99689590214297,
+            "e": 83.60599102180915,
+            "o": 68.36388345579945
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - e 4.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "naufal",
+          "correct": true,
+          "distance": 71.90308386547775,
+          "final_vowel_distances": {
+            "a": 79.46792901507392,
+            "i": 83.38708130335242,
+            "u": 76.33230035687173,
+            "e": 71.90308386547775,
+            "o": 100.62279130096242
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - o 4.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "naufal",
+          "correct": true,
+          "distance": 64.21114194642179,
+          "final_vowel_distances": {
+            "a": 67.4120158321509,
+            "i": 94.52484569273413,
+            "u": 65.4304768923344,
+            "e": 71.15391142718344,
+            "o": 64.21114194642179
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "wiga",
+          "correct": true,
+          "distance": 53.12764443108395,
+          "final_vowel_distances": {
+            "a": 53.12764443108395,
+            "i": 104.10897409811042,
+            "u": 71.05797686661428,
+            "e": 84.9118987432174,
+            "o": 70.02915465159076
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "wiga",
+          "correct": true,
+          "distance": 80.4007697705937,
+          "final_vowel_distances": {
+            "a": 88.851318362536,
+            "i": 80.4007697705937,
+            "u": 83.49828467743127,
+            "e": 114.41006166866231,
+            "o": 126.23249689349717
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": true,
+          "distance": 52.92889591198365,
+          "final_vowel_distances": {
+            "a": 89.005390406393,
+            "i": 108.42085996295823,
+            "u": 52.92889591198365,
+            "e": 105.41072751117518,
+            "o": 71.69918257141919
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - e 3.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 86.2585847749919,
+          "final_vowel_distances": {
+            "a": 109.75781937087078,
+            "i": 90.70285078164811,
+            "u": 86.2585847749919,
+            "e": 143.03129469736947,
+            "o": 162.30771887097464
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - o 3.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 63.533337945360394,
+          "final_vowel_distances": {
+            "a": 95.8924107682069,
+            "i": 126.28842980946284,
+            "u": 63.533337945360394,
+            "e": 123.40728971225417,
+            "o": 94.79622186441587
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "zya",
+          "correct": true,
+          "distance": 52.85073309465736,
+          "final_vowel_distances": {
+            "a": 52.85073309465736,
+            "i": 100.62449586396984,
+            "u": 63.685592173142204,
+            "e": 70.3880945340593,
+            "o": 68.49342736339703
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "zya",
+          "correct": true,
+          "distance": 47.460612056624626,
+          "final_vowel_distances": {
+            "a": 100.8038431582459,
+            "i": 47.460612056624626,
+            "u": 66.47396450061811,
+            "e": 66.77813187452625,
+            "o": 94.13902227650355
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "zya",
+          "correct": true,
+          "distance": 49.187120026426975,
+          "final_vowel_distances": {
+            "a": 76.46713121445973,
+            "i": 109.24221101005985,
+            "u": 49.187120026426975,
+            "e": 92.96929701024084,
+            "o": 59.00174779619559
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "zya",
+          "correct": true,
+          "distance": 51.347806852813704,
+          "final_vowel_distances": {
+            "a": 73.68146192871792,
+            "i": 90.70246672233634,
+            "u": 64.82131246373343,
+            "e": 51.347806852813704,
+            "o": 75.40714803727202
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - o 3.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "zya",
+          "correct": true,
+          "distance": 61.40856084173831,
+          "final_vowel_distances": {
+            "a": 68.83250726827595,
+            "i": 90.73556302977619,
+            "u": 70.56736684963012,
+            "e": 83.10186768998362,
+            "o": 61.40856084173831
+          }
+        }
+      ],
+      "open_results": [
+        {
+          "audio": "templates_other/Dabbir/dab - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 297.465330464885,
+          "final_vowel_distances": {
+            "a": 953.012862443282,
+            "i": 1219.3463818044775,
+            "u": 297.465330464885,
+            "e": 541.5275663003804,
+            "o": 953.6725148558875
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 379.03845483492813,
+          "final_vowel_distances": {
+            "a": 1213.471060268664,
+            "i": 575.7621166278049,
+            "u": 379.03845483492813,
+            "e": 429.1024420673652,
+            "o": 1208.9971202496192
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 183.43467626806606,
+          "final_vowel_distances": {
+            "a": 907.8212141477032,
+            "i": 818.5053147932343,
+            "u": 183.43467626806606,
+            "e": 379.2640274120492,
+            "o": 742.2620027337207
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - e 2.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 256.61781901226124,
+          "final_vowel_distances": {
+            "a": 743.2668977119546,
+            "i": 1087.0786404355074,
+            "u": 265.7022598728321,
+            "e": 256.61781901226124,
+            "o": 634.0544208300811
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 231.09916209376365,
+          "final_vowel_distances": {
+            "a": 997.3579246842636,
+            "i": 1176.6450752461556,
+            "u": 231.09916209376365,
+            "e": 358.180134652053,
+            "o": 802.4975972499396
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 321.8757428106514,
+          "final_vowel_distances": {
+            "a": 1651.0538033784571,
+            "i": 1626.2725036835218,
+            "u": 321.8757428106514,
+            "e": 708.6278630862865,
+            "o": 1835.977306100518
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 417.8224081034229,
+          "final_vowel_distances": {
+            "a": 1873.3324067057868,
+            "i": 741.8630187422254,
+            "u": 417.8224081034229,
+            "e": 663.9229773315716,
+            "o": 2351.9598621810132
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": true,
+          "distance": 402.5362679724347,
+          "final_vowel_distances": {
+            "a": 1390.755010260061,
+            "i": 1125.5392513164143,
+            "u": 402.5362679724347,
+            "e": 586.3271965610323,
+            "o": 1393.8678726856451
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 324.8456463269443,
+          "final_vowel_distances": {
+            "a": 1381.391883985362,
+            "i": 996.5950957658291,
+            "u": 324.8456463269443,
+            "e": 639.7612306342804,
+            "o": 2276.0808875363787
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 289.5584576265126,
+          "final_vowel_distances": {
+            "a": 1050.632197115384,
+            "i": 1470.5637915384548,
+            "u": 289.5584576265126,
+            "e": 636.9799230968491,
+            "o": 968.6357791844558
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 498.79817920110116,
+          "final_vowel_distances": {
+            "a": 1142.027255263394,
+            "i": 980.8577005154366,
+            "u": 498.79817920110116,
+            "e": 527.8896015624563,
+            "o": 1691.2138455889465
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 384.3996957374308,
+          "final_vowel_distances": {
+            "a": 977.0848049717724,
+            "i": 865.9188262438062,
+            "u": 384.3996957374308,
+            "e": 495.5633073596539,
+            "o": 1172.429741020007
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": true,
+          "distance": 246.50357622668184,
+          "final_vowel_distances": {
+            "a": 1268.3132267298133,
+            "i": 827.5248649468464,
+            "u": 246.50357622668184,
+            "e": 367.0479755094516,
+            "o": 1061.686332587003
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 448.7420838948013,
+          "final_vowel_distances": {
+            "a": 2492.604423958884,
+            "i": 945.702723675247,
+            "u": 448.7420838948013,
+            "e": 516.0040534733749,
+            "o": 2619.020151467274
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 338.0455239557811,
+          "final_vowel_distances": {
+            "a": 1153.7860244344645,
+            "i": 839.7748896315721,
+            "u": 338.0455239557811,
+            "e": 742.5762503357278,
+            "o": 1575.7607307432245
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 411.13188816558494,
+          "final_vowel_distances": {
+            "a": 1466.13403588859,
+            "i": 935.7109374832045,
+            "u": 411.13188816558494,
+            "e": 484.6354666335022,
+            "o": 1760.5525728114997
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 450.14048939728633,
+          "final_vowel_distances": {
+            "a": 1310.290110275722,
+            "i": 618.2284680500356,
+            "u": 450.14048939728633,
+            "e": 473.38759777977333,
+            "o": 1069.829107748041
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": true,
+          "distance": 246.94194499571438,
+          "final_vowel_distances": {
+            "a": 1218.338035778499,
+            "i": 637.0958933225405,
+            "u": 246.94194499571438,
+            "e": 478.1356322334943,
+            "o": 844.0728252995872
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 485.61460324551325,
+          "final_vowel_distances": {
+            "a": 1590.0625599249624,
+            "i": 1116.340847340797,
+            "u": 485.61460324551325,
+            "e": 626.1805664427341,
+            "o": 1483.4426151457712
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 429.4365812319432,
+          "final_vowel_distances": {
+            "a": 1276.963641033914,
+            "i": 881.7793213108467,
+            "u": 429.4365812319432,
+            "e": 464.19394775439287,
+            "o": 1282.75557695708
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 291.05802716512045,
+          "final_vowel_distances": {
+            "a": 1808.2527964923408,
+            "i": 1297.8604168459758,
+            "u": 291.05802716512045,
+            "e": 753.047830150232,
+            "o": 1874.4389465593902
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 296.8494313521283,
+          "final_vowel_distances": {
+            "a": 2041.8615103364773,
+            "i": 948.120678337627,
+            "u": 296.8494313521283,
+            "e": 642.7746541095373,
+            "o": 2246.8600699065264
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": true,
+          "distance": 231.23833436181357,
+          "final_vowel_distances": {
+            "a": 3190.2293676650565,
+            "i": 1537.39915780109,
+            "u": 231.23833436181357,
+            "e": 797.3318095969325,
+            "o": 2453.703320725817
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 334.741550970212,
+          "final_vowel_distances": {
+            "a": 2057.1199436979246,
+            "i": 1160.1768316247537,
+            "u": 334.741550970212,
+            "e": 592.0289478967987,
+            "o": 2476.465823626531
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 186.39438458864933,
+          "final_vowel_distances": {
+            "a": 1569.932508184611,
+            "i": 1503.1774955539229,
+            "u": 186.39438458864933,
+            "e": 609.3759137333963,
+            "o": 1630.3398016923359
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 374.48997869804424,
+          "final_vowel_distances": {
+            "a": 1450.0915542661903,
+            "i": 1629.4729372791041,
+            "u": 374.48997869804424,
+            "e": 606.2244678942038,
+            "o": 2009.565638681425
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 363.91131018095166,
+          "final_vowel_distances": {
+            "a": 1694.0457983339318,
+            "i": 1014.1125527660428,
+            "u": 363.91131018095166,
+            "e": 639.4100491867224,
+            "o": 2012.1579186066047
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 208.21972814181586,
+          "final_vowel_distances": {
+            "a": 1827.9172114554174,
+            "i": 1531.5450155653614,
+            "u": 208.21972814181586,
+            "e": 625.5059779695043,
+            "o": 1544.8064025142096
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - e 2.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 398.73881039249517,
+          "final_vowel_distances": {
+            "a": 997.3726715977529,
+            "i": 875.4420638635557,
+            "u": 501.1668058297589,
+            "e": 398.73881039249517,
+            "o": 1536.4567919419253
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 346.2198663199865,
+          "final_vowel_distances": {
+            "a": 1408.670053080424,
+            "i": 700.1391584093584,
+            "u": 346.2198663199865,
+            "e": 471.6748138861364,
+            "o": 1205.9928682264822
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 437.4959896806591,
+          "final_vowel_distances": {
+            "a": 1077.7392572691035,
+            "i": 692.4714653585166,
+            "u": 437.4959896806591,
+            "e": 720.1092465539151,
+            "o": 1319.917794969287
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 446.83480775200337,
+          "final_vowel_distances": {
+            "a": 1116.8138657880365,
+            "i": 473.0151177247663,
+            "u": 446.83480775200337,
+            "e": 547.8928160022598,
+            "o": 1230.091807884154
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 259.3911861865333,
+          "final_vowel_distances": {
+            "a": 971.0266273070056,
+            "i": 1058.0595819168495,
+            "u": 259.3911861865333,
+            "e": 339.39674393178797,
+            "o": 1253.9040359052065
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - e 2.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 328.204205927429,
+          "final_vowel_distances": {
+            "a": 945.2559227644828,
+            "i": 1109.5732974146906,
+            "u": 354.76890377175505,
+            "e": 328.204205927429,
+            "o": 960.2707278644839
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 262.8104546214149,
+          "final_vowel_distances": {
+            "a": 1362.3017281513494,
+            "i": 551.5075782208196,
+            "u": 262.8104546214149,
+            "e": 405.70344410778756,
+            "o": 946.8607291237007
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 334.5476401202293,
+          "final_vowel_distances": {
+            "a": 1101.8840512757822,
+            "i": 959.2136261987966,
+            "u": 334.5476401202293,
+            "e": 899.52055859758,
+            "o": 1306.861509980996
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 438.1255846761974,
+          "final_vowel_distances": {
+            "a": 1234.8945014646115,
+            "i": 589.6008441701401,
+            "u": 438.1255846761974,
+            "e": 686.2686099438362,
+            "o": 817.2556993602071
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": true,
+          "distance": 350.03718525873364,
+          "final_vowel_distances": {
+            "a": 1389.7634739461137,
+            "i": 1061.0992081574727,
+            "u": 350.03718525873364,
+            "e": 686.7030600877862,
+            "o": 898.3061255267243
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - e 2.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "Angie",
+          "correct": true,
+          "distance": 362.94291822478743,
+          "final_vowel_distances": {
+            "a": 1271.1677553850643,
+            "i": 645.4308971148581,
+            "u": 401.4766270285806,
+            "e": 362.94291822478743,
+            "o": 1453.6729417905888
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 267.2523864006642,
+          "final_vowel_distances": {
+            "a": 1063.2910058269583,
+            "i": 953.7493678289507,
+            "u": 267.2523864006642,
+            "e": 518.7799783090663,
+            "o": 837.0839163469545
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 326.3366777724891,
+          "final_vowel_distances": {
+            "a": 767.6090048241757,
+            "i": 541.3755722674574,
+            "u": 326.3366777724891,
+            "e": 693.8175737189976,
+            "o": 1543.4713580431305
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 198.0858947294754,
+          "final_vowel_distances": {
+            "a": 1106.486520938776,
+            "i": 703.5551205393667,
+            "u": 198.0858947294754,
+            "e": 488.9131763854539,
+            "o": 1098.0351019865168
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": true,
+          "distance": 274.1924663824723,
+          "final_vowel_distances": {
+            "a": 1160.7528694707553,
+            "i": 888.7060996828858,
+            "u": 274.1924663824723,
+            "e": 339.02778349315776,
+            "o": 1018.8364209279398
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 252.54112601759599,
+          "final_vowel_distances": {
+            "a": 1077.3185603970262,
+            "i": 746.7279206889134,
+            "u": 252.54112601759599,
+            "e": 316.02145602175136,
+            "o": 1340.103528205818
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 287.30245701184475,
+          "final_vowel_distances": {
+            "a": 849.398899257899,
+            "i": 1169.75050613681,
+            "u": 287.30245701184475,
+            "e": 380.3439892239964,
+            "o": 1042.4138660397123
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 370.58331605675676,
+          "final_vowel_distances": {
+            "a": 1091.628426901586,
+            "i": 1442.119875779231,
+            "u": 370.58331605675676,
+            "e": 746.8067915733182,
+            "o": 880.0595835732851
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 255.57875293731186,
+          "final_vowel_distances": {
+            "a": 1161.548463374238,
+            "i": 796.8283030315437,
+            "u": 255.57875293731186,
+            "e": 406.22114653013904,
+            "o": 814.8597944798877
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": true,
+          "distance": 163.28555464497137,
+          "final_vowel_distances": {
+            "a": 1183.7364352888387,
+            "i": 1325.1770557963227,
+            "u": 163.28555464497137,
+            "e": 473.9881380507384,
+            "o": 741.0533094097291
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 220.43043096589483,
+          "final_vowel_distances": {
+            "a": 973.8439087038128,
+            "i": 1091.7282494242133,
+            "u": 220.43043096589483,
+            "e": 382.648889615622,
+            "o": 896.7556465362735
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 224.03082082765818,
+          "final_vowel_distances": {
+            "a": 1000.9846843305887,
+            "i": 1119.8172436775271,
+            "u": 224.03082082765818,
+            "e": 442.74848808996086,
+            "o": 677.5402722533838
+          }
+        }
+      ]
+    },
+    "zya": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 20.0,
+      "average_accuracy": 50.0,
+      "closed_results": [
+        {
+          "audio": "templates_us/densu/densu - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "densu",
+          "correct": true,
+          "distance": 70.20693261385283,
+          "final_vowel_distances": {
+            "a": 70.20693261385283,
+            "i": 101.27023452333354,
+            "u": 76.23145002275523,
+            "e": 96.87690475273384,
+            "o": 74.32156369473651
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "densu",
+          "correct": true,
+          "distance": 53.94922614485301,
+          "final_vowel_distances": {
+            "a": 95.73067873319354,
+            "i": 53.94922614485301,
+            "u": 75.70620428738759,
+            "e": 78.54623557764256,
+            "o": 100.74842015970337
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "densu",
+          "correct": true,
+          "distance": 55.617798596711,
+          "final_vowel_distances": {
+            "a": 75.82648099916297,
+            "i": 92.3292906805688,
+            "u": 55.617798596711,
+            "e": 105.24248771013549,
+            "o": 72.83687286572119
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "densu",
+          "correct": true,
+          "distance": 30.641642893637712,
+          "final_vowel_distances": {
+            "a": 73.9450631400302,
+            "i": 64.11775939488687,
+            "u": 65.06952386577971,
+            "e": 30.641642893637712,
+            "o": 74.42787996551228
+          }
+        },
+        {
+          "audio": "templates_us/densu/densu - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "densu",
+          "correct": false,
+          "distance": 54.91726353975813,
+          "final_vowel_distances": {
+            "a": 54.91726353975813,
+            "i": 108.87390723470548,
+            "u": 65.11294455283877,
+            "e": 101.61563996278342,
+            "o": 61.56026052593779
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "hira",
+          "correct": true,
+          "distance": 63.27449979910856,
+          "final_vowel_distances": {
+            "a": 63.27449979910856,
+            "i": 89.66127958921668,
+            "u": 72.94383561022359,
+            "e": 108.55963303850531,
+            "o": 77.6447600831799
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - i 3.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "hira",
+          "correct": false,
+          "distance": 80.02112238190226,
+          "final_vowel_distances": {
+            "a": 89.33208114875363,
+            "i": 90.11866106748317,
+            "u": 80.02112238190226,
+            "e": 81.30577144924688,
+            "o": 94.09859892058365
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "hira",
+          "correct": true,
+          "distance": 52.23147493459865,
+          "final_vowel_distances": {
+            "a": 82.78913552659226,
+            "i": 87.16871204177413,
+            "u": 52.23147493459865,
+            "e": 94.86917432731775,
+            "o": 56.919974965251726
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "hira",
+          "correct": true,
+          "distance": 31.66494068546727,
+          "final_vowel_distances": {
+            "a": 93.15785521479124,
+            "i": 67.29426440868995,
+            "u": 67.23175005571517,
+            "e": 31.66494068546727,
+            "o": 82.47109638762022
+          }
+        },
+        {
+          "audio": "templates_us/hira/hira - o 3.wav",
+          "true": "o",
+          "predicted": "a",
+          "person": "hira",
+          "correct": false,
+          "distance": 52.504903716020046,
+          "final_vowel_distances": {
+            "a": 52.504903716020046,
+            "i": 104.55619556296678,
+            "u": 64.81919796070862,
+            "e": 81.71167040412838,
+            "o": 57.961795400572385
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - a 4.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "naufal",
+          "correct": true,
+          "distance": 57.623123310802896,
+          "final_vowel_distances": {
+            "a": 57.623123310802896,
+            "i": 89.69105590592982,
+            "u": 72.16261714644496,
+            "e": 78.40538689809797,
+            "o": 83.88414321651625
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - i 4.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "naufal",
+          "correct": true,
+          "distance": 59.445597056701445,
+          "final_vowel_distances": {
+            "a": 93.32440406572073,
+            "i": 59.445597056701445,
+            "u": 78.65703179524293,
+            "e": 75.98789756424138,
+            "o": 142.42493945778548
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - u 4.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "naufal",
+          "correct": true,
+          "distance": 52.99689590214297,
+          "final_vowel_distances": {
+            "a": 83.93048171149994,
+            "i": 103.4871429289807,
+            "u": 52.99689590214297,
+            "e": 83.60599102180915,
+            "o": 68.36388345579945
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - e 4.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "naufal",
+          "correct": true,
+          "distance": 71.90308386547775,
+          "final_vowel_distances": {
+            "a": 79.46792901507392,
+            "i": 83.38708130335242,
+            "u": 76.33230035687173,
+            "e": 71.90308386547775,
+            "o": 100.62279130096242
+          }
+        },
+        {
+          "audio": "templates_us/naufal/naufal - o 4.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "naufal",
+          "correct": true,
+          "distance": 64.21114194642179,
+          "final_vowel_distances": {
+            "a": 67.4120158321509,
+            "i": 94.52484569273413,
+            "u": 65.4304768923344,
+            "e": 71.15391142718344,
+            "o": 64.21114194642179
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "wiga",
+          "correct": true,
+          "distance": 53.12764443108395,
+          "final_vowel_distances": {
+            "a": 53.12764443108395,
+            "i": 104.10897409811042,
+            "u": 71.05797686661428,
+            "e": 84.9118987432174,
+            "o": 70.02915465159076
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "wiga",
+          "correct": true,
+          "distance": 80.4007697705937,
+          "final_vowel_distances": {
+            "a": 88.851318362536,
+            "i": 80.4007697705937,
+            "u": 83.49828467743127,
+            "e": 114.41006166866231,
+            "o": 126.23249689349717
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": true,
+          "distance": 52.92889591198365,
+          "final_vowel_distances": {
+            "a": 89.005390406393,
+            "i": 108.42085996295823,
+            "u": 52.92889591198365,
+            "e": 105.41072751117518,
+            "o": 71.69918257141919
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - e 3.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 86.2585847749919,
+          "final_vowel_distances": {
+            "a": 109.75781937087078,
+            "i": 90.70285078164811,
+            "u": 86.2585847749919,
+            "e": 143.03129469736947,
+            "o": 162.30771887097464
+          }
+        },
+        {
+          "audio": "templates_us/wiga/wiga - o 3.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "wiga",
+          "correct": false,
+          "distance": 63.533337945360394,
+          "final_vowel_distances": {
+            "a": 95.8924107682069,
+            "i": 126.28842980946284,
+            "u": 63.533337945360394,
+            "e": 123.40728971225417,
+            "o": 94.79622186441587
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - a 3.wav",
+          "true": "a",
+          "predicted": "a",
+          "person": "zya",
+          "correct": true,
+          "distance": 52.85073309465736,
+          "final_vowel_distances": {
+            "a": 52.85073309465736,
+            "i": 100.62449586396984,
+            "u": 63.685592173142204,
+            "e": 70.3880945340593,
+            "o": 68.49342736339703
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - i 3.wav",
+          "true": "i",
+          "predicted": "i",
+          "person": "zya",
+          "correct": true,
+          "distance": 47.460612056624626,
+          "final_vowel_distances": {
+            "a": 100.8038431582459,
+            "i": 47.460612056624626,
+            "u": 66.47396450061811,
+            "e": 66.77813187452625,
+            "o": 94.13902227650355
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - u 3.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "zya",
+          "correct": true,
+          "distance": 49.187120026426975,
+          "final_vowel_distances": {
+            "a": 76.46713121445973,
+            "i": 109.24221101005985,
+            "u": 49.187120026426975,
+            "e": 92.96929701024084,
+            "o": 59.00174779619559
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - e 3.wav",
+          "true": "e",
+          "predicted": "e",
+          "person": "zya",
+          "correct": true,
+          "distance": 51.347806852813704,
+          "final_vowel_distances": {
+            "a": 73.68146192871792,
+            "i": 90.70246672233634,
+            "u": 64.82131246373343,
+            "e": 51.347806852813704,
+            "o": 75.40714803727202
+          }
+        },
+        {
+          "audio": "templates_us/zya/zya - o 3.wav",
+          "true": "o",
+          "predicted": "o",
+          "person": "zya",
+          "correct": true,
+          "distance": 61.40856084173831,
+          "final_vowel_distances": {
+            "a": 68.83250726827595,
+            "i": 90.73556302977619,
+            "u": 70.56736684963012,
+            "e": 83.10186768998362,
+            "o": 61.40856084173831
+          }
+        }
+      ],
+      "open_results": [
+        {
+          "audio": "templates_other/Dabbir/dab - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 6383.650100866479,
+          "final_vowel_distances": {
+            "a": 5171801.124879722,
+            "i": 5277075.551054883,
+            "u": 6383.650100866479,
+            "e": 2813356.336832216,
+            "o": 5126479.269233052
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 6897.2335521415725,
+          "final_vowel_distances": {
+            "a": 7980893.004229725,
+            "i": 3234162.220818681,
+            "u": 6897.2335521415725,
+            "e": 3165379.820977412,
+            "o": 4342792.305747178
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": true,
+          "distance": 4315.2971178572625,
+          "final_vowel_distances": {
+            "a": 6684657.49538749,
+            "i": 4944218.155744649,
+            "u": 4315.2971178572625,
+            "e": 3411967.6463935724,
+            "o": 3813482.0752467006
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 5345.962610376385,
+          "final_vowel_distances": {
+            "a": 7057841.170158774,
+            "i": 3700302.85739365,
+            "u": 5345.962610376385,
+            "e": 3047416.0197981764,
+            "o": 4482269.194347816
+          }
+        },
+        {
+          "audio": "templates_other/Dabbir/dab - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Dabbir",
+          "correct": false,
+          "distance": 4091.4876263966894,
+          "final_vowel_distances": {
+            "a": 6613531.706745185,
+            "i": 4458389.605819699,
+            "u": 4091.4876263966894,
+            "e": 2751316.6524538053,
+            "o": 3858227.856140165
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 6940.603874896372,
+          "final_vowel_distances": {
+            "a": 8178290.460820138,
+            "i": 5012556.269610361,
+            "u": 6940.603874896372,
+            "e": 4546672.402528088,
+            "o": 5319716.50227853
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 9889.523435654437,
+          "final_vowel_distances": {
+            "a": 7491369.762312568,
+            "i": 4494699.935802746,
+            "u": 9889.523435654437,
+            "e": 4575337.39957188,
+            "o": 6479116.810672782
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": true,
+          "distance": 6070.305092830262,
+          "final_vowel_distances": {
+            "a": 6273819.098105061,
+            "i": 5712488.329483911,
+            "u": 6070.305092830262,
+            "e": 4598579.370372517,
+            "o": 5181535.529172613
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 8711.953523848233,
+          "final_vowel_distances": {
+            "a": 7012173.488569699,
+            "i": 4909995.207447856,
+            "u": 8711.953523848233,
+            "e": 4388126.307231698,
+            "o": 5970295.892589424
+          }
+        },
+        {
+          "audio": "templates_other/Evelyn/Evelyn - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Evelyn",
+          "correct": false,
+          "distance": 4581.978459302278,
+          "final_vowel_distances": {
+            "a": 6265397.673908559,
+            "i": 6942459.058415457,
+            "u": 4581.978459302278,
+            "e": 3516016.1427026987,
+            "o": 4644910.672911383
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 8178.575743548591,
+          "final_vowel_distances": {
+            "a": 7411495.813996657,
+            "i": 6298760.610906787,
+            "u": 8178.575743548591,
+            "e": 3530935.20015291,
+            "o": 6905057.800462235
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 10198.749730920761,
+          "final_vowel_distances": {
+            "a": 9460767.184637228,
+            "i": 3813514.896390848,
+            "u": 10198.749730920761,
+            "e": 3535995.4329638793,
+            "o": 6563353.589438836
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": true,
+          "distance": 4601.699908608477,
+          "final_vowel_distances": {
+            "a": 7294623.684653436,
+            "i": 5704312.6967272945,
+            "u": 4601.699908608477,
+            "e": 3422813.2844881997,
+            "o": 5359701.404877437
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 7009.662206378066,
+          "final_vowel_distances": {
+            "a": 8953076.118005192,
+            "i": 5544413.933469702,
+            "u": 7009.662206378066,
+            "e": 4388596.781513517,
+            "o": 7897171.13394387
+          }
+        },
+        {
+          "audio": "templates_other/Fed/Fed - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Fed",
+          "correct": false,
+          "distance": 5920.8573565200795,
+          "final_vowel_distances": {
+            "a": 5385235.065240122,
+            "i": 4932579.900467274,
+            "u": 5920.8573565200795,
+            "e": 2780805.013092712,
+            "o": 5738792.548755918
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 7419.729850650027,
+          "final_vowel_distances": {
+            "a": 6897879.688884086,
+            "i": 5582804.513891721,
+            "u": 7419.729850650027,
+            "e": 4215159.487198635,
+            "o": 5719049.838049762
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 7450.627296610465,
+          "final_vowel_distances": {
+            "a": 8290220.306580409,
+            "i": 2668632.2782688416,
+            "u": 7450.627296610465,
+            "e": 4025490.366764408,
+            "o": 6662803.087652591
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": true,
+          "distance": 4027.0069101673002,
+          "final_vowel_distances": {
+            "a": 7843670.301405933,
+            "i": 4292724.9317413205,
+            "u": 4027.0069101673002,
+            "e": 3383739.5207441165,
+            "o": 3597025.8009415846
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 8527.535253396496,
+          "final_vowel_distances": {
+            "a": 9533225.041309064,
+            "i": 4388814.10621305,
+            "u": 8527.535253396496,
+            "e": 3870477.739839345,
+            "o": 6650332.203107177
+          }
+        },
+        {
+          "audio": "templates_other/Akbar/Akbar - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Akbar",
+          "correct": false,
+          "distance": 9016.537985167348,
+          "final_vowel_distances": {
+            "a": 6881421.765728705,
+            "i": 4498474.722675144,
+            "u": 9016.537985167348,
+            "e": 3621053.534012737,
+            "o": 5341097.8350657495
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 8359.012493839007,
+          "final_vowel_distances": {
+            "a": 7343598.249858412,
+            "i": 5789144.088457179,
+            "u": 8359.012493839007,
+            "e": 4548271.395847143,
+            "o": 5800530.429434207
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 7423.420401660352,
+          "final_vowel_distances": {
+            "a": 7535555.434201963,
+            "i": 5355596.726688941,
+            "u": 7423.420401660352,
+            "e": 5043310.281162017,
+            "o": 6202153.535013604
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": true,
+          "distance": 8333.580463834764,
+          "final_vowel_distances": {
+            "a": 8451428.299853345,
+            "i": 5433845.196968159,
+            "u": 8333.580463834764,
+            "e": 5563746.015774159,
+            "o": 6697114.631046065
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 8494.33331536365,
+          "final_vowel_distances": {
+            "a": 8233424.871251979,
+            "i": 5306670.005433451,
+            "u": 8494.33331536365,
+            "e": 5241531.5195847815,
+            "o": 7240309.234876801
+          }
+        },
+        {
+          "audio": "templates_other/Justin/Justin - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Justin",
+          "correct": false,
+          "distance": 8032.516563182623,
+          "final_vowel_distances": {
+            "a": 8010825.3099061595,
+            "i": 5660645.888686505,
+            "u": 8032.516563182623,
+            "e": 4994687.854455888,
+            "o": 4924703.977273836
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 11099.877617323247,
+          "final_vowel_distances": {
+            "a": 8074955.428953213,
+            "i": 5242354.913466237,
+            "u": 11099.877617323247,
+            "e": 4453004.367961097,
+            "o": 5559218.21314137
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 9776.215155410506,
+          "final_vowel_distances": {
+            "a": 7951486.080093752,
+            "i": 4952135.320161636,
+            "u": 9776.215155410506,
+            "e": 4603293.926854661,
+            "o": 5832776.974908332
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": true,
+          "distance": 8055.625821743641,
+          "final_vowel_distances": {
+            "a": 7703467.792148799,
+            "i": 5542768.872046572,
+            "u": 8055.625821743641,
+            "e": 4247196.658401501,
+            "o": 4994638.771163371
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 4363.728267816284,
+          "final_vowel_distances": {
+            "a": 8624493.10412251,
+            "i": 4197834.543209731,
+            "u": 4363.728267816284,
+            "e": 3934407.65849389,
+            "o": 6410790.968508776
+          }
+        },
+        {
+          "audio": "templates_other/Ucup/Ucup - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Ucup",
+          "correct": false,
+          "distance": 4831.614593665961,
+          "final_vowel_distances": {
+            "a": 6327142.876327365,
+            "i": 4811180.859238789,
+            "u": 4831.614593665961,
+            "e": 3304574.384120049,
+            "o": 4717167.579964948
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 9068.189742813965,
+          "final_vowel_distances": {
+            "a": 7757974.550099107,
+            "i": 4771703.074563849,
+            "u": 9068.189742813965,
+            "e": 2592307.471838785,
+            "o": 5482626.6693006335
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 6957.661534736294,
+          "final_vowel_distances": {
+            "a": 8887284.94897548,
+            "i": 3578876.4156755903,
+            "u": 6957.661534736294,
+            "e": 3285674.363660507,
+            "o": 5926535.897164579
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": true,
+          "distance": 6769.3988036938945,
+          "final_vowel_distances": {
+            "a": 7158938.273711562,
+            "i": 5318824.135349001,
+            "u": 6769.3988036938945,
+            "e": 3377273.1117413635,
+            "o": 5799884.250300914
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 3686.938311677362,
+          "final_vowel_distances": {
+            "a": 8590188.167661881,
+            "i": 4002472.3502736823,
+            "u": 3686.938311677362,
+            "e": 2691063.410108798,
+            "o": 6514764.272314124
+          }
+        },
+        {
+          "audio": "templates_other/Gonza/gon - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Gonza",
+          "correct": false,
+          "distance": 5754.082392630405,
+          "final_vowel_distances": {
+            "a": 6442369.255219129,
+            "i": 3086426.8775180797,
+            "u": 5754.082392630405,
+            "e": 3095831.5339286216,
+            "o": 3728818.5733355097
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 6619.019262420585,
+          "final_vowel_distances": {
+            "a": 6905834.989545293,
+            "i": 5086824.979973435,
+            "u": 6619.019262420585,
+            "e": 3871076.5721281716,
+            "o": 5513548.013877924
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 6266.483832464201,
+          "final_vowel_distances": {
+            "a": 8374084.833993289,
+            "i": 3729593.970922351,
+            "u": 6266.483832464201,
+            "e": 3269557.289872451,
+            "o": 4772112.252832263
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": true,
+          "distance": 4334.886531229592,
+          "final_vowel_distances": {
+            "a": 6638726.259336096,
+            "i": 5511386.351722499,
+            "u": 4334.886531229592,
+            "e": 3805128.3635378145,
+            "o": 5333076.685004491
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 8575.42565320201,
+          "final_vowel_distances": {
+            "a": 7627111.819466972,
+            "i": 4967952.136525082,
+            "u": 8575.42565320201,
+            "e": 3413344.522431129,
+            "o": 5631749.859499996
+          }
+        },
+        {
+          "audio": "templates_other/Angie/ji - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Angie",
+          "correct": false,
+          "distance": 4522.596816400395,
+          "final_vowel_distances": {
+            "a": 6389934.125107956,
+            "i": 4016581.4585412075,
+            "u": 4522.596816400395,
+            "e": 4070055.453591773,
+            "o": 4772053.627168703
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 5788.890574288525,
+          "final_vowel_distances": {
+            "a": 4580324.625706075,
+            "i": 4999326.7524168305,
+            "u": 5788.890574288525,
+            "e": 3274379.9704488716,
+            "o": 6291754.838498794
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 4290.370792344048,
+          "final_vowel_distances": {
+            "a": 8391411.259756038,
+            "i": 3545675.481363017,
+            "u": 4290.370792344048,
+            "e": 3739046.343965609,
+            "o": 5015809.084099553
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": true,
+          "distance": 6140.572355825806,
+          "final_vowel_distances": {
+            "a": 7432185.039188462,
+            "i": 3215606.2415027376,
+            "u": 6140.572355825806,
+            "e": 3261869.79763107,
+            "o": 5037817.036678311
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 5982.539371752436,
+          "final_vowel_distances": {
+            "a": 6517540.165034991,
+            "i": 3787196.9747501053,
+            "u": 5982.539371752436,
+            "e": 1872072.544617867,
+            "o": 7093959.112392124
+          }
+        },
+        {
+          "audio": "templates_other/Adnan/nan - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Adnan",
+          "correct": false,
+          "distance": 4646.164989758162,
+          "final_vowel_distances": {
+            "a": 6936985.654473183,
+            "i": 4286216.206445656,
+            "u": 4646.164989758162,
+            "e": 3699625.6184878363,
+            "o": 5277030.560876864
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - a 2.wav",
+          "true": "a",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 5572.680881930151,
+          "final_vowel_distances": {
+            "a": 5159005.684229133,
+            "i": 4879003.039563403,
+            "u": 5572.680881930151,
+            "e": 2477190.692972811,
+            "o": 4221159.012573405
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - i 2.wav",
+          "true": "i",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 8033.233329682597,
+          "final_vowel_distances": {
+            "a": 7988136.666241959,
+            "i": 4822100.012362227,
+            "u": 8033.233329682597,
+            "e": 4754162.550627054,
+            "o": 5036669.473893779
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - u 2.wav",
+          "true": "u",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": true,
+          "distance": 3897.0241053702825,
+          "final_vowel_distances": {
+            "a": 6617594.270484361,
+            "i": 5391027.050626606,
+            "u": 3897.0241053702825,
+            "e": 3626998.543681547,
+            "o": 3872729.9031733777
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - e 2.wav",
+          "true": "e",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 7283.643042543857,
+          "final_vowel_distances": {
+            "a": 7156221.637146312,
+            "i": 5131182.686706418,
+            "u": 7283.643042543857,
+            "e": 2789744.737551712,
+            "o": 4608961.9735471895
+          }
+        },
+        {
+          "audio": "templates_other/Azul/zul - o 2.wav",
+          "true": "o",
+          "predicted": "u",
+          "person": "Azul",
+          "correct": false,
+          "distance": 3664.579382973807,
+          "final_vowel_distances": {
+            "a": 6391424.22355727,
+            "i": 6381605.869191886,
+            "u": 3664.579382973807,
+            "e": 2934978.218209075,
+            "o": 4320986.648095533
+          }
+        }
+      ]
+    },
+    "overall": {
+      "closed_accuracy": 80.0,
+      "open_accuracy": 21.6,
+      "average_accuracy": 50.8
+    }
+  }
+}
