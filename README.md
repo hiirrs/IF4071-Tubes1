@@ -2,7 +2,7 @@
 
 Sistem pengenalan vokal Bahasa Indonesia (a, i, u, e, o) menggunakan metode Dynamic Time Warping (DTW) dan fitur MFCC 39 dimensi.
 
-## 📋 Deskripsi
+## Deskripsi
 
 Proyek ini mengimplementasikan sistem pengenalan vokal otomatis yang dapat:
 - Mengenali 5 vokal dasar Bahasa Indonesia: **a, i, u, e, o**
@@ -11,11 +11,11 @@ Proyek ini mengimplementasikan sistem pengenalan vokal otomatis yang dapat:
 - Preprocessing audio dengan Voice Activity Detection (VAD) dan pre-emphasis
 - Evaluasi dengan dua skenario: **Closed** dan **Open**
 
-## 🗂️ Struktur Proyek
+## Struktur Proyek
 
 ```
 IF4071-TUBES1/
-├── templates_us/          # Dataset training dari 5 orang (densu, hira, naufal, wiga, zya)
+├── templates_us/          # Dataset training dari 5 orang (Denise, Hira, Naufal, Wiga, Zya)
 │   ├── densu/
 │   │   ├── densu - a 1.wav
 │   │   ├── densu - a 2.wav
@@ -26,7 +26,7 @@ IF4071-TUBES1/
 │   ├── naufal/
 │   ├── wiga/
 │   └── zya/
-├── templates_other/       # Dataset testing dari orang lain (Akbar, Evelyn, Fed, Justin, Ucup)
+├── templates_other/       # Dataset testing dari kelompok lain (Akbar, Evelyn, Fed, Justin, Ucup)
 │   ├── Akbar/
 │   ├── Evelyn/
 │   ├── Fed/
@@ -43,7 +43,7 @@ IF4071-TUBES1/
 └── README.md
 ```
 
-## 🚀 Instalasi
+## Instalasi
 
 ### Prerequisites
 
@@ -72,7 +72,7 @@ python_speech_features>=0.6
 fastdtw>=0.3.4
 ```
 
-## 📊 Dataset
+## Dataset
 
 ### Format File Audio
 - **Format**: `.wav` atau `.m4a`
@@ -91,7 +91,7 @@ fastdtw>=0.3.4
 - 5 orang berbeda: Akbar, Evelyn, Fed, Justin, Ucup
 - File terakhir dari setiap vokal digunakan untuk testing open scenario
 
-## 🔧 Cara Menggunakan
+## Cara Menggunakan
 
 ### Running the Main Program
 
@@ -134,7 +134,7 @@ viz.plot_waveform_with_vad('test_audio.wav', save_path='waveform.png')
 viz.plot_mfcc39('test_audio.wav', save_prefix='mfcc')
 ```
 
-## 📈 Fitur Ekstraksi
+## Fitur Ekstraksi
 
 ### MFCC 39 Dimensi
 
@@ -158,7 +158,7 @@ viz.plot_mfcc39('test_audio.wav', save_prefix='mfcc')
 - **Median Filtering**: Mengurangi noise pada MFCC
 - **CMVN**: Cepstral Mean and Variance Normalization
 
-## 🎯 Evaluasi
+## Evaluasi
 
 ### Skenario Testing
 
@@ -179,7 +179,7 @@ viz.plot_mfcc39('test_audio.wav', save_prefix='mfcc')
 - **Average Accuracy**: Rata-rata dari kedua scenario
 - **Confusion Matrix**: Analisis kesalahan prediksi
 
-## 📊 Visualisasi
+## Visualisasi
 
 Program menghasilkan visualisasi berikut di folder `results/images/`:
 
@@ -189,7 +189,7 @@ Program menghasilkan visualisasi berikut di folder `results/images/`:
 4. **Vowel Distances Bar**: Jarak DTW ke setiap vokal
 5. **Confusion Matrix**: Heatmap confusion matrix
 
-## 🔍 Algoritma DTW
+## Algoritma DTW
 
 Dynamic Time Warping digunakan untuk mencocokkan dua sequence dengan panjang berbeda:
 
@@ -200,7 +200,7 @@ normalized_distance = distance / len(path)
 
 **Normalisasi**: Jarak dibagi panjang path untuk fairness antar sequence berbeda panjang
 
-## 📝 Output
+## Output
 
 ### Console Output
 - Detail prediksi setiap file test
@@ -224,7 +224,7 @@ normalized_distance = distance / len(path)
 }
 ```
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 **Audio tidak terdeteksi:**
 - Pastikan format file `.wav` atau `.m4a`
@@ -239,7 +239,7 @@ normalized_distance = distance / len(path)
 - Adjust parameter VAD (top_db)
 - Coba dengan/tanpa normalisasi
 
-## 👥 Contributors
+## Contributors
 
 - 13522013 - Denise Felicia Tiowanni
 - 13522053 - Erdianti Wiga Putri Andini
@@ -247,16 +247,6 @@ normalized_distance = distance / len(path)
 - 13522074 - Muhammad Naufal Aulia
 - 13522085 - Zahira Dina Amalia
 
-## 📄 License
+## License
 
-This project is for educational purposes (IF4071 - Pattern Recognition).
-
-## 📚 References
-
-- Rabiner, L., & Juang, B. H. (1993). Fundamentals of speech recognition.
-- Müller, M. (2007). Information retrieval for music and motion.
-- Davis, S., & Mermelstein, P. (1980). Comparison of parametric representations for monosyllabic word recognition.
-
----
-
-**Note**: Proyek ini dibuat untuk tugas mata kuliah IF4071 Pattern Recognition, Institut Teknologi Bandung.
+**Note**: Proyek ini dibuat untuk tugas mata kuliah IF4071 Speech Recognition, Institut Teknologi Bandung.
