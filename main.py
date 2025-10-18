@@ -1,375 +1,479 @@
+import csv
 import os
 import json
-from typing import List, Tuple
-from datetime import datetime
-import sys
+from pathlib import Path
+import re
+from typing import Dict, List, Optional, Tuple
 
-from VowelDTW.VowelRecognitionDTW import VowelRecognitionDTW
-from VowelDTW.VowelDTWVisualizer import VowelDTWVisualizer
+from VowelDTW.BuildRecognizer import build_recognizer_from_folders
+from VowelDTW.SafeVisualizer import SafeVisualizer, create_comprehensive_visualizations
 
-RESULTS_DIR = "results"
-IMAGES_DIR = os.path.join(RESULTS_DIR, "images")
-os.makedirs(IMAGES_DIR, exist_ok=True)
-
-class OutputLogger:
-    """Class untuk menangkap dan menyimpan semua output"""
-    def __init__(self, log_file_path):
-        self.log_file_path = log_file_path
-        self.log_entries = []
-        
-    def log(self, message, level="INFO"):
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        entry = f"[{timestamp}] [{level}] {message}"
-        self.log_entries.append(entry)
-        print(message)
-        
-    def save_log(self):
-        with open(self.log_file_path, 'w', encoding='utf-8') as f:
-            f.write("\n".join(self.log_entries))
-
-def scan_person_folder(folder: str, vowels: List[str], logger: OutputLogger):
-    result = {}
+def scan_person_folder(folder: str, vowels: List[str]) -> Dict[str, List[Tuple[str, int]]]:
+    result: Dict[str, List[Tuple[str, int]]] = {}
     if not os.path.exists(folder):
-        logger.log(f"Folder tidak ditemukan: {folder}", "WARNING")
+        print(f"Folder tidak ditemukan: {folder}")
         return result
 
-    logger.log(f"Scanning folder: {folder}")
-    file_count = 0
-    
     for filename in os.listdir(folder):
-        if not (filename.endswith(".wav") or filename.endswith(".m4a")):
+        if not (filename.lower().endswith(".wav") or filename.lower().endswith(".m4a")):
             continue
-            
-        file_count += 1
-        parts = filename.replace('.wav', '').replace('.m4a', '').split(' - ')
+        name_wo_ext = filename.rsplit(".", 1)[0]
+        parts = name_wo_ext.split(" - ")
         if len(parts) < 2:
-            logger.log(f"Skipping file with invalid format: {filename}", "WARNING")
             continue
-            
+
+        # ekspektasi: "<person> - <vowel> <num>"
         vowel_num = parts[1].strip().split()
         if len(vowel_num) < 2:
-            logger.log(f"Skipping file with invalid vowel format: {filename}", "WARNING")
             continue
 
         vowel_part = vowel_num[0].lower()
         try:
-            file_num = int(vowel_num[1])
+            file_num = int(re.sub(r'\D+', '', vowel_num[1]))
         except ValueError:
-            logger.log(f"Warning: Could not parse number from {filename}", "WARNING")
+            print(f"Warning: Could not parse number from {filename}")
             continue
 
         if vowel_part in vowels:
             result.setdefault(vowel_part, []).append((os.path.join(folder, filename), file_num))
-            
-    logger.log(f"Found {file_count} audio files in {folder}")
+
+    # sort each list by num asc
+    for v in list(result.keys()):
+        result[v].sort(key=lambda x: x[1])
     return result
 
-def save_detailed_results(results, test_data_us, test_data_other, output_path):
-    """Menyimpan hasil detail ke file JSON"""
-    detailed_results = {
-        "metadata": {
-            "timestamp": datetime.now().isoformat(),
-            "total_test_files_us": len(test_data_us),
-            "total_test_files_other": len(test_data_other)
-        },
-        "test_data": {
-            "us_files": [
-                {
-                    "file_path": path,
-                    "true_vowel": vowel,
-                    "person": person
-                } for path, vowel, person in test_data_us
-            ],
-            "other_files": [
-                {
-                    "file_path": path,
-                    "true_vowel": vowel,
-                    "person": person
-                } for path, vowel, person in test_data_other
-            ]
-        },
-        "detailed_results": results
-    }
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(detailed_results, f, indent=2, ensure_ascii=False)
 
-def save_template_info(recognizer, output_path, logger):
-    """Menyimpan informasi template yang dimuat"""
-    template_info = {
-        "metadata": {
-            "timestamp": datetime.now().isoformat(),
-            "total_vowels": len(recognizer.vowels)
-        },
-        "templates": {}
-    }
-    
-    total_templates = 0
-    for vowel in recognizer.vowels:
-        if vowel in recognizer.templates:
-            template_info["templates"][vowel] = {}
-            for person, templates in recognizer.templates[vowel].items():
-                template_info["templates"][vowel][person] = {
-                    "count": len(templates),
-                    "feature_shapes": [list(t.shape) for t in templates]
-                }
-                total_templates += len(templates)
-    
-    template_info["metadata"]["total_templates"] = total_templates
-    logger.log(f"Total templates loaded: {total_templates}")
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(template_info, f, indent=2, ensure_ascii=False)
+def scan_person_folder_recursive(root: str, vowels: List[str]) -> Dict[str, List[Tuple[str, int]]]:
+    out: Dict[str, List[Tuple[str, int]]] = {}
+    rootp = Path(root)
+    if not rootp.exists():
+        print(f"[WARN] Folder not found: {root}")
+        return out
 
-if __name__ == "__main__":
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = os.path.join(RESULTS_DIR, f"execution_log_{timestamp}.txt")
-    detailed_results_file = os.path.join(RESULTS_DIR, f"detailed_results_{timestamp}.json")
-    template_info_file = os.path.join(RESULTS_DIR, f"template_info_{timestamp}.json")
-    predictions_closed_file = os.path.join(RESULTS_DIR, f"predictions_closed_{timestamp}.csv")
-    predictions_open_file = os.path.join(RESULTS_DIR, f"predictions_open_{timestamp}.csv")
-    
-    logger = OutputLogger(log_file)
-    
-    persons = ['densu', 'hira', 'naufal', 'wiga', 'zya']
-    vowels = ['a', 'i', 'u', 'e', 'o']
-    base_path = ""
+    for f in rootp.rglob("*"):
+        if not f.is_file():
+            continue
+        if f.suffix.lower() not in (".wav", ".m4a"):
+            continue
 
-    logger.log("=== MEMULAI EKSPERIMEN VOWEL RECOGNITION ===")
-    logger.log(f"Persons: {persons}")
-    logger.log(f"Vowels: {vowels}")
+        base = f.stem
+        if " - " not in base:
+            continue
 
-    recognizer = VowelRecognitionDTW(sample_rate=16000, use_vad=True, normalize=True, n_segments=3)
-    viz = VowelDTWVisualizer(recognizer)
+        right = base.split(" - ", 1)[1].strip()
+        parts = right.split()
+        if not parts:
+            continue
 
-    logger.log("=== SCANNING FILES (templates_us) ===")
-    all_files = {}
+        vtok = parts[0].lower()
+        if vtok not in vowels:
+            continue
+
+        num = 0
+        if len(parts) > 1:
+            try:
+                num = int(re.sub(r"\D+", "", parts[1]))
+            except Exception:
+                num = 0
+
+        out.setdefault(vtok, []).append((str(f), num))
+
+    for v in list(out.keys()):
+        out[v].sort(key=lambda x: x[1])
+    return out
+
+
+def person_id_from_name(filepath: str) -> str:
+    base = Path(filepath).stem
+    parts = base.split(' - ')
+    return parts[0].strip().lower() if parts else "unknown"
+
+
+def diagnose_templates_dir(root: str, exts=(".wav", ".m4a")):
+    p = Path(root)
+    print("Exists:", p.exists(), "| Dir:", p.is_dir(), "| Path:", p.resolve())
+    if not p.exists():
+        return
+    print("Immediate entries:", [x.name for x in p.iterdir()])
+    files = [str(f) for f in p.rglob("*") if f.suffix.lower() in exts]
+    print(f"Found {len(files)} audio file(s) under {root} (recursive).")
+    for s in files[:20]:
+        print("  -", s)
+
+
+def export_predictions_csv(recognizer, test_data: List[Tuple[str, str, str]], out_csv_path: str):
+    rows = []
+    for wav_path, true_vowel, person in test_data:
+        try:
+            pred, _, _, final_d = recognizer.recognize(wav_path)
+        except Exception as e:
+            print(f"[WARN] recognize failed for {wav_path}: {e}")
+            pred, final_d = None, {}
+
+        row = {
+            "file": os.path.basename(wav_path),
+            "path": wav_path,
+            "person": person,
+            "true_vowel": true_vowel,
+            "pred_vowel": pred,
+        }
+        for k, v in final_d.items():
+            try:
+                row[f"dist_{k}"] = float(v)
+            except Exception:
+                row[f"dist_{k}"] = None
+        rows.append(row)
+
+    os.makedirs(os.path.dirname(out_csv_path), exist_ok=True)
+    fieldnames = ["file", "path", "person", "true_vowel", "pred_vowel"]
+    extra_cols = sorted({k for r in rows for k in r.keys() if k.startswith("dist_")})
+    fieldnames.extend(extra_cols)
+
+    with open(out_csv_path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
+        for r in rows:
+            w.writerow(r)
+
+
+def build_test_data_from_files(persons: List[str],
+                              all_files: Dict[str, Dict[str, List[Tuple[str, int]]]],
+                              vowels: List[str],
+                              use_last_file: bool = True) -> List[Tuple[str, str, str]]:
+    test_data: List[Tuple[str, str, str]] = []
     for person in persons:
-        person_folder = os.path.join(f"{base_path}templates_us", person)
-        all_files[person] = scan_person_folder(person_folder, vowels, logger)
-        
-        total_files = sum(len(files) for files in all_files[person].values())
-        logger.log(f"Person {person}: {total_files} total files")
-        for vowel, files in all_files[person].items():
-            logger.log(f"  - Vowel {vowel}: {len(files)} files")
-
-    logger.log("\n=== LOADING TEMPLATES (using files with smaller numbers) ===")
-    test_data_us: List[Tuple[str, str, str]] = []
-    templates_loaded = 0
-    
-    for person in persons:
-        logger.log(f"Processing person: {person}")
         for vowel in vowels:
-            files = all_files.get(person, {}).get(vowel, [])
-            files.sort(key=lambda x: x[1])
-            if len(files) == 0:
-                logger.log(f"  No files found for vowel {vowel}", "WARNING")
+            files = (all_files.get(person, {}) or {}).get(vowel, [])
+            if not files:
                 continue
+            test_file = files[-1] if use_last_file else files[0]
+            test_data.append((test_file[0], vowel, person))
+    return test_data
 
-            template_files = files[:-1] if len(files) > 1 else []
-            test_file = files[-1]
 
-            logger.log(f"  Vowel {vowel}: {len(template_files)} templates, 1 test file")
-            
-            for file_path, file_num in template_files:
+def add_templates_from_files(recognizer,
+                            persons: List[str],
+                            all_files: Dict[str, Dict[str, List[Tuple[str, int]]]],
+                            max_templates_per_speaker: Optional[int] = None,
+                            exclude_last: bool = True):
+    for person in persons:
+        for vowel, files in (all_files.get(person, {}) or {}).items():
+            template_files = files[:-1] if exclude_last and len(files) > 1 else files
+            if max_templates_per_speaker:
+                template_files = template_files[:max_templates_per_speaker]
+            for file_path, _ in template_files:
                 try:
                     recognizer.add_template(vowel, person, file_path)
-                    templates_loaded += 1
-                    logger.log(f"    Loaded template: {os.path.basename(file_path)}")
                 except Exception as e:
-                    logger.log(f"    Error loading {file_path}: {e}", "ERROR")
+                    print(f"[WARN] Error loading template {file_path}: {e}")
 
-            test_data_us.append((test_file[0], vowel, person))
-            logger.log(f"    Test file: {os.path.basename(test_file[0])}")
 
-    logger.log(f"\nTotal templates loaded: {templates_loaded}")
-    logger.log(f"Total US test files: {len(test_data_us)}")
+def create_si_closed_recognizer(base_recognizer, exclude_person: str):
+    from VowelDTW.VowelRecognitionDTW import VowelRecognitionDTW
     
-    save_template_info(recognizer, template_info_file, logger)
-
-    logger.log("\n=== SCANNING FILES (templates_other) ===")
-    all_files_other = {}
-    folder_other = f"{base_path}templates_other"
-    if os.path.exists(folder_other):
-        for person in os.listdir(folder_other):
-            person_folder = os.path.join(folder_other, person)
-            if not os.path.isdir(person_folder):
-                continue
-            logger.log(f"Processing other person: {person}")
-            all_files_other[person] = scan_person_folder(person_folder, vowels, logger)
-            
-            total_files = sum(len(files) for files in all_files_other[person].values())
-            logger.log(f"Person {person}: {total_files} total files")
+    si_recognizer = VowelRecognitionDTW(
+        sample_rate=base_recognizer.sample_rate,
+        use_vad=base_recognizer.use_vad,
+        normalize=base_recognizer.normalize,
+        n_segments=base_recognizer.n_segments
+    )
+    
+    templates_added = 0
+    for vowel, person_dict in base_recognizer.templates.items():
+        for person, template_list in person_dict.items():
+            if person != exclude_person:  
+                for template_features in template_list:
+                    if vowel not in si_recognizer.templates:
+                        si_recognizer.templates[vowel] = {}
+                    if person not in si_recognizer.templates[vowel]:
+                        si_recognizer.templates[vowel][person] = []
+                    
+                    si_recognizer.templates[vowel][person].append(template_features)
+                    templates_added += 1
+    
+    if templates_added > 0:
+        si_recognizer.build_generalized_templates()
+        print(f"SI-Closed: Built generalized templates excluding {exclude_person} ({templates_added} templates)")
     else:
-        logger.log(f"Folder tidak ditemukan: {folder_other}", "WARNING")
-
-    test_data_other: List[Tuple[str, str, str]] = []
-    logger.log("\n=== TEST DATA (templates_other - using files with largest numbers) ===")
-    for person in all_files_other:
-        logger.log(f"Processing other person test files: {person}")
-        for vowel in vowels:
-            files = all_files_other[person].get(vowel, [])
-            files.sort(key=lambda x: x[1])
-            if len(files) == 0:
-                continue
-            test_file = files[-1]
-            test_data_other.append((test_file[0], vowel, person))
-            logger.log(f"  Test file {vowel}: {os.path.basename(test_file[0])}")
-            
-    logger.log(f"Total other test files: {len(test_data_other)}")
-
-    logger.log("\n=== GENERATING SAMPLE VISUALIZATIONS ===")
-    if len(test_data_us) > 0:
-        sample_path, sample_true, sample_person = test_data_us[0]
-        sample_base = os.path.splitext(os.path.basename(sample_path))[0]
-        
-        logger.log(f"Creating visualizations for sample: {sample_base}")
-
-        try:
-            viz.plot_waveform_with_vad(
-                sample_path,
-                top_db=20,
-                save_path=os.path.join(IMAGES_DIR, f"{sample_base}_waveform_vad.png")
-            )
-            logger.log("  Waveform + VAD visualization created")
-        except Exception as e:
-            logger.log(f"  Error creating waveform visualization: {e}", "ERROR")
-            
-        try:
-            viz.plot_mfcc39(
-                sample_path,
-                save_prefix=os.path.join(IMAGES_DIR, f"{sample_base}_mfcc39")
-            )
-            logger.log("  MFCC-39 visualization created")
-        except Exception as e:
-            logger.log(f"  Error creating MFCC visualization: {e}", "ERROR")
-
-        if sample_true in recognizer.templates and len(recognizer.templates[sample_true]) > 0:
-            try:
-                first_pid, templ_list = next(iter(recognizer.templates[sample_true].items()))
-                if len(templ_list) > 0:
-                    template_feats = templ_list[0]
-                    test_feats = recognizer.extract_mfcc_39(sample_path)
-                    viz.plot_dtw_alignment(
-                        template_feats, test_feats,
-                        title=f"DTW {sample_true.upper()} | template:{first_pid} vs test:{sample_person}",
-                        save_path=os.path.join(IMAGES_DIR, f"{sample_base}_dtw_alignment.png")
-                    )
-                    logger.log("  DTW alignment visualization created")
-            except Exception as e:
-                logger.log(f"  Error creating DTW visualization: {e}", "ERROR")
-
-        try:
-            pred, dist, _, final_d = recognizer.recognize(sample_path)
-            viz.plot_vowel_distances_bar(
-                final_d,
-                title=f"Distances for {os.path.basename(sample_path)} (true={sample_true}, pred={pred})",
-                save_path=os.path.join(IMAGES_DIR, f"{sample_base}_vowel_distances.png")
-            )
-            logger.log(f"  Distance bar chart created (true={sample_true}, pred={pred})")
-        except Exception as e:
-            logger.log(f"  Error creating distance visualization: {e}", "ERROR")
-
-    logger.log("\n=== STARTING EVALUATION ===")
-    logger.log("This may take several minutes...")
+        print(f"SI-Closed: No templates available after excluding {exclude_person}")
     
-    try:
-        results = recognizer.evaluate_all_scenarios(test_data_us, test_data_other)
-        logger.log("Evaluation completed successfully")
-        
-        logger.log("\n=== EVALUATION SUMMARY ===")
-        for person, person_results in results.items():
-            if person != 'overall':
-                logger.log(f"Person {person}:")
-                logger.log(f"  Closed accuracy: {person_results['closed_accuracy']:.3f}")
-                logger.log(f"  Open accuracy: {person_results['open_accuracy']:.3f}")
-                logger.log(f"  Average accuracy: {person_results['average_accuracy']:.3f}")
-        
-        if 'overall' in results:
-            logger.log("Overall results:")
-            for key, value in results['overall'].items():
-                logger.log(f"  {key}: {value:.3f}")
+    return si_recognizer
 
-        logger.log("\n=== SAVING CSV PREDICTIONS ===")
-        all_closed_results = []
-        all_open_results = []
+
+def predict_excluding_same_speaker(recognizer, wav_path: str, test_person: str):
+    try:
+        si_recognizer = create_si_closed_recognizer(recognizer, test_person)
         
-        for person_results in results.values():
-            if isinstance(person_results, dict):
-                if 'closed_results' in person_results:
-                    all_closed_results.extend(person_results['closed_results'])
-                if 'open_results' in person_results:
-                    all_open_results.extend(person_results['open_results'])
+        if not si_recognizer.generalized_templates:
+            print(f"[WARN] No generalized templates available after excluding {test_person}")
+            return None, {}
         
-        if all_closed_results:
-            recognizer.save_predictions_to_csv(all_closed_results, predictions_closed_file)
-            logger.log(f"Closed predictions saved to: {predictions_closed_file}")
+        pred, min_dist, all_distances, final_vowel_distances = si_recognizer.recognize(wav_path)
+        return pred, final_vowel_distances
         
-        if all_open_results:
-            recognizer.save_predictions_to_csv(all_open_results, predictions_open_file)
-            logger.log(f"Open predictions saved to: {predictions_open_file}")
-                
     except Exception as e:
-        logger.log(f"Error during evaluation: {e}", "ERROR")
-        results = {}
+        print(f"[ERROR] SI-Closed prediction failed for {wav_path}: {e}")
+        pred, min_dist, all_distances, final_vowel_distances = recognizer.recognize(wav_path)
+        return pred, final_vowel_distances
 
-    logger.log("\n=== GENERATING CONFUSION MATRIX ===")
-    try:
-        all_closed_results = []
-        for person_results in results.values():
-            if isinstance(person_results, dict) and 'closed_results' in person_results:
-                all_closed_results.extend(person_results['closed_results'])
-                
-        if len(all_closed_results) > 0:
-            viz.plot_confusion_heatmap(
-                all_closed_results,
-                vowels=recognizer.vowels,
-                title="Confusion Matrix (Closed Scenario)",
-                save_path=os.path.join(IMAGES_DIR, "confusion_matrix_closed.png")
-            )
-            logger.log("Confusion matrix heatmap created")
+
+def evaluate_si_closed(recognizer, test_data_us: List[Tuple[str, str, str]]):
+    total, correct = 0, 0
+    results_dicts: List[Dict[str, str]] = []
+    
+    print(f"\n=== Evaluasi SI-Closed dengan Generalized Templates ===")
+    print(f"Total test files: {len(test_data_us)}")
+    
+    for i, (wav_path, true_vowel, person) in enumerate(test_data_us):
+        print(f"Processing {i+1}/{len(test_data_us)}: {os.path.basename(wav_path)} (person: {person})")
+        
+        pred, final_distances = predict_excluding_same_speaker(recognizer, wav_path, person)
+        
+        if pred is not None:
+            results_dicts.append({"true": true_vowel, "predicted": pred})
+            total += 1
+            if pred == true_vowel:
+                correct += 1
+                print(f"Correct: {true_vowel} -> {pred}")
+            else:
+                print(f"Wrong: {true_vowel} -> {pred}")
         else:
-            logger.log("No closed results available for confusion matrix", "WARNING")
-    except Exception as e:
-        logger.log(f"Error creating confusion matrix: {e}", "ERROR")
+            print(f"Skipped: No templates available after excluding {person}")
+    
+    acc = (correct / total) * 100.0 if total > 0 else 0.0
+    print(f"\nSI-Closed Results: {correct}/{total} = {acc:.2f}%")
+    
+    return acc, results_dicts
 
-    logger.log("\n=== SAVING RESULTS ===")
-    try:
-        save_detailed_results(results, test_data_us, test_data_other, detailed_results_file)
-        logger.log(f"Detailed results saved to {detailed_results_file}")
-    except Exception as e:
-        logger.log(f"Error saving detailed results: {e}", "ERROR")
+# Configuration
+class Config:    
+    # Paths
+    BASE_PATH = ""
+    TEMPLATES_US_PATH = "templates_us"
+    TEMPLATES_OTHER_PATH = "templates_other"
+    RESULTS_DIR = "results"
+    IMAGES_DIR = os.path.join(RESULTS_DIR, "images")
+    
+    # Experiment settings
+    PERSONS = ['densu', 'hira', 'naufal', 'wiga', 'zya']
+    VOWELS = ['a', 'i', 'u', 'e', 'o']
+    
+    # Recognizer parameters
+    SAMPLE_RATE = 16000
+    USE_VAD = True
+    NORMALIZE = True
+    N_SEGMENTS = 3
+    MAX_TEMPLATES_PER_SPEAKER: Optional[int] = None  # None = use all available
+    
+    # Visualization settings
+    MAX_SAMPLES_PER_SCENARIO = 10
+    
+    def __init__(self):
+        # Ensure directories exist
+        os.makedirs(self.RESULTS_DIR, exist_ok=True)
+        os.makedirs(self.IMAGES_DIR, exist_ok=True)
+    
+    @property
+    def templates_us_full_path(self):
+        return os.path.join(self.BASE_PATH, self.TEMPLATES_US_PATH)
+    
+    @property
+    def templates_other_full_path(self):
+        return os.path.join(self.BASE_PATH, self.TEMPLATES_OTHER_PATH)
 
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    json_path = os.path.join(RESULTS_DIR, 'results.json')
-    try:
-        with open(json_path, 'w', encoding='utf-8') as f:
-            json_results = {}
-            for k, v in results.items():
-                if k != 'overall':
-                    json_results[k] = {
-                        'closed_accuracy': v['closed_accuracy'],
-                        'open_accuracy': v['open_accuracy'],
-                        'average_accuracy': v['average_accuracy']
-                    }
-                else:
-                    json_results[k] = v
-            json.dump(json_results, f, indent=2, ensure_ascii=False)
-        logger.log(f"Summary results saved to {json_path}")
-    except Exception as e:
-        logger.log(f"Error saving summary results: {e}", "ERROR")
 
-    logger.log(f"\n=== EXPERIMENT COMPLETED ===")
-    logger.log(f"Execution log: {log_file}")
-    logger.log(f"Detailed results: {detailed_results_file}")
-    logger.log(f"Template info: {template_info_file}")
-    logger.log(f"Summary results: {json_path}")
-    logger.log(f"Closed predictions CSV: {predictions_closed_file}")
-    logger.log(f"Open predictions CSV: {predictions_open_file}")
-    logger.log(f"Images directory: {IMAGES_DIR}")
+def run_diagnostics(config: Config):
+    """Run diagnostic checks on the directory structure"""
+    print("=" * 60)
+    print("=== RUNNING DIAGNOSTICS ===")
+    print("=" * 60)
+    
+    print(f"\n--- Checking templates_us directory ---")
+    diagnose_templates_dir(config.templates_us_full_path)
+    
+    if os.path.exists(config.templates_other_full_path):
+        print(f"\n--- Checking templates_other directory ---")
+        diagnose_templates_dir(config.templates_other_full_path)
+    else:
+        print(f"\n--- templates_other directory not found: {config.templates_other_full_path} ---")
+
+
+def build_recognizer(config: Config):
+    """Build the recognizer with templates"""
+    print("\n" + "=" * 60)
+    print("=== BUILDING RECOGNIZER ===")
+    print("=" * 60)
+    
+    # Use the builder to create recognizer
+    recognizer, test_data_templates, test_data_others = build_recognizer_from_folders(
+        template_base_path=config.templates_us_full_path,
+        template_persons=config.PERSONS,
+        test_base_path=config.templates_other_full_path,
+        sample_rate=config.SAMPLE_RATE,
+        use_vad=config.USE_VAD,
+        normalize=config.NORMALIZE,
+        n_segments=config.N_SEGMENTS,
+        max_templates_per_speaker=config.MAX_TEMPLATES_PER_SPEAKER
+    )
+    
+    return recognizer, test_data_templates, test_data_others
+
+
+def run_evaluation(recognizer, test_data_templates, test_data_others, config: Config):
+    """Run comprehensive evaluation"""
+    print("\n" + "=" * 60)
+    print("=== RUNNING EVALUATION ===")
+    print("=" * 60)
+    
+    # Main evaluation using recognizer's built-in method
+    results_summary = recognizer.evaluate_all_scenarios(test_data_templates, test_data_others)
+    
+    # Additional SI-Closed evaluation
+    print(f"\n--- SI-Closed Evaluation ---")
+    si_closed_acc, si_closed_results = evaluate_si_closed(recognizer, test_data_templates)
+    print(f"SI-Closed Accuracy: {si_closed_acc:.2f}%")
+    
+    # Add SI-Closed results to summary
+    results_summary['si_closed'] = {
+        'si_closed_accuracy': si_closed_acc,
+        'si_closed_results': si_closed_results
+    }
+    
+    return results_summary
+
+
+def export_results(recognizer, test_data_templates, test_data_others, results_summary, config: Config):
+    """Export results to CSV and JSON"""
+    print("\n" + "=" * 60)
+    print("=== EXPORTING RESULTS ===")
+    print("=" * 60)
+    
+    # Export prediction CSVs
+    if test_data_templates:
+        csv_path_closed = os.path.join(config.RESULTS_DIR, "predictions_closed.csv")
+        export_predictions_csv(recognizer, test_data_templates, csv_path_closed)
+        print(f"Closed predictions saved to: {csv_path_closed}")
+    
+    if test_data_others:
+        csv_path_open = os.path.join(config.RESULTS_DIR, "predictions_open.csv")
+        export_predictions_csv(recognizer, test_data_others, csv_path_open)
+        print(f"Open predictions saved to: {csv_path_open}")
+    
+    # Export JSON summary
+    json_path = os.path.join(config.RESULTS_DIR, 'results.json')
+    json_results = {}
+    
+    for k, v in results_summary.items():
+        if k == 'overall':
+            json_results[k] = v
+        elif k == 'si_closed':
+            json_results[k] = {'si_closed_accuracy': v.get('si_closed_accuracy')}
+        else:
+            if isinstance(v, dict):
+                json_results[k] = {
+                    'closed_accuracy': v.get('closed_accuracy'),
+                    'open_accuracy': v.get('open_accuracy'),
+                    'average_accuracy': v.get('average_accuracy')
+                }
+    
+    with open(json_path, 'w') as f:
+        json.dump(json_results, f, indent=2)
+    
+    print(f"Results summary saved to: {json_path}")
+
+
+def create_visualizations(recognizer, test_data_templates, test_data_others, results_summary, config: Config):
+    """Create comprehensive visualizations"""
+    print("\n" + "=" * 60)
+    print("=== CREATING VISUALIZATIONS ===")
+    print("=" * 60)
+    
+    visualization_summary = create_comprehensive_visualizations(
+        recognizer=recognizer,
+        test_data_templates=test_data_templates,
+        test_data_others=test_data_others,
+        results_summary=results_summary,
+        images_dir=config.IMAGES_DIR,
+        max_samples_per_scenario=config.MAX_SAMPLES_PER_SCENARIO
+    )
+    
+    # Additional confusion matrix for SI-Closed if available
+    if 'si_closed' in results_summary and 'si_closed_results' in results_summary['si_closed']:
+        visualizer = SafeVisualizer(recognizer, config.IMAGES_DIR)
+        si_results = results_summary['si_closed']['si_closed_results']
+        if si_results:
+            visualizer.safe_plot_confusion_heatmap(
+                si_results,
+                title="Confusion Matrix (SI-Closed: exclude same speaker)",
+                save_path=os.path.join(config.IMAGES_DIR, "confusion_matrix_si_closed.png")
+            )
+    
+    return visualization_summary
+
+
+def print_final_summary(results_summary, config: Config):
+    """Print final summary of results"""
+    print("\n" + "=" * 80)
+    print("=== FINAL SUMMARY ===")
+    print("=" * 80)
+    
+    if 'overall' in results_summary:
+        overall = results_summary['overall']
+        print(f"\nOverall Results:")
+        print(f"  Closed Accuracy:  {overall.get('closed_accuracy', 0):.2f}%")
+        print(f"  Open Accuracy:    {overall.get('open_accuracy', 0):.2f}%")
+        print(f"  Average Accuracy: {overall.get('average_accuracy', 0):.2f}%")
+    
+    if 'si_closed' in results_summary:
+        si_acc = results_summary['si_closed'].get('si_closed_accuracy', 0)
+        print(f"  SI-Closed Accuracy: {si_acc:.2f}%")
+    
+    print(f"\nResults saved to: {config.RESULTS_DIR}/")
+    print(f"  - CSV predictions: predictions_closed.csv, predictions_open.csv")
+    print(f"  - JSON summary: results.json")
+    print(f"  - Visualizations: {config.IMAGES_DIR}/")
+    
+    print(f"\nExperiment completed successfully!")
+
+
+def main():
+    """Main execution function"""
+    print("Starting Vowel Recognition System Evaluation")
+    print("=" * 80)
+    
+    # Initialize configuration
+    config = Config()
     
     try:
-        logger.save_log()
-        print(f"\nAll outputs saved successfully!")
+        # Step 1: Run diagnostics
+        run_diagnostics(config)
+        
+        # Step 2: Build recognizer
+        recognizer, test_data_templates, test_data_others = build_recognizer(config)
+        
+        # Step 3: Run evaluation
+        results_summary = run_evaluation(recognizer, test_data_templates, test_data_others, config)
+        
+        # Step 4: Export results
+        export_results(recognizer, test_data_templates, test_data_others, results_summary, config)
+        
+        # Step 5: Create visualizations
+        visualization_summary = create_visualizations(
+            recognizer, test_data_templates, test_data_others, results_summary, config
+        )
+        
+        # Step 6: Print final summary
+        print_final_summary(results_summary, config)
+        
     except Exception as e:
-        print(f"Error saving execution log: {e}")
+        print(f"\nERROR: Experiment failed with exception:")
+        print(f"  {type(e).__name__}: {e}")
+        print(f"\nCheck your data paths and file structure.")
+        return False
+    
+    return True
+
+
+if __name__ == "__main__":
+    success = main()
+    exit(0 if success else 1)
