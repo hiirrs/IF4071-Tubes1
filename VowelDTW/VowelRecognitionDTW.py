@@ -63,6 +63,7 @@ class VowelRecognitionDTW:
             nfft=512,
             winstep=0.01,
             winlen=0.025,
+            winfunc=np.hamming,
             preemph=0,  
             ceplifter=22,
             appendEnergy=True
